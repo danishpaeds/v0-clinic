@@ -1,7 +1,7 @@
 import type React from "react"
 import type { Metadata } from "next"
 import { Geist, Geist_Mono } from "next/font/google"
-import "../src/app/globals.css"
+import "./globals.css" // Updated CSS import to use local globals.css instead of src/app/globals.css
 import { Header } from "@/src/components/Header"
 import { Footer } from "@/src/components/Footer"
 import { FloatingWhatsApp } from "@/components/FloatingWhatsApp"
@@ -16,6 +16,13 @@ export const metadata: Metadata = {
   keywords:
     "fertility clinic Mumbai, IVF Santacruz, ICSI, IUI, fertility specialist Mumbai, Dr Vrushni Bhuta, gynaecologist Santacruz, women's care Mumbai",
   generator: "v0.app",
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "32x32", type: "image/x-icon" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
+    ],
+    apple: [{ url: "/apple-touch-icon.jpg", sizes: "180x180", type: "image/png" }],
+  },
 }
 
 export default function RootLayout({

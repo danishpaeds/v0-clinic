@@ -199,8 +199,9 @@ export default function AboutPage() {
                   Mission
                 </h3>
                 <p className="text-gray-700 leading-relaxed">
-                  Building a compassionate community that fosters an empathetic environment where individuals facing
-                  fertility challenges find solace, guidance, and hope on their journey to parenthood.
+                  Dr Bhuta's mission is to build a compassionate community that not only supports but also fosters an
+                  empathetic and understanding environment. This community is designed to act as a sacred space where
+                  both men and women facing fertility challenges can find solace, guidance, and hope.
                 </p>
               </CardContent>
             </Card>
@@ -215,8 +216,9 @@ export default function AboutPage() {
                   Values
                 </h3>
                 <p className="text-gray-700 leading-relaxed">
-                  Guided by ethical principles and integrity, providing exceptional care while maintaining patient
-                  confidentiality and upholding the highest medical standards in every aspect of practice.
+                  Inspired by the verse from the Bhagwad Gita, "Karmanye Vadhikaraste, Ma Phaleshou Kada Chana, Ma Karma
+                  Phala Hetur Bhurmatey Sangostva Akarmani," Dr Vrushni focuses on providing the best possible care,
+                  maintaining patient confidentiality, and upholding ethical standards and integrity in her practice.
                 </p>
               </CardContent>
             </Card>
@@ -231,8 +233,9 @@ export default function AboutPage() {
                   Belief
                 </h3>
                 <p className="text-gray-700 leading-relaxed">
-                  With positive energy and advances in medical science, every individual can achieve their dream of
-                  parenthood. Each patient is considered part of an extended soul family.
+                  Dr Vrushni believes that fertility is controlled by Mother Nature on a higher plane. She considers all
+                  patients seeking treatment her soul families. With positive energy, advances in medical science and
+                  technology, couples as well as individuals can bring new life into the world.
                 </p>
               </CardContent>
             </Card>
