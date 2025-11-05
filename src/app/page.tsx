@@ -173,7 +173,7 @@ export default function Home() {
 
                 <div className="relative aspect-[3/4] rounded-[2.5rem] overflow-hidden shadow-2xl border border-white/50">
                   <Image
-                    src="/professional-female-doctor-in-purple-medical-attir.jpg"
+                    src="/images/doctor-purple-suit.jpg"
                     alt="Dr Vrushni Bhuta - Premier Fertility Specialist"
                     fill
                     className="object-cover"
@@ -304,7 +304,7 @@ export default function Home() {
                 <div className="absolute -inset-8 bg-gradient-to-br from-[#47145a]/10 to-[#eb9142]/10 rounded-[3rem] blur-3xl"></div>
                 <div className="relative aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl">
                   <Image
-                    src="/professional-female-doctor-in-coral-medical-attire.jpg"
+                    src="/images/doctor-coral-suit.jpg"
                     alt="Dr Vrushni Bhuta"
                     fill
                     className="object-cover"

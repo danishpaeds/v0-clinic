@@ -295,7 +295,7 @@ export default function TreatmentsPage() {
               <div className="absolute -inset-4 bg-gradient-to-br from-[#eb9142]/30 to-pink-400/30 rounded-3xl blur-2xl"></div>
               <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl">
                 <Image
-                  src="/professional-female-doctor-in-blue-medical-attire.jpg"
+                  src="/images/doctor-purple-blazer-seated.jpg"
                   alt="Dr Vrushni Bhuta - Fertility Specialist"
                   fill
                   className="object-cover"
