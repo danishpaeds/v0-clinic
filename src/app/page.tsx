@@ -387,7 +387,7 @@ export default function Home() {
               <div className="h-px w-12 bg-gradient-to-l from-transparent to-[#47145a]/30"></div>
             </div>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-[#47145a]">
-              The <span className="italic">Vrushni</span> Difference
+              Excellence in <span className="italic">Care</span>
             </h2>
           </div>
 

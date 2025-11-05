@@ -1,7 +1,6 @@
 import type React from "react"
 import type { Metadata } from "next"
 import { Geist, Geist_Mono } from "next/font/google"
-import { Analytics } from "@vercel/analytics/next"
 import "../src/app/globals.css"
 import { Header } from "@/src/components/Header"
 import { Footer } from "@/src/components/Footer"
@@ -31,7 +30,6 @@ export default function RootLayout({
           <main className="flex-1">{children}</main>
           <Footer />
         </div>
-        <Analytics />
       </body>
     </html>
   )

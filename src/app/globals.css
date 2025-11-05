@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Premium boutique fonts - elegant serif and refined sans-serif */
+@import url("https://fonts.googleapis.com/css2?family=Cormorant:wght@300;400;500;600;700&family=Inter:wght@200;300;400;500;600&display=swap");
+
 @font-face {
   font-family: "ClarityCity";
   src: url("/fonts/ClarityCity-Regular.woff2") format("woff2");
@@ -36,31 +39,42 @@
 
 @layer base {
   :root {
-    /* Updated to use brand colors: #66257B (purple) and #F29038 (orange) */
+    /* Premium boutique color palette with brand colors */
     --background: 0 0% 100%;
-    --foreground: 0 0% 3.9%;
+    --foreground: 280 65% 15%; /* Deep purple for text */
+
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 3.9%;
+    --card-foreground: 280 65% 15%;
+
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 3.9%;
+    --popover-foreground: 280 65% 15%;
+
     --primary: 280 65% 31%; /* #66257B - Brand purple */
     --primary-foreground: 0 0% 98%;
+
     --secondary: 24 95% 60%; /* #F29038 - Brand orange */
     --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 96.1%;
-    --muted-foreground: 0 0% 45.1%;
-    --accent: 24 95% 60%; /* Using brand orange for accents */
+
+    --muted: 20 20% 97%; /* Warm off-white */
+    --muted-foreground: 280 20% 45%;
+
+    --accent: 24 95% 60%; /* Brand orange for accents */
     --accent-foreground: 0 0% 98%;
+
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 89.8%;
-    --input: 0 0% 89.8%;
-    --ring: 280 65% 31%; /* Brand purple for focus rings */
-    --radius: 0.5rem;
 
-    /* Added custom brand color variables */
+    --border: 280 15% 90%; /* Subtle purple tint */
+    --input: 280 15% 90%;
+    --ring: 280 65% 31%; /* Brand purple for focus rings */
+
+    --radius: 1rem; /* Softer, more premium radius */
+
+    /* Custom brand and premium color variables */
     --brand-purple: 280 65% 31%; /* #66257B */
     --brand-orange: 24 95% 60%; /* #F29038 */
+    --cream: 20 20% 97%; /* Warm cream background */
+    --gold: 38 90% 55%; /* Subtle gold accent */
   }
 }
 
@@ -68,13 +82,43 @@
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
-    font-family: "ClarityCity", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
-      sans-serif;
+    /* Premium font stack with elegant serif for headings */
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-weight: 300;
+    letter-spacing: -0.01em;
+  }
+
+  /* Elegant serif headings for premium feel */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Cormorant", Georgia, serif;
+    font-weight: 400;
+    letter-spacing: -0.02em;
   }
 }
 
 html {
   scroll-behavior: smooth;
+}
+
+/* Premium utility classes for boutique aesthetic */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-pretty {
+    text-wrap: pretty;
+  }
+
+  .bg-gradient-radial {
+    background-image: radial-gradient(circle, var(--tw-gradient-stops));
+  }
 }
