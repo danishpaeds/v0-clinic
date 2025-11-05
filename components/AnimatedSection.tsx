@@ -1,6 +1,6 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { motion, type Variants } from "framer-motion"
 import type { ReactNode } from "react"
 
 interface AnimatedSectionProps {
@@ -9,12 +9,33 @@ interface AnimatedSectionProps {
   delay?: number
 }
 
+const fadeUpVariants: Variants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0 },
+}
+
+const fadeUpCardVariants: Variants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 },
+}
+
+const fadeVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1 },
+}
+
+const scaleVariants: Variants = {
+  hidden: { opacity: 0, scale: 0.9 },
+  visible: { opacity: 1, scale: 1 },
+}
+
 export function AnimatedSection({ children, className = "", delay = 0 }: AnimatedSectionProps) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-100px" }}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-100px", amount: 0.3 }}
+      variants={fadeUpVariants}
       transition={{
         duration: 0.6,
         delay,
@@ -30,9 +51,10 @@ export function AnimatedSection({ children, className = "", delay = 0 }: Animate
 export function AnimatedCard({ children, className = "", delay = 0 }: AnimatedSectionProps) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.3 }}
+      variants={fadeUpCardVariants}
       transition={{
         duration: 0.5,
         delay,
@@ -49,9 +71,10 @@ export function AnimatedCard({ children, className = "", delay = 0 }: AnimatedSe
 export function FadeIn({ children, className = "", delay = 0 }: AnimatedSectionProps) {
   return (
     <motion.div
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      viewport={{ once: true }}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.3 }}
+      variants={fadeVariants}
       transition={{
         duration: 0.8,
         delay,
@@ -66,9 +89,10 @@ export function FadeIn({ children, className = "", delay = 0 }: AnimatedSectionP
 export function ScaleIn({ children, className = "", delay = 0 }: AnimatedSectionProps) {
   return (
     <motion.div
-      initial={{ opacity: 0, scale: 0.9 }}
-      whileInView={{ opacity: 1, scale: 1 }}
-      viewport={{ once: true }}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.3 }}
+      variants={scaleVariants}
       transition={{
         duration: 0.5,
         delay,
