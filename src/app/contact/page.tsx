@@ -1,0 +1,244 @@
+'use client';
+
+import { Button } from '@/components/ui/button';
+import { Card, CardContent } from '@/components/ui/card';
+import { MapPin, Phone, Mail, Clock } from 'lucide-react';
+import { useState } from 'react';
+
+export default function ContactPage() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    message: '',
+  });
+
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Here you would typically send the form data to your backend
+    console.log('Form submitted:', formData);
+    setIsSubmitted(true);
+    setTimeout(() => setIsSubmitted(false), 3000);
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  return (
+    <div className="flex flex-col">
+      {/* Hero Section */}
+      <section className="relative bg-gradient-to-br from-[#47145a] to-[#5a1b71] text-white py-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center">
+            <span className="text-[#eb9142] font-bold text-sm tracking-wider uppercase">GET IN TOUCH</span>
+            <h1 className="text-4xl md:text-5xl font-extrabold mt-4 mb-6">
+              We are here to guide and support you
+            </h1>
+            <p className="text-xl text-gray-200">
+              Please reach out to us by phone or email to schedule your appointment
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Information & Form */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            {/* Contact Information */}
+            <div className="space-y-8">
+              <div>
+                <h2 className="text-3xl font-bold text-[#47145a] mb-8">Contact Information</h2>
+              </div>
+
+              <Card className="border-2 border-[#47145a]/10">
+                <CardContent className="p-6">
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 rounded-full bg-[#eb9142]/10 flex items-center justify-center flex-shrink-0">
+                      <MapPin className="w-6 h-6 text-[#eb9142]" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-[#47145a] mb-2">Address</h3>
+                      <p className="text-gray-600">
+                        Dilkhush CHS<br />
+                        1st Floor, Unit No. 4
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="border-2 border-[#47145a]/10">
+                <CardContent className="p-6">
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 rounded-full bg-[#eb9142]/10 flex items-center justify-center flex-shrink-0">
+                      <Phone className="w-6 h-6 text-[#eb9142]" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-[#47145a] mb-2">Phone</h3>
+                      <p className="text-gray-600">
+                        <a href="tel:+919820086575" className="hover:text-[#eb9142] transition-colors">
+                          +91 9820086575
+                        </a>
+                        <br />
+                        <a href="tel:+918591186575" className="hover:text-[#eb9142] transition-colors">
+                          +91 8591186575
+                        </a>
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="border-2 border-[#47145a]/10">
+                <CardContent className="p-6">
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 rounded-full bg-[#eb9142]/10 flex items-center justify-center flex-shrink-0">
+                      <Mail className="w-6 h-6 text-[#eb9142]" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-[#47145a] mb-2">Email</h3>
+                      <a href="mailto:connect@drvrushni.com" className="text-gray-600 hover:text-[#eb9142] transition-colors">
+                        connect@drvrushni.com
+                      </a>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="border-2 border-[#47145a]/10">
+                <CardContent className="p-6">
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 rounded-full bg-[#eb9142]/10 flex items-center justify-center flex-shrink-0">
+                      <Clock className="w-6 h-6 text-[#eb9142]" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-[#47145a] mb-2">Timings</h3>
+                      <p className="text-gray-600">
+                        Mon - Sat: 11am - 9pm<br />
+                        Sun: 11am - 1pm<br />
+                        <span className="text-sm text-gray-500">(With prior appointment)</span>
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Attachments/Other Locations */}
+              <div>
+                <h3 className="font-semibold text-[#47145a] mb-4">Other Attachments</h3>
+                <ul className="space-y-2 text-gray-600">
+                  <li className="flex items-start">
+                    <span className="text-[#eb9142] mr-2">•</span>
+                    <span>Dr LH Hiranandani Hospital, Powai</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-[#eb9142] mr-2">•</span>
+                    <span>Surya Hospital & Surya Fertility Clinics, Santacruz (W)</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-[#eb9142] mr-2">•</span>
+                    <span>VLSR - The Clinic, Khar West</span>
+                  </li>
+                </ul>
+                <p className="text-sm text-gray-500 mt-4">
+                  Registration No: 2009/02/0251
+                </p>
+              </div>
+            </div>
+
+            {/* Contact Form */}
+            <div>
+              <Card className="border-2 border-[#47145a]/10">
+                <CardContent className="p-8">
+                  <h2 className="text-2xl font-bold text-[#47145a] mb-6">Send us a message</h2>
+                  <form onSubmit={handleSubmit} className="space-y-6">
+                    <div>
+                      <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                        Full Name *
+                      </label>
+                      <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        required
+                        value={formData.name}
+                        onChange={handleChange}
+                        className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#eb9142] focus:border-transparent"
+                        placeholder="Enter your name"
+                      />
+                    </div>
+
+                    <div>
+                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                        Email Address *
+                      </label>
+                      <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        required
+                        value={formData.email}
+                        onChange={handleChange}
+                        className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#eb9142] focus:border-transparent"
+                        placeholder="Enter your email"
+                      />
+                    </div>
+
+                    <div>
+                      <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+                        Phone Number *
+                      </label>
+                      <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        required
+                        value={formData.phone}
+                        onChange={handleChange}
+                        className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#eb9142] focus:border-transparent"
+                        placeholder="Enter your phone number"
+                      />
+                    </div>
+
+                    <div>
+                      <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                        Message *
+                      </label>
+                      <textarea
+                        id="message"
+                        name="message"
+                        required
+                        rows={5}
+                        value={formData.message}
+                        onChange={handleChange}
+                        className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#eb9142] focus:border-transparent resize-none"
+                        placeholder="Tell us how we can help you"
+                      />
+                    </div>
+
+                    <Button type="submit" size="lg" className="w-full bg-[#eb9142] hover:bg-[#d67f35] text-white">
+                      Send Message
+                    </Button>
+
+                    {isSubmitted && (
+                      <div className="p-4 bg-green-50 border border-green-200 rounded-md">
+                        <p className="text-green-800 text-sm text-center">Thank you for your message! We'll get back to you soon.</p>
+                      </div>
+                    )}
+                  </form>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}

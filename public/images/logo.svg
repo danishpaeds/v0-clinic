@@ -1,0 +1,10 @@
+<svg width="200" height="60" viewBox="0 0 200 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Logo mark - abstract flower/fertility symbol -->
+  <circle cx="20" cy="30" r="12" fill="#eb9142" opacity="0.3"/>
+  <circle cx="20" cy="30" r="8" fill="#47145a"/>
+  <path d="M20 22 C22 22, 24 24, 24 26 C24 28, 22 30, 20 30 C18 30, 16 28, 16 26 C16 24, 18 22, 20 22" fill="#eb9142"/>
+
+  <!-- Text -->
+  <text x="45" y="25" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#eb9142">Dr Vrushni</text>
+  <text x="45" y="42" font-family="Arial, sans-serif" font-size="11" fill="#47145a">Women's Care & Fertility</text>
+</svg>
