@@ -1,9 +1,9 @@
+// Keeping it for backwards compatibility but it won't be used
 import type React from "react"
 import type { Metadata } from "next"
 import "./globals.css"
 import { Header } from "@/src/components/Header"
 import { Footer } from "@/src/components/Footer"
-import ClientBody from "./ClientBody"
 
 export const metadata: Metadata = {
   title: "Dr. Vrushni's Women's Care & Fertility Clinic - From Fertility to Fulfilment",
@@ -20,13 +20,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <ClientBody>
+      <body className="antialiased" suppressHydrationWarning>
         <div className="flex min-h-screen flex-col">
           <Header />
           <main className="flex-1">{children}</main>
           <Footer />
         </div>
-      </ClientBody>
+      </body>
     </html>
   )
 }

@@ -1,7 +1,3 @@
-"use client"
+import Page from "../src/app/page"
 
-import  from "../src/components/ui/card"
-
-export default function SyntheticV0PageForDeployment() {
-  return < />
-}
+export default Page
