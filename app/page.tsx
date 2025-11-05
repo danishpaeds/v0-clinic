@@ -81,7 +81,7 @@ export default function Home() {
             <div className="relative">
               <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl">
                 <Image
-                  src="/images/doctor-1.jpg"
+                  src="/images/doctor-purple-suit.jpg"
                   alt="Dr. Vrushni Bhuta - Leading Fertility Specialist in Mumbai"
                   fill
                   className="object-cover"
@@ -117,7 +117,7 @@ export default function Home() {
             <div className="relative order-2 lg:order-1">
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-xl">
                 <Image
-                  src="/images/doctor-2.jpg"
+                  src="/images/doctor-coral-suit.jpg"
                   alt="Dr. Vrushni Bhuta providing personalized fertility consultation"
                   fill
                   className="object-cover"
