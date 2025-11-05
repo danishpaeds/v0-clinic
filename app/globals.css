@@ -1,7 +1,4 @@
-@import "tailwindcss";
-@import "tw-animate-css";
-
-/* Adding traditional Tailwind CSS layer directives for deployment compatibility */
+/* Removed incompatible Tailwind v4 imports and using traditional directives */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
