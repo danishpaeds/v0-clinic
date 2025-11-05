@@ -3,32 +3,32 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: 'ClarityCity';
-  src: url('/fonts/ClarityCity-Regular.woff2') format('woff2');
+  font-family: "ClarityCity";
+  src: url("/fonts/ClarityCity-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'ClarityCity';
-  src: url('/fonts/ClarityCity-Medium.woff2') format('woff2');
+  font-family: "ClarityCity";
+  src: url("/fonts/ClarityCity-Medium.woff2") format("woff2");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'ClarityCity';
-  src: url('/fonts/ClarityCity-Bold.woff2') format('woff2');
+  font-family: "ClarityCity";
+  src: url("/fonts/ClarityCity-Bold.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'ClarityCity';
-  src: url('/fonts/ClarityCity-ExtraBold.woff2') format('woff2');
+  font-family: "ClarityCity";
+  src: url("/fonts/ClarityCity-ExtraBold.woff2") format("woff2");
   font-weight: 800;
   font-style: normal;
   font-display: swap;
@@ -36,26 +36,31 @@
 
 @layer base {
   :root {
+    /* Updated to use brand colors: #66257B (purple) and #F29038 (orange) */
     --background: 0 0% 100%;
     --foreground: 0 0% 3.9%;
     --card: 0 0% 100%;
     --card-foreground: 0 0% 3.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 3.9%;
-    --primary: 280 65% 21%;
+    --primary: 280 65% 31%; /* #66257B - Brand purple */
     --primary-foreground: 0 0% 98%;
-    --secondary: 24 100% 58%;
+    --secondary: 24 95% 60%; /* #F29038 - Brand orange */
     --secondary-foreground: 0 0% 98%;
     --muted: 0 0% 96.1%;
     --muted-foreground: 0 0% 45.1%;
-    --accent: 0 0% 96.1%;
-    --accent-foreground: 0 0% 9%;
+    --accent: 24 95% 60%; /* Using brand orange for accents */
+    --accent-foreground: 0 0% 98%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
     --border: 0 0% 89.8%;
     --input: 0 0% 89.8%;
-    --ring: 280 65% 21%;
+    --ring: 280 65% 31%; /* Brand purple for focus rings */
     --radius: 0.5rem;
+
+    /* Added custom brand color variables */
+    --brand-purple: 280 65% 31%; /* #66257B */
+    --brand-orange: 24 95% 60%; /* #F29038 */
   }
 }
 
@@ -65,7 +70,8 @@
   }
   body {
     @apply bg-background text-foreground;
-    font-family: 'ClarityCity', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-family: "ClarityCity", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+      sans-serif;
   }
 }
 

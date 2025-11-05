@@ -16,9 +16,17 @@ import {
 import Image from "next/image"
 
 export const metadata = {
-  title: "About Dr Vrushni Bhuta - Fertility Specialist & Gynaecologist",
+  title: "About Dr. Vrushni Bhuta - Leading Fertility Specialist in Mumbai | MS OBGY, MRM (UK)",
   description:
-    "Learn about Dr Vrushni Bhuta, a fertility specialist with over 10 years of experience in assisted reproductive techniques.",
+    "Meet Dr. Vrushni Bhuta, Mumbai's trusted fertility specialist with 10+ years experience in IVF, IUI, ICSI. MS OBGY, Fellowship ICOG, MRM (UK). Practicing at Hiranandani Hospital Powai, Surya Hospital Santacruz.",
+  keywords:
+    "Dr Vrushni Bhuta, fertility doctor Mumbai, IVF specialist Powai, gynecologist Santacruz, reproductive medicine Mumbai, fertility expert India, IVF doctor Hiranandani Hospital",
+  openGraph: {
+    title: "About Dr. Vrushni Bhuta - Leading Fertility Specialist Mumbai",
+    description:
+      "Board-certified fertility specialist with expertise in IVF, IUI, ICSI, and comprehensive reproductive medicine. Serving Mumbai for over a decade.",
+    images: ["/images/doctor-purple-blazer-seated.jpg"],
+  },
 }
 
 export default function AboutPage() {

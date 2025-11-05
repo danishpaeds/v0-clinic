@@ -4,6 +4,20 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Phone, ArrowRight, Award, Star, Sparkles, ChevronRight } from "lucide-react"
 import Image from "next/image"
 
+export const metadata = {
+  title: "Best IVF & Fertility Clinic in Mumbai | Dr. Vrushni Bhuta | 85% Success Rate",
+  description:
+    "Leading IVF and fertility clinic in Mumbai with 85% success rate. Dr. Vrushni Bhuta offers personalized IVF, IUI, ICSI, egg freezing treatments in Powai, Santacruz & Khar. Book consultation today.",
+  keywords:
+    "IVF Mumbai, fertility clinic Mumbai, best IVF doctor Mumbai, IVF treatment Powai, fertility specialist Santacruz, IUI Mumbai, ICSI treatment, egg freezing Mumbai, infertility treatment India",
+  openGraph: {
+    title: "Best IVF & Fertility Clinic in Mumbai | Dr. Vrushni Bhuta",
+    description:
+      "Transform your dream of parenthood into reality with Mumbai's leading fertility specialist. 85% success rate, 1000+ happy families, 10+ years of excellence.",
+    images: ["/images/doctor-purple-suit.jpg"],
+  },
+}
+
 export default function Home() {
   const treatments = [
     {
