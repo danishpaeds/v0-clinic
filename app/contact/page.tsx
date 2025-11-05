@@ -37,13 +37,14 @@ export default function ContactPage() {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "MedicalClinic",
-    name: "Dr. Vrushni Bhuta - Women's Care & Fertility Clinic",
+    name: "Dr. Vrushni's Women's Care & Fertility Clinic",
     image: "https://drvrushni.com/images/doctor-purple-suit.jpg",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "Dilkhush CHS, 1st Floor, Unit No. 4",
-      addressLocality: "Mumbai",
-      addressRegion: "Maharashtra",
+      streetAddress: "Dilkhush CHS, 1st Floor, Unit No.4",
+      addressLocality: "Santacruz (W)",
+      addressRegion: "Mumbai",
+      postalCode: "400054",
       addressCountry: "IN",
     },
     geo: {
@@ -110,7 +111,9 @@ export default function ContactPage() {
                         <p className="text-gray-600">
                           Dilkhush CHS
                           <br />
-                          1st Floor, Unit No. 4
+                          1st Floor, Unit No.4
+                          <br />
+                          Santacruz (W), Mumbai - 400054
                         </p>
                       </div>
                     </div>
@@ -283,6 +286,43 @@ export default function ContactPage() {
                     </form>
                   </CardContent>
                 </Card>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-16 bg-gray-50">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-6xl mx-auto">
+              <h2 className="text-3xl font-bold text-[#47145a] mb-8 text-center">Find Us on the Map</h2>
+              <Card className="border-2 border-[#47145a]/10 overflow-hidden">
+                <CardContent className="p-0">
+                  <div className="aspect-video w-full">
+                    <iframe
+                      src="https://maps.google.com/maps?q=3RMQ%2B98%20Mumbai,%20Maharashtra,%20India&output=embed"
+                      width="100%"
+                      height="100%"
+                      style={{ border: 0 }}
+                      allowFullScreen
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                      title="Dr. Vrushni's Women's Care & Fertility Clinic Location"
+                    />
+                  </div>
+                </CardContent>
+              </Card>
+              <div className="text-center mt-6">
+                <a
+                  href="https://share.google/qmWr06NBop9DGiMcF"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block"
+                >
+                  <Button size="lg" className="bg-[#47145a] hover:bg-[#5a1b71] text-white">
+                    <MapPin className="w-5 h-5 mr-2" />
+                    Open in Google Maps
+                  </Button>
+                </a>
               </div>
             </div>
           </div>

@@ -45,9 +45,9 @@ export function Header() {
               />
             </div>
             <div className="hidden md:flex flex-col">
-              <span className="text-lg lg:text-xl font-medium text-[#66257B] whitespace-nowrap">Dr. Vrushni Bhuta</span>
-              <span className="text-[10px] text-[#F29038] tracking-widest uppercase font-light">
-                Fertility Specialist
+              <span className="text-base lg:text-lg font-medium text-[#66257B] leading-tight">Dr. Vrushni's</span>
+              <span className="text-xs lg:text-sm text-[#F29038] font-light leading-tight">
+                Women's Care & Fertility Clinic
               </span>
             </div>
           </Link>
@@ -83,7 +83,7 @@ export function Header() {
                 </svg>
               </a>
               <a
-                href="https://wa.me/919876543210"
+                href="https://wa.me/919820086575?text=Hello%2C%20I%20would%20like%20to%20book%20a%20consultation%20at%20Dr.%20Vrushni%27s%20Women%27s%20Care%20%26%20Fertility%20Clinic."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-500 hover:text-[#25D366] transition-colors"
@@ -146,7 +146,7 @@ export function Header() {
                   </svg>
                 </a>
                 <a
-                  href="https://wa.me/919876543210"
+                  href="https://wa.me/919820086575?text=Hello%2C%20I%20would%20like%20to%20book%20a%20consultation%20at%20Dr.%20Vrushni%27s%20Women%27s%20Care%20%26%20Fertility%20Clinic."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-500 hover:text-[#25D366]"
