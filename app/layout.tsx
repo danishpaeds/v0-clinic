@@ -1,7 +1,7 @@
 import type React from "react"
 import type { Metadata } from "next"
 import { Geist, Geist_Mono } from "next/font/google"
-import "./globals.css" // Updated CSS import to use local globals.css instead of src/app/globals.css
+import "./globals.css"
 import { Header } from "@/src/components/Header"
 import { Footer } from "@/src/components/Footer"
 import { FloatingWhatsApp } from "@/components/FloatingWhatsApp"
@@ -18,10 +18,11 @@ export const metadata: Metadata = {
   generator: "v0.app",
   icons: {
     icon: [
-      { url: "/favicon.ico", sizes: "32x32", type: "image/x-icon" },
+      { url: "/favicon.ico", sizes: "32x32" },
       { url: "/favicon.svg", type: "image/svg+xml" },
     ],
-    apple: [{ url: "/apple-touch-icon.jpg", sizes: "180x180", type: "image/png" }],
+    apple: [{ url: "/apple-touch-icon.jpg", sizes: "180x180" }],
+    shortcut: "/favicon.ico",
   },
 }
 
