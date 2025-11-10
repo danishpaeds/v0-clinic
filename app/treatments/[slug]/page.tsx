@@ -1206,7 +1206,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 
   return {
     title: `${treatment.title} in Mumbai | Dr. Vrushni Bhuta - Powai & Santacruz`,
-    description: `${treatment.overview} Expert fertility care in Mumbai by Dr. Vrushni Bhuta. Clinics in Powai, Santacruz & Khar.`,
+    description: `${treatment.overview} Expert fertility care in Mumbai by Dr. Vrushni Bhuta. Clinics in Powai & Santacruz.`,
     keywords: `${treatment.title} Mumbai, ${treatment.title} Powai, ${treatment.title} Santacruz, fertility treatment Mumbai, Dr Vrushni Bhuta, ${treatment.title} India, ${treatment.title} cost Mumbai`,
     openGraph: {
       title: `${treatment.title} - Dr. Vrushni Bhuta Mumbai`,
@@ -1289,7 +1289,7 @@ export default function TreatmentDetailPage({ params }: { params: { slug: string
             {/* Location Badge */}
             <div className="mt-6 inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2">
               <MapPin className="w-4 h-4 text-[#eb9142]" />
-              <span className="text-sm">Available at our Powai, Santacruz & Khar clinics in Mumbai</span>
+              <span>Available at our Powai & Santacruz clinics in Mumbai</span>
             </div>
           </div>
         </div>
@@ -1487,10 +1487,6 @@ export default function TreatmentDetailPage({ params }: { params: { slug: string
               <div className="flex items-center gap-2">
                 <MapPin className="w-4 h-4 text-[#eb9142]" />
                 <span>Santacruz, Mumbai</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <MapPin className="w-4 h-4 text-[#eb9142]" />
-                <span>Khar, Mumbai</span>
               </div>
             </div>
           </div>

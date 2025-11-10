@@ -333,16 +333,14 @@ export default function AboutPage() {
                   Associated with Mumbai's leading hospitals and fertility centers, ensuring access to world-class
                   facilities and comprehensive care.
                 </p>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  {[
-                    "Dr LH Hiranandani Hospital, Powai",
-                    "Surya Hospital & Surya Fertility Clinics, Santacruz (W)",
-                    "VLSR - The Clinic, Khar West",
-                  ].map((hospital, i) => (
-                    <div key={i} className="bg-white/5 rounded-xl p-6 text-center border border-white/10">
-                      <p className="text-white font-semibold">{hospital}</p>
-                    </div>
-                  ))}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {["Dr LH Hiranandani Hospital, Powai", "Surya Hospital & Surya Fertility Clinics, Santacruz (W)"].map(
+                    (hospital, i) => (
+                      <div key={i} className="bg-white/5 rounded-xl p-6 text-center border border-white/10">
+                        <p className="text-white font-semibold">{hospital}</p>
+                      </div>
+                    ),
+                  )}
                 </div>
               </CardContent>
             </Card>

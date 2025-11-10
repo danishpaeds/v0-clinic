@@ -193,10 +193,6 @@ export default function ContactPage() {
                       <span className="text-[#eb9142] mr-2">•</span>
                       <span>Surya Hospital & Surya Fertility Clinics, Santacruz (W)</span>
                     </li>
-                    <li className="flex items-start">
-                      <span className="text-[#eb9142] mr-2">•</span>
-                      <span>VLSR - The Clinic, Khar West</span>
-                    </li>
                   </ul>
                   <p className="text-sm text-gray-500 mt-4">Registration No: 2009/02/0251</p>
                 </div>

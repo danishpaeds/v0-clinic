@@ -55,7 +55,7 @@ export default function LocationPage() {
     ],
     priceRange: "₹₹₹",
     medicalSpecialty: ["Fertility Medicine", "Gynecology", "Reproductive Endocrinology"],
-    areaServed: ["Santacruz", "Bandra", "Khar", "Vile Parle", "Andheri", "Mumbai"],
+    areaServed: ["Santacruz", "Bandra", "Vile Parle", "Andheri", "Mumbai"],
   }
 
   return (
@@ -282,7 +282,7 @@ export default function LocationPage() {
               <h2 className="text-2xl md:text-3xl font-bold text-[#47145a] mb-8 text-center">
                 Other Practice Locations
               </h2>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <Card className="border-2 border-[#47145a]/10">
                   <CardContent className="p-6">
                     <h3 className="font-semibold text-[#47145a] mb-2">Dr LH Hiranandani Hospital</h3>
@@ -293,12 +293,6 @@ export default function LocationPage() {
                   <CardContent className="p-6">
                     <h3 className="font-semibold text-[#47145a] mb-2">Surya Hospital & Fertility Clinics</h3>
                     <p className="text-gray-600 text-sm">Santacruz (W), Mumbai</p>
-                  </CardContent>
-                </Card>
-                <Card className="border-2 border-[#47145a]/10">
-                  <CardContent className="p-6">
-                    <h3 className="font-semibold text-[#47145a] mb-2">VLSR - The Clinic</h3>
-                    <p className="text-gray-600 text-sm">Khar West, Mumbai</p>
                   </CardContent>
                 </Card>
               </div>
@@ -319,7 +313,7 @@ export default function LocationPage() {
                 short walk from Santacruz Railway Station, providing convenient access via the Western Line.
               </p>
               <p className="text-gray-600 leading-relaxed mb-4">
-                Serving patients from Bandra, Khar, Vile Parle, Andheri, Juhu, and surrounding areas, our clinic offers
+                Serving patients from Bandra, Vile Parle, Andheri, Juhu, and surrounding areas, our clinic offers
                 comprehensive fertility treatments and women's healthcare services in a comfortable, modern setting. The
                 Santacruz location provides easy connectivity for patients traveling from South Mumbai, Central Mumbai,
                 and the Western Suburbs.

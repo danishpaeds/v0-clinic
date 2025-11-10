@@ -31,28 +31,33 @@ export function Header() {
           </div>
         </div>
 
-        <div className="flex h-20 items-center justify-between">
-          {/* Logo Section - Simplified */}
-          <Link href="/" className="flex items-center gap-3 hover:opacity-90 transition-opacity flex-shrink-0">
-            <div className="relative w-16 h-16 lg:w-20 lg:h-20">
+        <div className="flex h-24 lg:h-28 items-center justify-between lg:justify-start gap-8">
+          {/* Logo Section - Centered and Prominent on Desktop */}
+          <Link
+            href="/"
+            className="flex items-center gap-3 hover:opacity-90 transition-opacity flex-shrink-0 lg:flex-col lg:items-center lg:gap-1 lg:py-3"
+          >
+            <div className="relative w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24">
               <Image
                 src="/images/dr-vrushni-bhuta-logo.png"
                 alt="Dr. Vrushni Bhuta Logo"
-                width={80}
-                height={80}
-                className="object-contain drop-shadow-md"
+                width={96}
+                height={96}
+                className="object-contain"
                 priority
               />
             </div>
-            <div className="hidden md:flex flex-col">
-              <span className="text-base lg:text-lg font-medium text-[#66257B] leading-tight">Dr. Vrushni's</span>
-              <span className="text-xs lg:text-sm text-[#F29038] font-light leading-tight">
-                Women's Care & Fertility Clinic
+            <div className="flex flex-col lg:items-center lg:text-center">
+              <span className="text-base sm:text-lg lg:text-xl font-bold text-purple-900 dark:text-white leading-tight">
+                Dr. Vrushni Bhuta
+              </span>
+              <span className="text-xs lg:text-sm text-purple-700 dark:text-purple-300">
+                Fertility & IVF Specialist
               </span>
             </div>
           </Link>
 
-          <nav className="hidden lg:flex items-center gap-6 xl:gap-8 flex-1 justify-center px-8">
+          <nav className="hidden lg:flex items-center gap-5 xl:gap-7 flex-1 justify-end">
             {navLinks.map((link) => (
               <Link
                 key={link.href}

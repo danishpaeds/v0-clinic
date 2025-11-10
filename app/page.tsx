@@ -3,6 +3,7 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import { AnimatedSection, AnimatedCard, FadeIn, ScaleIn, SlideInLeft, SlideInRight } from "@/components/AnimatedSection"
 import {
   Heart,
   Award,
@@ -18,7 +19,6 @@ import {
   Stethoscope,
 } from "lucide-react"
 import type { Metadata } from "next"
-import { AnimatedSection, AnimatedCard, FadeIn, ScaleIn } from "@/components/AnimatedSection"
 
 export const metadata: Metadata = {
   title: "Dr. Vrushni Bhuta - Leading IVF Specialist in Mumbai | Fertility Clinic Powai",
@@ -40,67 +40,90 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
-      <section className="relative min-h-[80vh] md:min-h-[90vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-primary/5 via-background to-accent/5">
+      <section className="relative min-h-[80vh] md:min-h-[90vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-purple-50 via-white to-orange-50 dark:from-purple-950/20 dark:via-background dark:to-orange-950/20">
+        <div
+          className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-transparent to-orange-500/5 animate-pulse"
+          style={{ animationDuration: "8s" }}
+        />
         <div className="absolute inset-0 bg-[url('/placeholder.svg?height=1080&width=1920')] bg-cover bg-center opacity-5" />
 
         <div className="container relative z-10 px-4 py-12 md:py-20 mx-auto">
           <div className="grid gap-8 lg:grid-cols-2 lg:gap-16 items-center">
             {/* Left Content */}
-            <AnimatedSection className="space-y-6 md:space-y-8 text-center lg:text-left">
-              <Badge className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium bg-primary/10 text-primary border-primary/20">
-                <Sparkles className="w-4 h-4" />
-                Mumbai's Trusted Fertility Specialist
-              </Badge>
+            <AnimatedSection delay={0.1} className="space-y-6 md:space-8 text-center lg:text-left">
+              <FadeIn delay={0.2}>
+                <Badge className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium bg-gradient-to-r from-purple-500/10 to-orange-500/10 text-purple-700 dark:text-purple-300 border-purple-200 dark:border-purple-800 shadow-lg shadow-purple-500/20">
+                  <Sparkles className="w-4 h-4" />
+                  Mumbai's Trusted Fertility Specialist
+                </Badge>
+              </FadeIn>
 
-              <div className="space-y-3 md:space-y-4">
-                <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-balance leading-tight">
-                  From Fertility to <span className="text-primary">Fulfilment</span>
-                </h1>
-                <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto lg:mx-0 text-pretty">
-                  Expert fertility care with personalized treatment plans, advanced technology, and compassionate
-                  support throughout your journey to parenthood.
-                </p>
-              </div>
+              <AnimatedSection delay={0.3}>
+                <div className="space-y-3 md:space-y-4">
+                  <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-balance leading-tight">
+                    From Fertility to{" "}
+                    <span
+                      className="bg-gradient-to-r from-purple-600 to-orange-500 bg-clip-text text-transparent animate-pulse"
+                      style={{ animationDuration: "3s" }}
+                    >
+                      Fulfilment
+                    </span>
+                  </h1>
+                  <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto lg:mx-0 text-pretty">
+                    Expert fertility care with personalized treatment plans, advanced technology, and compassionate
+                    support throughout your journey to parenthood.
+                  </p>
+                </div>
+              </AnimatedSection>
 
-              <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center lg:justify-start">
-                <Button
-                  asChild
-                  size="lg"
-                  className="text-base md:text-lg px-6 md:px-8 py-5 md:py-6 shadow-lg hover:shadow-xl transition-all hover:scale-105 w-full sm:w-auto"
-                >
-                  <Link href="/contact">
-                    Book Consultation
-                    <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5" />
-                  </Link>
-                </Button>
-                <Button
-                  asChild
-                  variant="outline"
-                  size="lg"
-                  className="text-base md:text-lg px-6 md:px-8 py-5 md:py-6 bg-transparent hover:scale-105 transition-transform w-full sm:w-auto"
-                >
-                  <Link href="/treatments">Explore Treatments</Link>
-                </Button>
-              </div>
+              <AnimatedSection delay={0.5}>
+                <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center lg:justify-start">
+                  <Button
+                    asChild
+                    size="lg"
+                    className="text-base md:text-lg px-6 md:px-8 py-5 md:py-6 bg-gradient-to-r from-purple-600 to-orange-500 hover:from-purple-700 hover:to-orange-600 shadow-xl shadow-purple-500/30 hover:shadow-2xl hover:shadow-purple-500/40 transition-all hover:scale-105 w-full sm:w-auto"
+                  >
+                    <Link href="/contact">
+                      Book Consultation
+                      <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5" />
+                    </Link>
+                  </Button>
+                  <Button
+                    asChild
+                    variant="outline"
+                    size="lg"
+                    className="text-base md:text-lg px-6 md:px-8 py-5 md:py-6 bg-white/50 dark:bg-background/50 backdrop-blur-sm border-2 border-purple-200 dark:border-purple-800 hover:bg-purple-50 dark:hover:bg-purple-950/20 hover:border-purple-400 hover:scale-105 transition-all shadow-lg w-full sm:w-auto"
+                  >
+                    <Link href="/treatments">Explore Treatments</Link>
+                  </Button>
+                </div>
+              </AnimatedSection>
 
               {/* Stats */}
-              <div className="grid grid-cols-3 gap-4 md:gap-6 pt-6 md:pt-8 border-t">
-                {[
-                  { value: "15+", label: "Years Experience" },
-                  { value: "5000+", label: "Happy Families" },
-                  { value: "85%", label: "Success Rate" },
-                ].map((stat, index) => (
-                  <FadeIn key={index} delay={0.2 + index * 0.1} className="text-center lg:text-left">
-                    <div className="text-2xl md:text-3xl font-bold text-primary">{stat.value}</div>
-                    <div className="text-xs md:text-sm text-muted-foreground">{stat.label}</div>
-                  </FadeIn>
-                ))}
-              </div>
+              <FadeIn delay={0.7}>
+                <div className="grid grid-cols-3 gap-4 md:gap-6 pt-6 md:pt-8 border-t border-purple-200/50 dark:border-purple-800/50">
+                  {[
+                    { value: "15+", label: "Years Experience" },
+                    { value: "5000+", label: "Happy Families" },
+                    { value: "85%", label: "Success Rate" },
+                  ].map((stat, index) => (
+                    <div
+                      key={index}
+                      className="text-center lg:text-left group hover:scale-110 transition-transform duration-300"
+                    >
+                      <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-purple-600 to-orange-500 bg-clip-text text-transparent">
+                        {stat.value}
+                      </div>
+                      <div className="text-xs md:text-sm text-muted-foreground">{stat.label}</div>
+                    </div>
+                  ))}
+                </div>
+              </FadeIn>
             </AnimatedSection>
 
             {/* Right Image */}
             <ScaleIn delay={0.3} className="relative order-first lg:order-last">
-              <div className="relative aspect-[3/4] md:aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl max-w-md mx-auto lg:max-w-none">
+              <div className="relative aspect-[3/4] md:aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl shadow-purple-500/20 max-w-md mx-auto lg:max-w-none hover:scale-105 hover:shadow-3xl hover:shadow-purple-500/30 transition-all duration-500 border-4 border-white/50 dark:border-purple-900/50">
                 <Image
                   src="/images/doctor-purple-suit.jpg"
                   alt="Dr. Vrushni Bhuta - Leading Fertility Specialist in Mumbai"
@@ -109,27 +132,38 @@ export default function Home() {
                   priority
                 />
               </div>
-              <FadeIn
-                delay={0.6}
-                className="absolute -bottom-4 -right-4 md:-bottom-6 md:-right-6 bg-white p-4 md:p-6 rounded-xl shadow-xl max-w-[200px] md:max-w-xs hidden sm:block"
-              >
-                <div className="flex items-center gap-2 md:gap-3">
-                  <div className="flex -space-x-2">
-                    {[1, 2, 3, 4].map((i) => (
-                      <div
-                        key={i}
-                        className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-primary/20 border-2 border-white"
-                      />
-                    ))}
-                  </div>
-                  <div>
-                    <div className="flex items-center gap-1">
-                      {[1, 2, 3, 4, 5].map((i) => (
-                        <Star key={i} className="w-3 h-3 md:w-4 md:h-4 fill-primary text-primary" />
+
+              <FadeIn delay={1}>
+                <div className="absolute -top-4 -right-4 md:-top-6 md:-right-6 bg-white/90 dark:bg-background/90 backdrop-blur-xl p-4 md:p-6 rounded-xl shadow-2xl shadow-purple-500/20 max-w-[200px] md:max-w-xs hidden sm:block border border-purple-200/50 dark:border-purple-800/50 z-10">
+                  <div className="flex items-center gap-2 md:gap-3">
+                    <div className="flex -space-x-2">
+                      {[1, 2, 3, 4].map((i) => (
+                        <div
+                          key={i}
+                          className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-gradient-to-br from-purple-400 to-orange-400 border-2 border-white dark:border-background"
+                        />
                       ))}
                     </div>
-                    <p className="text-xs md:text-sm text-muted-foreground">5000+ Happy Patients</p>
+                    <div>
+                      <div className="flex items-center gap-1">
+                        {[1, 2, 3, 4, 5].map((i) => (
+                          <Star key={i} className="w-3 h-3 md:w-4 md:h-4 fill-orange-400 text-orange-400" />
+                        ))}
+                      </div>
+                      <p className="text-xs md:text-sm text-muted-foreground font-medium">5000+ Happy Patients</p>
+                    </div>
                   </div>
+                </div>
+              </FadeIn>
+
+              <FadeIn delay={0.5}>
+                <div className="absolute -right-4 bottom-8 md:-right-6 md:bottom-12 bg-white/95 dark:bg-background/95 backdrop-blur-xl p-4 md:p-6 rounded-xl shadow-2xl shadow-purple-500/20 max-w-[220px] md:max-w-xs border border-purple-200/50 dark:border-purple-800/50 z-10">
+                  <h3 className="text-xl md:text-2xl font-bold bg-gradient-to-r from-purple-600 to-orange-500 bg-clip-text text-transparent">
+                    Dr Vrushni Bhuta
+                  </h3>
+                  <p className="text-xs md:text-sm text-muted-foreground mt-1 font-medium">
+                    Fertility Specialist & IVF Expert
+                  </p>
                 </div>
               </FadeIn>
             </ScaleIn>
@@ -138,11 +172,11 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section className="py-12 md:py-20 bg-muted/30">
+      <section className="py-12 md:py-20 bg-gradient-to-br from-purple-50/50 via-white to-orange-50/50 dark:from-purple-950/10 dark:via-background dark:to-orange-950/10">
         <div className="container px-4 mx-auto">
           <div className="grid gap-8 md:gap-12 lg:grid-cols-2 lg:gap-16 items-center">
-            <AnimatedSection delay={0.2} className="relative order-2 lg:order-1">
-              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-xl max-w-md mx-auto lg:max-w-none">
+            <SlideInLeft delay={0.2} className="relative order-2 lg:order-1">
+              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-xl max-w-md mx-auto lg:max-w-none hover:scale-105 transition-transform duration-500">
                 <Image
                   src="/images/doctor-coral-suit.jpg"
                   alt="Dr. Vrushni Bhuta providing personalized fertility consultation"
@@ -150,11 +184,14 @@ export default function Home() {
                   className="object-cover"
                 />
               </div>
-            </AnimatedSection>
+            </SlideInLeft>
 
-            <AnimatedSection className="space-y-4 md:space-y-6 order-1 lg:order-2">
+            <SlideInRight className="space-y-4 md:space-y-6 order-1 lg:order-2">
               <div className="space-y-4">
-                <Badge variant="outline" className="text-primary border-primary">
+                <Badge
+                  variant="outline"
+                  className="text-purple-700 dark:text-purple-300 border-purple-300 dark:border-purple-700 bg-purple-50/50 dark:bg-purple-950/20"
+                >
                   About Dr. Vrushni Bhuta
                 </Badge>
                 <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl text-balance">
@@ -184,45 +221,57 @@ export default function Home() {
                     description: "Helped over 5000 couples achieve their dream of parenthood",
                   },
                 ].map((item, index) => (
-                  <FadeIn key={index} delay={0.1 + index * 0.1} className="flex gap-4">
-                    <div className="flex-shrink-0">
-                      <div className="flex items-center justify-center w-12 h-12 rounded-full bg-primary/10">
-                        <item.icon className="w-6 h-6 text-primary" />
+                  <AnimatedSection key={index} delay={0.1 + index * 0.1}>
+                    <div className="flex gap-4">
+                      <div className="flex-shrink-0">
+                        <div className="flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 hover:scale-110 transition-transform duration-300">
+                          <item.icon className="w-6 h-6 text-primary" />
+                        </div>
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-lg mb-1">{item.title}</h3>
+                        <p className="text-muted-foreground">{item.description}</p>
                       </div>
                     </div>
-                    <div>
-                      <h3 className="font-semibold text-lg mb-1">{item.title}</h3>
-                      <p className="text-muted-foreground">{item.description}</p>
-                    </div>
-                  </FadeIn>
+                  </AnimatedSection>
                 ))}
               </div>
 
-              <Button
-                asChild
-                size="lg"
-                variant="outline"
-                className="mt-6 bg-transparent hover:scale-105 transition-transform"
-              >
-                <Link href="/about">
-                  Learn More About Dr. Bhuta
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
-            </AnimatedSection>
+              <FadeIn delay={0.5}>
+                <Button
+                  asChild
+                  size="lg"
+                  variant="outline"
+                  className="mt-6 bg-transparent hover:scale-105 transition-transform"
+                >
+                  <Link href="/about">
+                    Learn More About Dr. Bhuta
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Link>
+                </Button>
+              </FadeIn>
+            </SlideInRight>
           </div>
         </div>
       </section>
 
       {/* Treatments Section */}
-      <section className="py-12 md:py-20">
-        <div className="container px-4 mx-auto">
-          <AnimatedSection className="text-center space-y-3 md:space-y-4 mb-8 md:mb-12">
-            <Badge variant="outline" className="text-primary border-primary">
+      <section className="py-12 md:py-20 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-transparent via-purple-50/30 to-transparent dark:via-purple-950/10 pointer-events-none" />
+
+        <div className="container px-4 mx-auto relative z-10">
+          <AnimatedSection className="text-center space-y-3 md:space-y-4 mb-8 md:mb-12 drop-shadow-lg">
+            <Badge
+              variant="outline"
+              className="text-purple-700 dark:text-purple-300 border-purple-300 dark:border-purple-700 bg-purple-50/50 dark:bg-purple-950/20"
+            >
               Our Services
             </Badge>
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl text-balance">
-              Comprehensive Fertility Treatments
+              Comprehensive{" "}
+              <span className="bg-gradient-to-r from-purple-600 to-orange-500 bg-clip-text text-transparent">
+                Fertility Treatments
+              </span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
               Advanced reproductive solutions tailored to your unique journey
@@ -238,7 +287,8 @@ export default function Home() {
                 href: "/treatments/ivf",
                 gradient: "from-purple-500/10 via-purple-400/5 to-transparent",
                 iconBg: "bg-gradient-to-br from-purple-500/20 to-purple-600/10",
-                borderColor: "border-purple-200/50 hover:border-purple-400/50",
+                borderColor: "border-purple-200/50 hover:border-purple-400",
+                shadowColor: "shadow-purple-500/10 hover:shadow-purple-500/30",
               },
               {
                 title: "IUI Treatment",
@@ -247,7 +297,8 @@ export default function Home() {
                 href: "/treatments/iui",
                 gradient: "from-blue-500/10 via-blue-400/5 to-transparent",
                 iconBg: "bg-gradient-to-br from-blue-500/20 to-blue-600/10",
-                borderColor: "border-blue-200/50 hover:border-blue-400/50",
+                borderColor: "border-blue-200/50 hover:border-blue-400",
+                shadowColor: "shadow-blue-500/10 hover:shadow-blue-500/30",
               },
               {
                 title: "Egg Freezing",
@@ -256,7 +307,8 @@ export default function Home() {
                 href: "/treatments/egg-freezing",
                 gradient: "from-pink-500/10 via-pink-400/5 to-transparent",
                 iconBg: "bg-gradient-to-br from-pink-500/20 to-pink-600/10",
-                borderColor: "border-pink-200/50 hover:border-pink-400/50",
+                borderColor: "border-pink-200/50 hover:border-pink-400",
+                shadowColor: "shadow-pink-500/10 hover:shadow-pink-500/30",
               },
               {
                 title: "ICSI",
@@ -265,7 +317,8 @@ export default function Home() {
                 href: "/treatments",
                 gradient: "from-orange-500/10 via-orange-400/5 to-transparent",
                 iconBg: "bg-gradient-to-br from-orange-500/20 to-orange-600/10",
-                borderColor: "border-orange-200/50 hover:border-orange-400/50",
+                borderColor: "border-orange-200/50 hover:border-orange-400",
+                shadowColor: "shadow-orange-500/10 hover:shadow-orange-500/30",
               },
               {
                 title: "Fertility Surgery",
@@ -274,7 +327,8 @@ export default function Home() {
                 href: "/treatments",
                 gradient: "from-teal-500/10 via-teal-400/5 to-transparent",
                 iconBg: "bg-gradient-to-br from-teal-500/20 to-teal-600/10",
-                borderColor: "border-teal-200/50 hover:border-teal-400/50",
+                borderColor: "border-teal-200/50 hover:border-teal-400",
+                shadowColor: "shadow-teal-500/10 hover:shadow-teal-500/30",
               },
               {
                 title: "Donor Programs",
@@ -283,21 +337,24 @@ export default function Home() {
                 href: "/treatments",
                 gradient: "from-rose-500/10 via-rose-400/5 to-transparent",
                 iconBg: "bg-gradient-to-br from-rose-500/20 to-rose-600/10",
-                borderColor: "border-rose-200/50 hover:border-rose-400/50",
+                borderColor: "border-rose-200/50 hover:border-rose-400",
+                shadowColor: "shadow-rose-500/10 hover:shadow-rose-500/30",
               },
             ].map((treatment, index) => (
               <AnimatedCard key={index} delay={index * 0.1}>
                 <Card
-                  className={`group h-full hover:shadow-2xl transition-all duration-500 border-2 ${treatment.borderColor} bg-gradient-to-br ${treatment.gradient} backdrop-blur-sm hover:scale-105`}
+                  className={`group h-full hover:shadow-2xl transition-all duration-500 border-2 ${treatment.borderColor} bg-gradient-to-br ${treatment.gradient} backdrop-blur-sm ${treatment.shadowColor} shadow-xl`}
                 >
                   <CardContent className="p-4 md:p-6 space-y-3 md:space-y-4">
                     <div
-                      className={`flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-full ${treatment.iconBg} group-hover:scale-110 transition-all duration-300 shadow-lg`}
+                      className={`flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-full ${treatment.iconBg} group-hover:scale-110 group-hover:rotate-12 transition-all duration-300 shadow-lg`}
                     >
                       <treatment.icon className="w-6 h-6 md:w-7 md:h-7 text-primary" />
                     </div>
                     <div className="space-y-1 md:space-y-2">
-                      <h3 className="text-lg md:text-xl font-semibold">{treatment.title}</h3>
+                      <h3 className="text-lg md:text-xl font-semibold group-hover:text-primary transition-colors">
+                        {treatment.title}
+                      </h3>
                       <p className="text-sm md:text-base text-muted-foreground text-pretty">{treatment.description}</p>
                     </div>
                     <Button
@@ -316,19 +373,23 @@ export default function Home() {
             ))}
           </div>
 
-          <AnimatedSection delay={0.4} className="text-center mt-8 md:mt-12">
-            <Button asChild size="lg" className="hover:scale-105 transition-transform w-full sm:w-auto">
+          <FadeIn delay={0.7} className="text-center mt-8 md:mt-12">
+            <Button
+              asChild
+              size="lg"
+              className="bg-gradient-to-r from-purple-600 to-orange-500 hover:from-purple-700 hover:to-orange-600 shadow-xl shadow-purple-500/30 hover:shadow-2xl hover:shadow-purple-500/40 hover:scale-105 transition-all w-full sm:w-auto"
+            >
               <Link href="/treatments">
                 View All Treatments
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
-          </AnimatedSection>
+          </FadeIn>
         </div>
       </section>
 
       {/* Excellence in Care Section */}
-      <section className="py-12 md:py-20 bg-muted/30">
+      <section className="py-12 md:py-20 bg-gradient-to-br from-orange-50/50 via-white to-purple-50/50 dark:from-orange-950/10 dark:via-background dark:to-purple-950/10">
         <div className="container px-4 mx-auto">
           <AnimatedSection className="text-center space-y-4 mb-12">
             <Badge variant="outline" className="text-primary border-primary">
@@ -370,13 +431,13 @@ export default function Home() {
                 iconBg: "bg-gradient-to-br from-emerald-500/20 to-emerald-600/10",
               },
             ].map((feature, index) => (
-              <AnimatedCard key={index} delay={index * 0.1}>
+              <AnimatedCard key={index} delay={index * 0.15}>
                 <Card
-                  className={`text-center border-2 h-full hover:shadow-xl transition-all duration-500 bg-gradient-to-br ${feature.gradient} backdrop-blur-sm hover:scale-105`}
+                  className={`text-center border-2 h-full hover:shadow-xl transition-all duration-500 bg-gradient-to-br ${feature.gradient} backdrop-blur-sm`}
                 >
                   <CardContent className="p-4 md:p-6 space-y-3 md:space-y-4">
                     <div
-                      className={`flex items-center justify-center w-14 h-14 md:w-16 md:h-16 mx-auto rounded-full ${feature.iconBg} shadow-lg`}
+                      className={`flex items-center justify-center w-14 h-14 md:w-16 md:h-16 mx-auto rounded-full ${feature.iconBg} shadow-lg hover:scale-110 hover:rotate-12 transition-all duration-300`}
                     >
                       <feature.icon className="w-7 h-7 md:w-8 md:h-8 text-primary" />
                     </div>
@@ -391,22 +452,27 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <AnimatedSection>
-        <section className="py-12 md:py-20 bg-primary text-primary-foreground">
-          <div className="container px-4 mx-auto text-center">
-            <div className="max-w-3xl mx-auto space-y-4 md:space-y-6">
-              <h2 className="text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl lg:text-5xl text-balance">
-                Ready to Start Your Journey?
-              </h2>
-              <p className="text-base md:text-lg text-primary-foreground/90 text-pretty px-4">
-                Schedule a consultation with Dr. Vrushni Bhuta and take the first step towards building your family.
-              </p>
+      <section className="py-12 md:py-20 bg-gradient-to-br from-purple-600 via-purple-700 to-orange-600 text-primary-foreground relative overflow-hidden">
+        <div
+          className="absolute inset-0 bg-gradient-to-br from-purple-500/50 via-transparent to-orange-500/50 animate-pulse"
+          style={{ animationDuration: "6s" }}
+        />
+
+        <div className="container px-4 mx-auto text-center relative z-10">
+          <AnimatedSection className="max-w-3xl mx-auto space-y-4 md:space-y-6">
+            <h2 className="text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl lg:text-5xl text-balance drop-shadow-lg">
+              Ready to Start Your Journey?
+            </h2>
+            <p className="text-base md:text-lg text-primary-foreground/90 text-pretty px-4 drop-shadow">
+              Schedule a consultation with Dr. Vrushni Bhuta and take the first step towards building your family.
+            </p>
+            <FadeIn delay={0.3}>
               <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center pt-2 md:pt-4">
                 <Button
                   asChild
                   size="lg"
                   variant="secondary"
-                  className="text-base md:text-lg px-6 md:px-8 py-5 md:py-6 hover:scale-105 transition-transform w-full sm:w-auto"
+                  className="text-base md:text-lg px-6 md:px-8 py-5 md:py-6 bg-white text-purple-700 hover:bg-white/90 hover:scale-105 transition-all shadow-2xl shadow-black/20 w-full sm:w-auto"
                 >
                   <Link href="/contact">
                     <Calendar className="mr-2 h-4 w-4 md:h-5 md:w-5" />
@@ -417,15 +483,15 @@ export default function Home() {
                   asChild
                   size="lg"
                   variant="outline"
-                  className="text-base md:text-lg px-6 md:px-8 py-5 md:py-6 bg-transparent border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary hover:scale-105 transition-all w-full sm:w-auto"
+                  className="text-base md:text-lg px-6 md:px-8 py-5 md:py-6 bg-transparent border-2 border-white text-white hover:bg-white hover:text-purple-700 hover:scale-105 transition-all shadow-xl w-full sm:w-auto"
                 >
                   <Link href="/treatments">View Treatments</Link>
                 </Button>
               </div>
-            </div>
-          </div>
-        </section>
-      </AnimatedSection>
+            </FadeIn>
+          </AnimatedSection>
+        </div>
+      </section>
     </div>
   )
 }

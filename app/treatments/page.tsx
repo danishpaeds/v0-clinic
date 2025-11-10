@@ -6,7 +6,7 @@ import Image from "next/image"
 export const metadata = {
   title: "Fertility Treatments in Mumbai - IVF, IUI, ICSI, Egg Freezing | Dr. Vrushni Bhuta",
   description:
-    "Comprehensive fertility treatments in Mumbai including IVF, IUI, ICSI, egg freezing, embryo cryopreservation, surrogacy, PGT & more. Expert care by Dr. Vrushni Bhuta at Powai, Santacruz & Khar.",
+    "Comprehensive fertility treatments in Mumbai including IVF, IUI, ICSI, egg freezing, embryo cryopreservation, surrogacy, PGT & more. Expert care by Dr. Vrushni Bhuta at Powai & Santacruz.",
   keywords:
     "fertility treatments Mumbai, IVF treatment Mumbai, IUI procedure India, ICSI Mumbai, egg freezing Powai, embryo freezing Mumbai, surrogacy Mumbai, PGT testing India, fertility surgery Mumbai, donor egg program Mumbai, sperm freezing India, laparoscopy fertility Mumbai, hysteroscopy Mumbai, PRP ovary treatment, fertility preservation Mumbai",
   openGraph: {
