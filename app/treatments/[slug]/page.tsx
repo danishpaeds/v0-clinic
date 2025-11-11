@@ -22,6 +22,616 @@ const treatments: Record<
     faqs?: { question: string; answer: string }[]
   }
 > = {
+  // ... existing treatments ...
+
+  "fertility-assessment": {
+    title: "Fertility Assessment & Counselling",
+    subtitle: "Comprehensive Fertility Evaluation in Mumbai",
+    overview:
+      "Comprehensive fertility evaluation and personalized counseling to understand your reproductive health, identify potential issues, and determine the most appropriate treatment path for your journey to parenthood.",
+    detailedDescription: [
+      "Fertility assessment is the essential first step in understanding your reproductive health. At Dr. Vrushni Bhuta's clinic in Powai and Santacruz, we provide thorough evaluations for both partners to identify any factors that may be affecting your ability to conceive.",
+      "Our comprehensive assessment includes detailed medical history, physical examinations, hormone testing, ovarian reserve evaluation, semen analysis, and imaging studies. This complete picture allows us to provide accurate diagnosis and personalized treatment recommendations.",
+      "We believe in evidence-based, ethical counseling that empowers you with knowledge and realistic expectations about your fertility journey.",
+    ],
+    process: [
+      {
+        title: "Initial Consultation",
+        description:
+          "Comprehensive discussion of medical history, lifestyle factors, previous pregnancies, and fertility concerns for both partners.",
+      },
+      {
+        title: "Female Fertility Testing",
+        description:
+          "Hormone blood tests (FSH, LH, AMH, Prolactin, Thyroid), transvaginal ultrasound to assess ovarian reserve and uterine health.",
+      },
+      {
+        title: "Male Fertility Testing",
+        description:
+          "Semen analysis to evaluate sperm count, motility, morphology, and overall reproductive potential.",
+      },
+      {
+        title: "Additional Tests if Needed",
+        description:
+          "HSG (hysterosalpingography) to check fallopian tube patency, genetic screening, or specialized tests based on initial findings.",
+      },
+      {
+        title: "Results Discussion & Treatment Plan",
+        description:
+          "Detailed explanation of all test results and personalized recommendations for treatment options tailored to your specific situation.",
+      },
+    ],
+    benefits: [
+      "Comprehensive understanding of your fertility status",
+      "Identification of potential fertility issues early",
+      "Personalized treatment recommendations",
+      "Evidence-based counseling and realistic expectations",
+      "Assessment of both partners' reproductive health",
+      "Early detection of treatable conditions",
+      "Foundation for informed decision-making",
+    ],
+    whoShouldConsider: [
+      "Couples trying to conceive for 6-12 months without success",
+      "Women over 35 planning to conceive",
+      "Anyone with irregular menstrual cycles or known reproductive issues",
+      "Couples with previous pregnancy losses",
+      "Anyone wanting to understand their reproductive health before trying to conceive",
+    ],
+    duration: "Initial assessment takes 1-2 weeks with multiple appointments for testing",
+    faqs: [
+      {
+        question: "When should we seek fertility assessment?",
+        answer:
+          "If you're under 35 and have been trying for 12 months, or over 35 and trying for 6 months without conceiving, it's time for an assessment. Earlier evaluation is recommended if you have known reproductive issues.",
+      },
+      {
+        question: "Do both partners need to be tested?",
+        answer:
+          "Yes, fertility assessment should include both partners as male and female factors each account for about 40% of infertility cases, with combined factors making up the remainder.",
+      },
+    ],
+  },
+
+  "recurrent-pregnancy-loss": {
+    title: "Recurrent Pregnancy Loss Evaluation",
+    subtitle: "Comprehensive Assessment for Repeated Miscarriages",
+    overview:
+      "Specialized evaluation and management for couples experiencing repeated pregnancy losses. Our Mumbai clinic provides thorough investigation to identify causes and develop personalized treatment strategies.",
+    detailedDescription: [
+      "Recurrent pregnancy loss (RPL), defined as two or more consecutive miscarriages, affects about 1-2% of couples. At Dr. Vrushni Bhuta's clinic, we understand the emotional toll of repeated losses and provide compassionate, comprehensive care.",
+      "Our evaluation investigates potential causes including genetic factors, uterine abnormalities, hormonal imbalances, immune system issues, and blood clotting disorders. Identifying the underlying cause allows us to provide targeted treatment to improve your chances of a successful pregnancy.",
+      "We offer emotional support throughout the process, combining medical expertise with understanding and empathy for what you're experiencing.",
+    ],
+    process: [
+      {
+        title: "Detailed Medical History",
+        description:
+          "Comprehensive review of previous pregnancies, losses, medical conditions, and family history to identify potential risk factors.",
+      },
+      {
+        title: "Genetic Testing",
+        description:
+          "Karyotype analysis for both partners to check for chromosomal abnormalities that could cause recurrent losses.",
+      },
+      {
+        title: "Uterine Evaluation",
+        description:
+          "Imaging studies (HSG, ultrasound, or hysteroscopy) to assess uterine structure and identify abnormalities like fibroids, polyps, or septum.",
+      },
+      {
+        title: "Hormonal & Immune Testing",
+        description:
+          "Blood tests to check thyroid function, progesterone levels, antiphospholipid antibodies, and other immune markers.",
+      },
+      {
+        title: "Thrombophilia Screening",
+        description: "Testing for blood clotting disorders that can contribute to pregnancy loss.",
+      },
+      {
+        title: "Treatment Plan Development",
+        description:
+          "Based on findings, we create a personalized treatment plan which may include medications, surgery, or specialized monitoring in future pregnancies.",
+      },
+    ],
+    benefits: [
+      "Identification of underlying causes of pregnancy loss",
+      "Targeted treatment strategies based on specific diagnoses",
+      "Improved chances of successful pregnancy",
+      "Emotional support throughout the journey",
+      "Comprehensive multidisciplinary approach",
+      "Specialized monitoring in future pregnancies",
+    ],
+    whoShouldConsider: [
+      "Couples who have experienced two or more consecutive miscarriages",
+      "Women with late pregnancy losses",
+      "Couples with one loss and other risk factors",
+      "Anyone seeking answers after repeated pregnancy losses",
+    ],
+    successRate: "With appropriate treatment, 60-80% of couples with RPL go on to have a successful pregnancy.",
+    duration: "Complete evaluation typically takes 4-6 weeks",
+    faqs: [
+      {
+        question: "How many losses are considered recurrent?",
+        answer:
+          "Clinically, two or more consecutive losses are considered recurrent pregnancy loss. However, some specialists recommend evaluation after even one loss if you're over 35 or have other risk factors.",
+      },
+      {
+        question: "Can RPL be treated?",
+        answer:
+          "Many causes of RPL can be treated. Depending on the cause, treatments may include medications (like aspirin or progesterone), surgery to correct uterine abnormalities, or specialized monitoring in pregnancy.",
+      },
+    ],
+  },
+
+  counseling: {
+    title: "Counseling & Emotional Support",
+    subtitle: "Professional Psychological Support Throughout Your Fertility Journey",
+    overview:
+      "Professional counseling and emotional support services to help you navigate the emotional challenges of infertility, treatment stress, and the journey to parenthood with resilience and hope.",
+    detailedDescription: [
+      "Infertility and fertility treatment can be emotionally challenging. At Dr. Vrushni Bhuta's clinic in Mumbai, we recognize that addressing the emotional aspects of your journey is as important as the medical treatment.",
+      "Dr. Bhuta is certified in Personal Counselling based on Robert R. Carkhuff's Helping Model, providing specialized support that combines medical expertise with genuine empathetic care.",
+      "Our counseling services help you manage stress, cope with treatment outcomes, navigate relationship challenges, and maintain emotional wellbeing throughout your fertility journey.",
+    ],
+    process: [
+      {
+        title: "Initial Assessment",
+        description:
+          "Understanding your emotional state, concerns, and support needs through compassionate conversation.",
+      },
+      {
+        title: "Coping Strategies",
+        description: "Learning practical techniques to manage stress, anxiety, and emotional responses to treatment.",
+      },
+      {
+        title: "Relationship Support",
+        description:
+          "Addressing how infertility affects your relationship and developing strategies for maintaining connection and communication.",
+      },
+      {
+        title: "Decision-Making Support",
+        description:
+          "Guidance through difficult decisions about treatment options, donor conception, or alternative family-building paths.",
+      },
+      {
+        title: "Ongoing Support",
+        description: "Regular check-ins and support sessions throughout your treatment journey and beyond.",
+      },
+    ],
+    benefits: [
+      "Professional emotional support throughout treatment",
+      "Stress management techniques",
+      "Improved coping strategies",
+      "Relationship strengthening",
+      "Better treatment adherence and outcomes",
+      "Reduced anxiety and depression",
+      "Empowerment through knowledge and support",
+    ],
+    whoShouldConsider: [
+      "Anyone undergoing fertility treatment",
+      "Couples experiencing relationship strain due to infertility",
+      "Individuals struggling with treatment stress or anxiety",
+      "Those who have experienced pregnancy loss",
+      "Anyone making difficult decisions about treatment options",
+    ],
+    duration: "Flexible sessions tailored to your needs",
+    faqs: [
+      {
+        question: "Is counseling necessary during fertility treatment?",
+        answer:
+          "While not mandatory, counseling is highly beneficial. Fertility treatment is emotionally demanding, and professional support helps you navigate challenges more effectively and maintain emotional wellbeing.",
+      },
+      {
+        question: "Will counseling improve my chances of success?",
+        answer:
+          "Studies show that managing stress and maintaining emotional wellbeing can positively impact treatment outcomes. Counseling helps you stay resilient and focused throughout your journey.",
+      },
+    ],
+  },
+
+  pcos: {
+    title: "PCOS & Menstrual Irregularities",
+    subtitle: "Comprehensive PCOS Management in Mumbai",
+    overview:
+      "Expert diagnosis and management of Polycystic Ovary Syndrome (PCOS) and hormonal imbalances affecting menstrual regularity and fertility. Our Mumbai clinic offers holistic treatment approaches.",
+    detailedDescription: [
+      "Polycystic Ovary Syndrome (PCOS) is one of the most common hormonal disorders affecting women of reproductive age. At Dr. Vrushni Bhuta's clinic in Powai and Santacruz, we provide comprehensive PCOS management combining medical treatment with lifestyle modifications.",
+      "PCOS can cause irregular periods, difficulty conceiving, weight gain, acne, and excess hair growth. Our approach addresses both immediate symptoms and long-term health, focusing on restoring hormonal balance and improving fertility outcomes.",
+      "We create personalized treatment plans that may include medications, dietary guidance, exercise recommendations, and fertility treatments when you're ready to conceive.",
+    ],
+    process: [
+      {
+        title: "Diagnosis & Assessment",
+        description:
+          "Comprehensive evaluation including physical exam, ultrasound to check for polycystic ovaries, and hormone blood tests (testosterone, LH, FSH, insulin).",
+      },
+      {
+        title: "Lifestyle Modification Plan",
+        description:
+          "Personalized guidance on diet, exercise, and weight management to improve insulin sensitivity and hormone balance.",
+      },
+      {
+        title: "Medical Management",
+        description:
+          "Medications to regulate menstrual cycles, improve insulin sensitivity, manage symptoms, and induce ovulation when planning pregnancy.",
+      },
+      {
+        title: "Fertility Treatment if Needed",
+        description:
+          "If lifestyle changes and medications don't result in pregnancy, we may recommend ovulation induction, IUI, or IVF.",
+      },
+      {
+        title: "Long-term Health Monitoring",
+        description: "Regular follow-up to monitor metabolic health, manage symptoms, and adjust treatment as needed.",
+      },
+    ],
+    benefits: [
+      "Regular menstrual cycles",
+      "Improved fertility outcomes",
+      "Better management of PCOS symptoms",
+      "Reduced risk of long-term complications (diabetes, cardiovascular disease)",
+      "Weight management support",
+      "Improved insulin sensitivity",
+      "Holistic approach to women's health",
+    ],
+    whoShouldConsider: [
+      "Women with irregular or absent menstrual periods",
+      "Women struggling to conceive with PCOS",
+      "Those with symptoms like excess hair growth, acne, or weight gain",
+      "Women with polycystic ovaries on ultrasound",
+      "Anyone with hormonal imbalances affecting menstrual regularity",
+    ],
+    duration: "Ongoing management with regular monitoring",
+    faqs: [
+      {
+        question: "Can I get pregnant with PCOS?",
+        answer:
+          "Yes! With proper management, many women with PCOS conceive successfully. Treatment focuses on restoring ovulation through lifestyle changes, medications, or fertility treatments.",
+      },
+      {
+        question: "Is PCOS curable?",
+        answer:
+          "PCOS is a lifelong condition, but it's highly manageable. With appropriate treatment and lifestyle modifications, you can control symptoms and achieve good health outcomes.",
+      },
+    ],
+  },
+
+  "fibroid-endometriosis": {
+    title: "Fibroid/Endometriosis Evaluation",
+    subtitle: "Expert Assessment of Fibroids & Endometriosis in Mumbai",
+    overview:
+      "Comprehensive evaluation and treatment planning for uterine fibroids and endometriosis affecting reproductive health and fertility. Our Mumbai clinic offers advanced diagnostic and treatment options.",
+    detailedDescription: [
+      "Uterine fibroids and endometriosis are common conditions that can significantly impact fertility and quality of life. At Dr. Vrushni Bhuta's clinic, we provide thorough evaluation to determine the extent of these conditions and their impact on your fertility.",
+      "Fibroids are benign tumors in the uterus that can cause heavy bleeding, pain, and fertility issues. Endometriosis involves tissue similar to the uterine lining growing outside the uterus, causing pain, inflammation, and potential fertility problems.",
+      "Our approach combines advanced imaging, minimally invasive surgery when needed, and personalized treatment plans to improve your symptoms and fertility outcomes.",
+    ],
+    process: [
+      {
+        title: "Comprehensive Assessment",
+        description:
+          "Detailed medical history, physical examination, and discussion of symptoms including pain, bleeding patterns, and fertility concerns.",
+      },
+      {
+        title: "Imaging Studies",
+        description:
+          "Transvaginal ultrasound and/or MRI to visualize fibroids, endometriomas, and other pelvic abnormalities.",
+      },
+      {
+        title: "Diagnostic Laparoscopy if Needed",
+        description:
+          "Minimally invasive procedure to directly visualize endometriosis implants and assess disease severity (gold standard for endometriosis diagnosis).",
+      },
+      {
+        title: "Treatment Planning",
+        description:
+          "Based on findings, severity, symptoms, and fertility goals, we develop a treatment plan which may include medications, surgery, or fertility treatments.",
+      },
+      {
+        title: "Surgical Treatment if Indicated",
+        description:
+          "Minimally invasive procedures to remove fibroids (myomectomy) or excise endometriosis while preserving fertility.",
+      },
+    ],
+    benefits: [
+      "Accurate diagnosis of fibroids and endometriosis",
+      "Symptom relief (reduced pain and bleeding)",
+      "Improved fertility outcomes",
+      "Minimally invasive surgical options",
+      "Personalized treatment based on disease severity",
+      "Preservation of fertility",
+    ],
+    whoShouldConsider: [
+      "Women with pelvic pain, especially during periods",
+      "Those with heavy or prolonged menstrual bleeding",
+      "Women experiencing infertility with suspected fibroids or endometriosis",
+      "Anyone with known fibroids or endometriosis planning pregnancy",
+      "Women with painful intercourse",
+    ],
+    duration: "Evaluation typically takes 2-4 weeks; treatment duration varies",
+    faqs: [
+      {
+        question: "Do all fibroids need to be removed before fertility treatment?",
+        answer:
+          "Not all fibroids affect fertility. We assess location, size, and type of fibroid. Those growing into the uterine cavity (submucosal) typically need removal, while others may not require intervention.",
+      },
+      {
+        question: "Can endometriosis be cured?",
+        answer:
+          "Endometriosis is a chronic condition that can't be permanently cured, but symptoms can be well-managed with medications and surgery. Pregnancy can sometimes improve symptoms temporarily.",
+      },
+    ],
+  },
+
+  "routine-checkup": {
+    title: "Routine Gynaecological Check-up",
+    subtitle: "Comprehensive Women's Health Assessments in Mumbai",
+    overview:
+      "Complete women's health assessments including preventive screenings, early detection of health issues, and personalized wellness guidance. Our Mumbai clinic provides thorough, compassionate gynecological care.",
+    detailedDescription: [
+      "Regular gynecological check-ups are essential for maintaining women's health and detecting potential issues early. At Dr. Vrushni Bhuta's clinic in Powai and Santacruz, we provide comprehensive assessments tailored to your age and health needs.",
+      "Our routine check-ups include physical examination, Pap smear for cervical cancer screening, breast examination, discussion of menstrual health, contraception counseling, and screening for sexually transmitted infections when appropriate.",
+      "We believe in preventive care and creating a comfortable, non-judgmental environment where you can discuss all aspects of your reproductive and sexual health openly.",
+    ],
+    process: [
+      {
+        title: "Consultation",
+        description:
+          "Discussion of your medical history, menstrual cycle, sexual health, contraception needs, and any concerns.",
+      },
+      {
+        title: "Physical Examination",
+        description:
+          "Complete gynecological examination including external and internal assessment, breast examination, and vital signs check.",
+      },
+      {
+        title: "Pap Smear & HPV Testing",
+        description:
+          "Cervical cancer screening (recommended every 3 years for women 21-65, or per guidelines based on age and history).",
+      },
+      {
+        title: "Additional Screening Tests",
+        description: "Blood tests for anemia, thyroid function, vitamin D, and STI screening if indicated.",
+      },
+      {
+        title: "Counseling & Follow-up",
+        description:
+          "Discussion of results, contraception options, lifestyle recommendations, and scheduling any needed follow-up care.",
+      },
+    ],
+    benefits: [
+      "Early detection of gynecological issues",
+      "Cervical and breast cancer screening",
+      "Management of menstrual irregularities",
+      "Contraception counseling",
+      "Sexual health discussion in a safe environment",
+      "Preventive health guidance",
+      "Peace of mind about your reproductive health",
+    ],
+    whoShouldConsider: [
+      "All women over 21 years of age",
+      "Sexually active women of any age",
+      "Women experiencing menstrual irregularities or pelvic pain",
+      "Anyone needing contraception counseling",
+      "Women planning pregnancy",
+    ],
+    duration: "Routine check-up takes 30-45 minutes",
+    faqs: [
+      {
+        question: "How often should I have a gynecological check-up?",
+        answer:
+          "Most women should have an annual check-up. However, Pap smears are typically done every 3 years (unless you have risk factors). Dr. Bhuta will recommend an appropriate schedule based on your age and health.",
+      },
+      {
+        question: "Is a gynecological exam uncomfortable?",
+        answer:
+          "While some women find it slightly uncomfortable, we take every measure to ensure your comfort and dignity. The exam is quick, and open communication helps reduce anxiety.",
+      },
+    ],
+  },
+
+  "vaginal-infections": {
+    title: "Vaginal Infections & Pelvic Pain Management",
+    subtitle: "Expert Treatment of Gynecological Infections & Pain",
+    overview:
+      "Comprehensive diagnosis and treatment for vaginal infections, pelvic pain, and related gynecological concerns. Our Mumbai clinic provides effective relief and long-term management strategies.",
+    detailedDescription: [
+      "Vaginal infections and pelvic pain are common gynecological issues that can significantly impact quality of life. At Dr. Vrushni Bhuta's clinic, we provide thorough evaluation and effective treatment for conditions like bacterial vaginosis, yeast infections, sexually transmitted infections, and various causes of pelvic pain.",
+      "Our approach involves accurate diagnosis through clinical examination and laboratory testing, followed by targeted treatment and guidance on preventing recurrence.",
+      "We understand the discomfort and concern these conditions cause and provide compassionate, confidential care to restore your gynecological health.",
+    ],
+    process: [
+      {
+        title: "Symptom Assessment",
+        description:
+          "Detailed discussion of symptoms including discharge, odor, itching, burning, pain location and characteristics.",
+      },
+      {
+        title: "Clinical Examination",
+        description:
+          "Pelvic examination to assess for signs of infection, inflammation, or other abnormalities causing symptoms.",
+      },
+      {
+        title: "Laboratory Testing",
+        description:
+          "Vaginal swabs, culture tests, STI screening, and other tests as needed to identify the specific cause.",
+      },
+      {
+        title: "Treatment",
+        description:
+          "Targeted antibiotics, antifungals, or other medications based on the specific diagnosis. Pain management strategies for pelvic pain.",
+      },
+      {
+        title: "Follow-up & Prevention",
+        description: "Follow-up to ensure treatment effectiveness and counseling on preventing recurrent infections.",
+      },
+    ],
+    benefits: [
+      "Accurate diagnosis of infection cause",
+      "Effective symptom relief",
+      "Prevention of complications",
+      "Guidance on preventing recurrence",
+      "Confidential, non-judgmental care",
+      "Comprehensive pain management",
+    ],
+    whoShouldConsider: [
+      "Women with abnormal vaginal discharge",
+      "Those experiencing vaginal itching, burning, or odor",
+      "Women with pelvic or lower abdominal pain",
+      "Anyone with painful urination or intercourse",
+      "Women with recurrent vaginal infections",
+    ],
+    duration: "Initial visit 30-45 minutes; treatment duration varies by condition",
+    faqs: [
+      {
+        question: "Can vaginal infections affect fertility?",
+        answer:
+          "Most vaginal infections, when treated promptly, don't affect fertility. However, untreated infections can sometimes lead to pelvic inflammatory disease (PID), which can affect fertility. That's why timely treatment is important.",
+      },
+      {
+        question: "Why do I keep getting vaginal infections?",
+        answer:
+          "Recurrent infections can be due to various factors including antibiotic use, hormonal changes, diabetes, weakened immune system, or incomplete treatment. We'll investigate the cause and develop a prevention strategy.",
+      },
+    ],
+  },
+
+  "cancer-screening": {
+    title: "Cervical Cancer & Breast Cancer Screening",
+    subtitle: "Comprehensive Cancer Prevention & Early Detection in Mumbai",
+    overview:
+      "Regular screening programs for early detection and prevention of cervical and breast cancer. Our Mumbai clinic provides evidence-based screening protocols and compassionate care.",
+    detailedDescription: [
+      "Early detection saves lives. At Dr. Vrushni Bhuta's clinic in Powai and Santacruz, we offer comprehensive cancer screening services including Pap smears, HPV testing for cervical cancer, and clinical breast examinations.",
+      "Cervical cancer is highly preventable through regular screening, which detects precancerous changes early when they're most treatable. Breast cancer screening through regular examinations helps identify abnormalities early, improving treatment outcomes.",
+      "We follow international guidelines for screening frequency and provide personalized recommendations based on your age, risk factors, and medical history.",
+    ],
+    process: [
+      {
+        title: "Risk Assessment",
+        description:
+          "Evaluation of personal and family history to determine appropriate screening schedule and any additional tests needed.",
+      },
+      {
+        title: "Cervical Cancer Screening",
+        description:
+          "Pap smear and/or HPV testing to detect precancerous cervical changes. Recommended every 3 years for women 21-65 (or per guidelines).",
+      },
+      {
+        title: "Breast Examination",
+        description:
+          "Clinical breast examination to check for lumps or abnormalities. Mammography referral if indicated based on age or findings.",
+      },
+      {
+        title: "Results & Follow-up",
+        description:
+          "Discussion of results and any necessary follow-up procedures. Guidance on self-breast examination techniques.",
+      },
+      {
+        title: "HPV Vaccination Counseling",
+        description: "Discussion about HPV vaccination for cervical cancer prevention when appropriate.",
+      },
+    ],
+    benefits: [
+      "Early detection of precancerous changes",
+      "Improved treatment outcomes",
+      "Peace of mind through regular screening",
+      "Evidence-based screening protocols",
+      "Personalized screening schedule",
+      "Education on self-examination",
+      "Cancer prevention guidance",
+    ],
+    whoShouldConsider: [
+      "All women aged 21-65 for cervical cancer screening",
+      "Women over 40 for regular breast examination",
+      "Those with family history of breast or cervical cancer",
+      "Women with previous abnormal screening results",
+      "Anyone with symptoms like abnormal bleeding or breast lumps",
+    ],
+    duration: "Screening appointment takes 30-45 minutes",
+    faqs: [
+      {
+        question: "How often should I get screened?",
+        answer:
+          "Cervical screening (Pap smear) is typically every 3 years for women 21-65. Breast examinations should be annual for women over 40, with mammography as recommended. Dr. Bhuta will personalize your schedule based on risk factors.",
+      },
+      {
+        question: "Should I get the HPV vaccine?",
+        answer:
+          "HPV vaccination is highly recommended for girls and young women (ideally before age 26, but can be beneficial up to age 45). It prevents infection with HPV types that cause most cervical cancers.",
+      },
+    ],
+  },
+
+  wellness: {
+    title: "Meditation & Mind-Body Wellness Sessions",
+    subtitle: "Holistic Wellness Programs in Mumbai",
+    overview:
+      "Holistic wellness programs combining meditation, mind-body techniques, and spiritual healing for emotional and physical wellbeing throughout your fertility and women's health journey.",
+    detailedDescription: [
+      "At Dr. Vrushni Bhuta's clinic, we recognize that true healing encompasses body, mind, and spirit. Our wellness programs integrate meditation, mindfulness practices, and holistic healing techniques to support your overall wellbeing.",
+      "These sessions help reduce stress, improve emotional resilience, enhance body awareness, and create a sense of peace during challenging times. Whether you're undergoing fertility treatment or managing other health concerns, our wellness programs complement medical care with spiritual and emotional support.",
+      "Dr. Bhuta's approach aligns with the clinic's philosophy that 'healing is not just physical — it's emotional, spiritual, and leading to a fulfilling life.'",
+    ],
+    process: [
+      {
+        title: "Individual Assessment",
+        description:
+          "Understanding your specific needs, stress levels, and wellness goals to tailor the program to you.",
+      },
+      {
+        title: "Meditation Instruction",
+        description:
+          "Guided meditation sessions teaching various techniques including mindfulness, visualization, and breathing exercises.",
+      },
+      {
+        title: "Mind-Body Practices",
+        description:
+          "Incorporating yoga, progressive muscle relaxation, and other mind-body techniques for stress reduction.",
+      },
+      {
+        title: "Group or Individual Sessions",
+        description:
+          "Flexible options for group wellness sessions or individual personalized programs based on your preference.",
+      },
+      {
+        title: "Home Practice Guidance",
+        description:
+          "Tools and techniques to continue your wellness practice at home, integrating mindfulness into daily life.",
+      },
+    ],
+    benefits: [
+      "Reduced stress and anxiety",
+      "Improved emotional wellbeing",
+      "Better sleep quality",
+      "Enhanced mind-body connection",
+      "Increased resilience during treatment",
+      "Complementary support for medical care",
+      "Spiritual and emotional healing",
+      "Improved quality of life",
+    ],
+    whoShouldConsider: [
+      "Anyone undergoing fertility treatment",
+      "Women experiencing stress related to reproductive health",
+      "Those seeking holistic approaches to wellness",
+      "Individuals interested in meditation and mindfulness",
+      "Anyone wanting to improve emotional and spiritual health",
+    ],
+    duration: "Session lengths vary; programs can be customized to your schedule",
+    faqs: [
+      {
+        question: "Can meditation really help with fertility?",
+        answer:
+          "While meditation doesn't directly cause pregnancy, research shows that stress reduction techniques can improve treatment adherence, emotional wellbeing, and overall health—all factors that support fertility treatment success.",
+      },
+      {
+        question: "Do I need previous meditation experience?",
+        answer:
+          "No experience necessary! Our wellness sessions are designed for beginners and experienced practitioners alike. We'll guide you through techniques at a comfortable pace.",
+      },
+    ],
+  },
+
   iui: {
     title: "IUI (Intrauterine Insemination)",
     subtitle: "Minimally Invasive Fertility Treatment in Mumbai",

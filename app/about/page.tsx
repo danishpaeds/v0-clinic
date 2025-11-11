@@ -83,7 +83,7 @@ export default function AboutPage() {
             <div className="space-y-6 order-1 lg:order-2">
               <div className="inline-block">
                 <span className="text-[#eb9142] font-bold text-sm tracking-widest uppercase bg-white/10 px-6 py-3 rounded-full backdrop-blur-sm">
-                  ABOUT DR VRUSHNI
+                  ABOUT DR VRUSHNI BHUTA  
                 </span>
               </div>
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight">

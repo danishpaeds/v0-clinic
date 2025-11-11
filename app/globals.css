@@ -173,9 +173,22 @@
     animation: float 3s ease-in-out infinite;
   }
 
-  /* Added premium shadow utilities */
+  /* Enhanced shadow utilities for premium depth */
   .shadow-3xl {
-    box-shadow: 0 35px 60px -15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 35px 60px -15px rgba(0, 0, 0, 0.3), 0 20px 40px -10px rgba(0, 0, 0, 0.2);
+  }
+
+  .shadow-premium {
+    box-shadow: 0 20px 50px -12px rgba(71, 20, 90, 0.25), 0 10px 25px -8px rgba(235, 145, 66, 0.15);
+  }
+
+  /* Added smooth transitions for all interactive elements */
+  button,
+  a,
+  .card {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
   }
 
   /* Added reduced motion support for accessibility */

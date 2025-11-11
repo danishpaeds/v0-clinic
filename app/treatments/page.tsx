@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { Card, CardContent } from "@/components/ui/card"
-import { ArrowRight, Heart, Microscope, Snowflake, Users, Dna, Sparkles, Baby } from "lucide-react"
+import { ArrowRight, Heart, Sparkles, Baby } from "lucide-react"
 import Image from "next/image"
 
 export const metadata = {
@@ -20,12 +20,13 @@ export const metadata = {
 export default function TreatmentsPage() {
   const treatmentCategories = [
     {
-      category: "Foundation Treatments",
+      category: "Fertility Care & Assisted Reproduction",
+      description: "Supporting your dream of parenthood with ethical, evidence based & tailor made treatment plans",
       icon: Heart,
-      color: "from-rose-50 to-pink-50",
-      borderColor: "border-rose-200",
-      iconBg: "bg-rose-100",
-      iconColor: "text-rose-600",
+      color: "from-purple-50 to-violet-50",
+      borderColor: "border-purple-200",
+      iconBg: "bg-purple-100",
+      iconColor: "text-[#47145a]",
       treatments: [
         {
           title: "Pre-conceptional Counselling",
@@ -39,16 +40,12 @@ export default function TreatmentsPage() {
             "Series of painless ultrasounds performed at regular intervals to precisely assess the growth and development of ovarian follicles.",
           href: "/treatments/follicular-monitoring",
         },
-      ],
-    },
-    {
-      category: "Assisted Reproductive Techniques",
-      icon: Microscope,
-      color: "from-purple-50 to-violet-50",
-      borderColor: "border-purple-200",
-      iconBg: "bg-purple-100",
-      iconColor: "text-[#47145a]",
-      treatments: [
+        {
+          title: "Fertility Assessment & Counselling",
+          description:
+            "Comprehensive fertility evaluation and personalized counseling to understand your reproductive health and treatment options.",
+          href: "/treatments/fertility-assessment",
+        },
         {
           title: "IUI (Intrauterine Insemination)",
           description:
@@ -56,7 +53,7 @@ export default function TreatmentsPage() {
           href: "/treatments/iui",
         },
         {
-          title: "IVF (In Vitro Fertilisation)",
+          title: "IVF (In Vitro Fertilization)",
           description:
             "Advanced technique combining eggs and sperm in a controlled laboratory environment, offering hope when natural methods are unsuccessful.",
           href: "/treatments/ivf",
@@ -68,29 +65,25 @@ export default function TreatmentsPage() {
           href: "/treatments/icsi",
         },
         {
-          title: "Testicular Sperm Aspiration & Biopsy",
+          title: "Testicular Sperm Aspiration & Biopsy (PESA/TESA/TESE/micro TESE)",
           description:
             "Specialized surgical techniques to retrieve sperm directly from the testicles for men with limited or no sperm in ejaculate.",
           href: "/treatments/testicular-sperm-aspiration",
         },
-      ],
-    },
-    {
-      category: "Fertility Preservation",
-      icon: Snowflake,
-      color: "from-sky-50 to-cyan-50",
-      borderColor: "border-sky-200",
-      iconBg: "bg-sky-100",
-      iconColor: "text-sky-600",
-      treatments: [
+        {
+          title: "Fertility Enhancing Surgery (Laparoscopy/Hysteroscopy)",
+          description:
+            "Advanced minimally invasive surgical procedures to diagnose and treat conditions affecting female fertility.",
+          href: "/treatments/fertility-surgery",
+        },
         {
           title: "Embryo Cryopreservation",
           description:
-            "State-of-the-art freezing and storage of embryos for future use, ideal for preserving fertility before cancer treatment.",
+            "State-of-the-art freezing and storage of embryos for future use, ideal for preserving fertility before medical treatments.",
           href: "/treatments/embryo-cryopreservation",
         },
         {
-          title: "Oocyte or Egg Freezing",
+          title: "Oocyte Cryopreservation",
           description:
             "Preserve your reproductive potential by freezing eggs at their highest quality for future family planning flexibility.",
           href: "/treatments/egg-freezing",
@@ -101,43 +94,11 @@ export default function TreatmentsPage() {
             "Safe preservation of sperm for future use, particularly beneficial before medical treatments affecting fertility.",
           href: "/treatments/sperm-cryopreservation",
         },
-      ],
-    },
-    {
-      category: "Advanced Options",
-      icon: Users,
-      color: "from-amber-50 to-orange-50",
-      borderColor: "border-amber-200",
-      iconBg: "bg-amber-100",
-      iconColor: "text-[#eb9142]",
-      treatments: [
         {
           title: "Donor Oocyte Program",
           description:
             "When your eggs are not viable, carefully selected donor eggs offer an alternative path to experiencing pregnancy and childbirth.",
           href: "/treatments/donor-oocyte",
-        },
-        {
-          title: "Surrogacy",
-          description:
-            "Compassionate surrogacy program where a gestational carrier helps bring your baby into the world.",
-          href: "/treatments/surrogacy",
-        },
-      ],
-    },
-    {
-      category: "Surgical Interventions",
-      icon: Sparkles,
-      color: "from-emerald-50 to-teal-50",
-      borderColor: "border-emerald-200",
-      iconBg: "bg-emerald-100",
-      iconColor: "text-emerald-600",
-      treatments: [
-        {
-          title: "Fertility Enhancing Surgery",
-          description:
-            "Advanced laparoscopy and hysteroscopy procedures to diagnose and treat conditions affecting female fertility.",
-          href: "/treatments/fertility-surgery",
         },
         {
           title: "PRP of the Ovary",
@@ -151,21 +112,68 @@ export default function TreatmentsPage() {
             "Cutting-edge PRP treatment to enhance endometrial thickness and receptivity for better implantation.",
           href: "/treatments/prp-endometrium",
         },
+        {
+          title: "Recurrent Pregnancy Loss Evaluation",
+          description: "Comprehensive assessment and management for couples experiencing multiple pregnancy losses.",
+          href: "/treatments/recurrent-pregnancy-loss",
+        },
+        {
+          title: "Counseling & Emotional Support",
+          description:
+            "Professional counseling and emotional support throughout your fertility journey to help you navigate challenges.",
+          href: "/treatments/counseling",
+        },
+        {
+          title: "Preimplantation Genetic Testing (PGT-A, PGT-M, NICS)",
+          description:
+            "Comprehensive genetic screening of embryos to identify the healthiest embryos for transfer and reduce genetic disorders.",
+          href: "/treatments/pgt",
+        },
       ],
     },
     {
-      category: "Genetic Testing",
-      icon: Dna,
-      color: "from-fuchsia-50 to-pink-50",
-      borderColor: "border-fuchsia-200",
-      iconBg: "bg-fuchsia-100",
-      iconColor: "text-fuchsia-600",
+      category: "Gynaecology & Women's Wellness",
+      description: "Comprehensive women's health services for every stage of life",
+      icon: Sparkles,
+      color: "from-orange-50 to-pink-50",
+      borderColor: "border-orange-200",
+      iconBg: "bg-orange-100",
+      iconColor: "text-[#eb9142]",
       treatments: [
         {
-          title: "Preimplantation Genetic Testing (PGT)",
+          title: "PCOS & Menstrual Irregularities",
           description:
-            "Comprehensive genetic screening of embryos to identify the healthiest embryos for transfer, including PGT-A, PGT-M, and NICS.",
-          href: "/treatments/pgt",
+            "Comprehensive management of polycystic ovary syndrome and hormonal imbalances affecting menstrual cycles.",
+          href: "/treatments/pcos",
+        },
+        {
+          title: "Fibroid/Endometriosis Evaluation",
+          description:
+            "Advanced diagnosis and treatment planning for fibroids and endometriosis affecting reproductive health.",
+          href: "/treatments/fibroid-endometriosis",
+        },
+        {
+          title: "Routine Gynaecological Check-up",
+          description:
+            "Complete women's health assessments including preventive screenings and early detection of health issues.",
+          href: "/treatments/routine-checkup",
+        },
+        {
+          title: "Vaginal Infections & Pelvic Pain Management",
+          description:
+            "Expert diagnosis and treatment for vaginal infections, pelvic pain, and related gynecological concerns.",
+          href: "/treatments/vaginal-infections",
+        },
+        {
+          title: "Cervical Cancer & Breast Cancer Screening",
+          description: "Regular screening programs for early detection and prevention of cervical and breast cancer.",
+          href: "/treatments/cancer-screening",
+        },
+        {
+          title: "Meditation & Mind-Body Wellness Sessions",
+          description:
+            "Holistic wellness programs combining meditation and mind-body techniques for emotional and spiritual healing.",
+          href: "/treatments/wellness",
         },
       ],
     },
@@ -200,12 +208,11 @@ export default function TreatmentsPage() {
                 </span>
               </div>
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 leading-tight">
-                Our Wide Range of
-                <span className="block text-[#eb9142] mt-2">Fertility Treatments</span>
+                Our Treatments &<span className="block text-[#eb9142] mt-2">Services</span>
               </h1>
               <p className="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto leading-relaxed">
-                From basic fertility assessments to advanced reproductive technologies, we offer personalized solutions
-                for every stage of your journey
+                From fertility assessment to advanced reproductive technologies, we offer personalized solutions for
+                every stage of your journey
               </p>
             </div>
 
@@ -245,6 +252,7 @@ export default function TreatmentsPage() {
                   </div>
                   <div>
                     <h2 className="text-3xl md:text-4xl font-bold text-[#47145a]">{category.category}</h2>
+                    <p className="text-lg text-gray-600 mb-4">{category.description}</p>
                     <div className="h-1 w-20 bg-gradient-to-r from-[#eb9142] to-[#d67f35] rounded-full mt-2"></div>
                   </div>
                 </div>

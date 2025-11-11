@@ -23,17 +23,17 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full bg-gradient-to-r from-[#47145a] via-[#66257B] to-[#eb9142] shadow-lg">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex h-20 lg:h-24 items-center justify-between gap-8">
+        <div className="flex h-28 lg:h-40 items-center justify-between gap-8">
           <Link
             href="/"
             className="flex items-center hover:drop-shadow-[0_0_15px_rgba(255,255,255,0.7)] transition-all duration-300 flex-shrink-0"
           >
-            <div className="relative w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24">
+            <div className="relative w-28 h-28 sm:w-32 sm:h-32 lg:w-36 lg:h-36 xl:w-40 xl:h-40">
               <Image
                 src="/images/dr-vrushni-bhuta-logo.png"
                 alt="Dr. Vrushni Bhuta - Women's Care & Fertility Clinic"
-                width={96}
-                height={96}
+                width={160}
+                height={160}
                 className="object-contain"
                 priority
               />
