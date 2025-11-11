@@ -365,9 +365,9 @@ export default function AboutPage() {
               <Button
                 asChild
                 size="lg"
-                className="bg-white text-[#47145a] hover:bg-gray-100 px-12 py-6 text-lg font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all"
+                className="bg-white hover:bg-gray-100 px-12 py-6 text-lg font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all"
               >
-                <Link href="/contact">
+                <Link href="/contact" className="text-white">
                   Book an Appointment
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </Link>
