@@ -129,9 +129,9 @@ export default function Home() {
 
             {/* Right Image */}
             <ScaleIn delay={0.3} className="relative order-first lg:order-last">
-              <div className="relative aspect-[3/4] md:aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl shadow-purple-500/20 max-w-md mx-auto lg:max-w-none hover:scale-105 hover:shadow-3xl hover:shadow-purple-500/30 transition-all duration-500 border-4 border-white/50 dark:border-purple-900/50">
+              <div className="relative aspect-[3/4] md:aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl max-w-md mx-auto lg:max-w-none hover:scale-105 hover:shadow-3xl hover:shadow-purple-500/30 transition-all duration-500 border-4 border-white/50 dark:border-purple-900/50">
                 <Image
-                  src="/images/doctor-purple-suit.jpg"
+                  src="/images/doctor-purple-blazer-seated.jpg"
                   alt="Dr. Vrushni Bhuta - Leading Fertility Specialist in Mumbai"
                   fill
                   className="object-cover"
@@ -163,7 +163,7 @@ export default function Home() {
               </FadeIn>
 
               <FadeIn delay={0.5}>
-                <div className="absolute -right-4 bottom-8 md:-right-6 md:bottom-12 bg-white/95 dark:bg-background/95 backdrop-blur-xl p-4 md:p-6 rounded-xl shadow-2xl shadow-purple-500/20 max-w-[220px] md:max-w-xs border border-purple-200/50 dark:border-purple-800/50 z-10">
+                <div className="absolute -right-4 bottom-20 md:-right-6 md:bottom-24 lg:bottom-28 bg-white/95 dark:bg-background/95 backdrop-blur-xl p-4 md:p-6 rounded-xl shadow-2xl shadow-purple-500/20 max-w-[220px] md:max-w-xs border border-purple-200/50 dark:border-purple-800/50 z-10">
                   <h3 className="text-xl md:text-2xl font-bold bg-gradient-to-r from-purple-600 to-orange-500 bg-clip-text text-transparent">
                     Dr Vrushni Bhuta
                   </h3>
@@ -279,7 +279,7 @@ export default function Home() {
                 Fertility Treatments
               </span>
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty leading-relaxed">
               Advanced reproductive solutions tailored to your unique journey
             </p>
           </AnimatedSection>
@@ -453,6 +453,72 @@ export default function Home() {
                 </Card>
               </AnimatedCard>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Large Logo Card Section */}
+      <section className="py-16 md:py-24 lg:py-32 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-50 via-white to-orange-50 dark:from-purple-950/20 dark:via-background dark:to-orange-950/20" />
+
+        <div className="container px-4 mx-auto relative z-10">
+          <div className="max-w-6xl mx-auto">
+            <Card className="border-4 border-purple-200/50 dark:border-purple-800/50 shadow-2xl shadow-purple-500/20 bg-gradient-to-br from-white via-purple-50/30 to-orange-50/30 dark:from-background dark:via-purple-950/10 dark:to-orange-950/10 backdrop-blur-sm overflow-hidden hover:shadow-3xl hover:shadow-purple-500/30 transition-all duration-500">
+              <CardContent className="p-12 md:p-16 lg:p-24">
+                <div className="flex flex-col items-center justify-center space-y-8 md:space-y-10 lg:space-y-12">
+                  {/* Large Logo */}
+                  <FadeIn delay={0.2}>
+                    <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-[28rem] lg:h-[28rem] rounded-3xl overflow-hidden shadow-2xl shadow-purple-500/30 ring-4 ring-purple-200/50 dark:ring-purple-800/50 hover:scale-105 hover:ring-purple-400/50 transition-all duration-500">
+                      <Image
+                        src="/images/dr-vrushni-bhuta-logo.png"
+                        alt="Dr. Vrushni Bhuta - Women's Care & Fertility Clinic Logo"
+                        fill
+                        className="object-contain p-8 md:p-12 lg:p-16"
+                        priority
+                      />
+                    </div>
+                  </FadeIn>
+
+                  {/* Clinic Name and Tagline */}
+                  <FadeIn delay={0.4} className="text-center space-y-4 md:space-y-6">
+                    <h3 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold bg-gradient-to-r from-purple-600 to-orange-500 bg-clip-text text-transparent">
+                      Dr Vrushni's Women's Care & Fertility Clinic
+                    </h3>
+                    <p className="text-xl md:text-2xl lg:text-3xl text-muted-foreground italic font-light">
+                      "From Fertility to Fulfilment"
+                    </p>
+                    <div className="flex items-center justify-center gap-3 pt-2">
+                      <div className="h-px w-16 md:w-20 lg:w-24 bg-gradient-to-r from-transparent to-purple-400" />
+                      <Sparkles className="w-6 h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 text-purple-500" />
+                      <div className="h-px w-16 md:w-20 lg:w-24 bg-gradient-to-l from-transparent to-orange-400" />
+                    </div>
+                  </FadeIn>
+
+                  {/* Description */}
+                  <FadeIn delay={0.6} className="text-center max-w-3xl">
+                    <p className="text-lg md:text-xl lg:text-2xl text-muted-foreground text-pretty leading-relaxed">
+                      Mumbai's premier destination for comprehensive women's healthcare and advanced fertility
+                      treatments. Led by Dr. Vrushni Bhuta, we provide compassionate, personalized care with
+                      cutting-edge technology to help you achieve your dreams of parenthood.
+                    </p>
+                  </FadeIn>
+
+                  {/* CTA Button */}
+                  <FadeIn delay={0.8}>
+                    <Button
+                      asChild
+                      size="lg"
+                      className="text-lg md:text-xl px-10 md:px-12 lg:px-16 py-7 md:py-8 bg-gradient-to-r from-purple-600 to-orange-500 hover:from-purple-700 hover:to-orange-600 shadow-xl shadow-purple-500/30 hover:shadow-2xl hover:shadow-purple-500/40 transition-all hover:scale-105"
+                    >
+                      <Link href="/contact">
+                        Start Your Journey Today
+                        <ArrowRight className="ml-2 h-6 w-6" />
+                      </Link>
+                    </Button>
+                  </FadeIn>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>

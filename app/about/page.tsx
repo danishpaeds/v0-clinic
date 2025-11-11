@@ -57,7 +57,7 @@ export default function AboutPage() {
               <div className="absolute -inset-6 bg-gradient-to-br from-[#eb9142]/30 to-pink-400/30 rounded-[3rem] blur-3xl"></div>
               <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
                 <Image
-                  src="/images/doctor-purple-blazer-seated.jpg"
+                  src="/images/doctor-purple-suit.jpg"
                   alt="Dr Vrushni Bhuta - Fertility Specialist"
                   fill
                   className="object-cover"
@@ -190,7 +190,7 @@ export default function AboutPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             <Card className="group relative overflow-hidden border-2 border-[#47145a]/10 hover:border-[#eb9142] transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
-              <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-[#eb9142] to-[#d67f35] opacity-0 group-hover:opacity-10 transition-opacity rounded-bl-full"></div>
+              <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-[#47145a] to-[#d67f35] opacity-0 group-hover:opacity-10 transition-opacity rounded-bl-full"></div>
               <CardContent className="p-8 relative z-10">
                 <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-rose-100 to-pink-100 flex items-center justify-center mb-6">
                   <Target className="w-10 h-10 text-rose-600" />
@@ -207,7 +207,7 @@ export default function AboutPage() {
             </Card>
 
             <Card className="group relative overflow-hidden border-2 border-[#47145a]/10 hover:border-[#eb9142] transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
-              <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-[#eb9142] to-[#d67f35] opacity-0 group-hover:opacity-10 transition-opacity rounded-bl-full"></div>
+              <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-[#47145a] to-[#d67f35] opacity-0 group-hover:opacity-10 transition-opacity rounded-bl-full"></div>
               <CardContent className="p-8 relative z-10">
                 <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-purple-100 to-violet-100 flex items-center justify-center mb-6">
                   <Heart className="w-10 h-10 text-[#47145a]" />
@@ -224,7 +224,7 @@ export default function AboutPage() {
             </Card>
 
             <Card className="group relative overflow-hidden border-2 border-[#47145a]/10 hover:border-[#eb9142] transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
-              <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-[#eb9142] to-[#d67f35] opacity-0 group-hover:opacity-10 transition-opacity rounded-bl-full"></div>
+              <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-[#47145a] to-[#d67f35] opacity-0 group-hover:opacity-10 transition-opacity rounded-bl-full"></div>
               <CardContent className="p-8 relative z-10">
                 <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-amber-100 to-orange-100 flex items-center justify-center mb-6">
                   <Users className="w-10 h-10 text-[#eb9142]" />
@@ -237,6 +237,78 @@ export default function AboutPage() {
                   patients seeking treatment her soul families. With positive energy, advances in medical science and
                   technology, couples as well as individuals can bring new life into the world.
                 </p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Large Logo Card Section */}
+      <section className="py-0 bg-gradient-to-b from-white via-[#fbf7f6] to-white">
+        <div className="container mx-auto px-0">
+          <div className="max-w-full mx-auto">
+            <Card className="relative overflow-hidden border-0 rounded-none hover:shadow-2xl group bg-gradient-to-br from-white via-purple-50/30 to-orange-50/30">
+              {/* Decorative gradient background */}
+              <div className="absolute inset-0 bg-gradient-to-br from-[#47145a]/5 via-transparent to-[#eb9142]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+              <CardContent className="p-0">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 min-h-[600px] lg:min-h-[800px]">
+                  {/* Left Side - Logo */}
+                  <div className="flex items-center justify-center p-0 bg-gradient-to-br from-purple-50 to-white relative">
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#47145a]/5 to-[#eb9142]/5"></div>
+                    <div className="relative z-10 w-full h-full flex items-center justify-center">
+                      <div className="relative w-full h-full max-w-3xl max-h-3xl transform group-hover:scale-105 transition-all duration-500">
+                        <Image
+                          src="/images/dr-vrushni-bhuta-logo.png"
+                          alt="Dr. Vrushni Bhuta Logo"
+                          fill
+                          className="object-contain p-8 lg:p-16"
+                          priority
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Right Side - Content */}
+                  <div className="flex flex-col items-center justify-center p-12 md:p-16 lg:p-24 text-center relative z-10">
+                    {/* Clinic Name */}
+                    <h3 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6">
+                      <span className="bg-gradient-to-r from-[#47145a] via-purple-600 to-[#eb9142] bg-clip-text text-transparent">
+                        Dr Vrushni's Women's Care & Fertility Clinic
+                      </span>
+                    </h3>
+
+                    {/* Tagline */}
+                    <p className="text-2xl md:text-3xl lg:text-4xl font-semibold text-[#47145a] mb-8 italic">
+                      From Fertility to Fulfilment
+                    </p>
+
+                    {/* Decorative separator */}
+                    <div className="flex items-center justify-center gap-3 mb-8">
+                      <div className="h-px w-20 md:w-24 bg-gradient-to-r from-transparent to-purple-400" />
+                      <Sparkles className="w-7 h-7 md:w-8 md:h-8 text-purple-500" />
+                      <div className="h-px w-20 md:w-24 bg-gradient-to-l from-transparent to-orange-400" />
+                    </div>
+
+                    {/* Description */}
+                    <p className="text-xl md:text-2xl text-gray-700 leading-relaxed mb-10">
+                      A sanctuary of hope, compassion, and advanced medical care where dreams of parenthood become
+                      reality through personalized treatment and unwavering support.
+                    </p>
+
+                    {/* CTA Button */}
+                    <Button
+                      asChild
+                      size="lg"
+                      className="bg-gradient-to-r from-[#47145a] to-purple-700 hover:from-purple-700 hover:to-[#eb9142] text-white px-12 md:px-16 py-8 md:py-10 text-xl md:text-2xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+                    >
+                      <Link href="/contact">
+                        <Phone className="w-6 h-6 md:w-7 md:h-7 mr-3" />
+                        Schedule Your Consultation
+                      </Link>
+                    </Button>
+                  </div>
+                </div>
               </CardContent>
             </Card>
           </div>
