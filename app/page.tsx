@@ -60,16 +60,22 @@ export default function Home() {
 
               <AnimatedSection delay={0.3}>
                 <div className="space-y-3 md:space-y-4">
-                  <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-balance leading-tight">
-                    From Fertility to{" "}
-                    <span
-                      className="bg-gradient-to-r from-purple-600 to-orange-500 bg-clip-text text-transparent animate-pulse"
-                      style={{ animationDuration: "3s" }}
-                    >
-                      Fulfilment
-                    </span>
-                  </h1>
-                  <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto lg:mx-0 text-pretty">
+                  <div className="space-y-2">
+                    <p className="text-sm md:text-base font-medium text-purple-600 dark:text-purple-400 uppercase tracking-wider">
+                      Welcome to
+                    </p>
+                    <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-balance leading-tight">
+                      Dr Vrushni's Women's Care & Fertility Clinic
+                    </h1>
+                    <p className="text-xl md:text-2xl lg:text-3xl font-light text-muted-foreground mt-4">
+                      From Fertility to{" "}
+                      <span className="bg-gradient-to-r from-purple-600 to-orange-500 bg-clip-text text-transparent font-semibold">
+                        Fulfilment
+                      </span>
+                    </p>
+                  </div>
+                  {/* </CHANGE> */}
+                  <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto lg:mx-0 leading-relaxed">
                     Expert fertility care with personalized treatment plans, advanced technology, and compassionate
                     support throughout your journey to parenthood.
                   </p>
