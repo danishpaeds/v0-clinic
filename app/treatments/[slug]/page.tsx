@@ -4,6 +4,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { ArrowLeft, Phone, CheckCircle2, Clock, AlertCircle, MapPin, ArrowRight } from "lucide-react"
 import { notFound } from "next/navigation"
 import type { Metadata } from "next"
+import { MedicalDisclaimer } from "@/components/MedicalDisclaimer"
 
 const treatments: Record<
   string,
@@ -784,7 +785,7 @@ const treatments: Record<
     successRate:
       "50-60% pregnancy rate per cycle for women under 35, with success rates comparable to conventional IVF",
     duration: "The full ICSI cycle takes approximately 4-6 weeks from start to pregnancy test",
-    recovery: "2-3 days rest recommended after egg retrieval; embryo transfer requires no recovery time",
+    recovery: "2-3 days rest after egg retrieval; embryo transfer requires no recovery time",
     risks: [
       "Ovarian hyperstimulation syndrome (OHSS) from hormone medications",
       "Multiple pregnancy if more than one embryo is transferred",
@@ -1832,7 +1833,7 @@ export function generateStaticParams() {
   }))
 }
 
-export default function TreatmentPage({ params }: { params: { slug: string } }) {
+export default function TreatmentPage({ params }: { params: Promise<{ slug: string }> }) {
   const treatment = treatments[params.slug]
 
   if (!treatment) {
@@ -2143,6 +2144,9 @@ export default function TreatmentPage({ params }: { params: { slug: string } }) 
           </div>
         </div>
       </section>
+
+      {/* CHANGE: Added comprehensive medical disclaimer section before related treatments */}
+      <MedicalDisclaimer />
 
       {/* Related Treatments section before footer */}
       <section className="py-16 bg-gradient-to-b from-white to-purple-50/30">
