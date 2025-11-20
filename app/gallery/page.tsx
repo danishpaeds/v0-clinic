@@ -1,76 +1,101 @@
-import { Card, CardContent } from '@/components/ui/card';
-import Image from 'next/image';
+import { Card, CardContent } from "@/components/ui/card"
+import Image from "next/image"
 
 export const metadata = {
-  title: 'Clinic Gallery - Dr Vrushni\'s Women\'s Care & Fertility Clinic',
-  description: 'View photos of our state-of-the-art fertility clinic, facilities, and happy families.',
-};
+  title: "Clinic Gallery - Dr Vrushni's Women's Care & Fertility Clinic",
+  description: "View photos of our state-of-the-art fertility clinic, facilities, and happy families.",
+  keywords:
+    "fertility clinic photos, IVF clinic Mumbai, clinic facilities, fertility center gallery, Dr Vrushni clinic, Santacruz fertility clinic",
+  openGraph: {
+    title: "Clinic Gallery - Dr. Vrushni's Women's Care & Fertility Clinic",
+    description:
+      "Explore our state-of-the-art fertility clinic facilities and celebrate success stories of families we've helped create.",
+    type: "website",
+    locale: "en_IN",
+    url: "https://drvrushni.com/gallery",
+    siteName: "Dr. Vrushni's Women's Care & Fertility Clinic",
+    images: [
+      {
+        url: "/images/doctor-purple-blazer-seated.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Dr. Vrushni Bhuta Fertility Clinic",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Clinic Gallery - Dr. Vrushni's Fertility Clinic",
+    description: "State-of-the-art fertility clinic facilities in Mumbai.",
+    images: ["/images/doctor-purple-blazer-seated.jpg"],
+  },
+}
 
 export default function GalleryPage() {
   const galleryItems = [
     {
-      title: 'Dr Vrushni Bhuta',
-      category: 'Team',
-      image: 'https://ext.same-assets.com/3773510777/4116934596.jpeg',
+      title: "Dr Vrushni Bhuta",
+      category: "Team",
+      image: "https://ext.same-assets.com/3773510777/4116934596.jpeg",
     },
     {
-      title: 'Reception Area',
-      category: 'Facilities',
-      image: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800&q=80',
+      title: "Reception Area",
+      category: "Facilities",
+      image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800&q=80",
     },
     {
-      title: 'Consultation Room',
-      category: 'Facilities',
-      image: 'https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=800&q=80',
+      title: "Consultation Room",
+      category: "Facilities",
+      image: "https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=800&q=80",
     },
     {
-      title: 'State-of-the-art Lab',
-      category: 'Facilities',
-      image: 'https://images.unsplash.com/photo-1582719471384-894fbb16e074?w=800&q=80',
+      title: "State-of-the-art Lab",
+      category: "Facilities",
+      image: "https://images.unsplash.com/photo-1582719471384-711bdf4f8f17?w=800&q=80",
     },
     {
-      title: 'Ultrasound Room',
-      category: 'Facilities',
-      image: 'https://images.unsplash.com/photo-1579154341055-7f82d7f8a3ee?w=800&q=80',
+      title: "Ultrasound Room",
+      category: "Facilities",
+      image: "https://images.unsplash.com/photo-1579154341055-7f82d7f8a3ee?w=800&q=80",
     },
     {
-      title: 'Waiting Area',
-      category: 'Facilities',
-      image: 'https://images.unsplash.com/photo-1512678080530-7760d81faba6?w=800&q=80',
+      title: "Waiting Area",
+      category: "Facilities",
+      image: "https://images.unsplash.com/photo-1512678080530-7760d81faba6?w=800&q=80",
     },
     {
-      title: 'IVF Laboratory',
-      category: 'Technology',
-      image: 'https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=800&q=80',
+      title: "IVF Laboratory",
+      category: "Technology",
+      image: "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=800&q=80",
     },
     {
-      title: 'Advanced Equipment',
-      category: 'Technology',
-      image: 'https://images.unsplash.com/photo-1581594549595-35f6edc7b762?w=800&q=80',
+      title: "Advanced Equipment",
+      category: "Technology",
+      image: "https://images.unsplash.com/photo-1581594549595-35f6edc7b762?w=800&q=80",
     },
     {
-      title: 'Happy Family',
-      category: 'Success Stories',
-      image: 'https://images.unsplash.com/photo-1511895426328-dc8714191300?w=800&q=80',
+      title: "Happy Family",
+      category: "Success Stories",
+      image: "https://images.unsplash.com/photo-1511895426328-dc8714191300?w=800&q=80",
     },
     {
-      title: 'New Parents',
-      category: 'Success Stories',
-      image: 'https://images.unsplash.com/photo-1476703993599-0035a21b17a9?w=800&q=80',
+      title: "New Parents",
+      category: "Success Stories",
+      image: "https://images.unsplash.com/photo-1476703993599-0035a21b17a9?w=800&q=80",
     },
     {
-      title: 'Baby Announcement',
-      category: 'Success Stories',
-      image: 'https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?w=800&q=80',
+      title: "Baby Announcement",
+      category: "Success Stories",
+      image: "https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?w=800&q=80",
     },
     {
-      title: 'Family Joy',
-      category: 'Success Stories',
-      image: 'https://images.unsplash.com/photo-1467452572984-711bdf4f8f17?w=800&q=80',
+      title: "Family Joy",
+      category: "Success Stories",
+      image: "https://images.unsplash.com/photo-1467452572984-711bdf4f8f17?w=800&q=80",
     },
-  ];
+  ]
 
-  const categories = ['All', 'Team', 'Facilities', 'Technology', 'Success Stories'];
+  const categories = ["All", "Team", "Facilities", "Technology", "Success Stories"]
 
   return (
     <div className="flex flex-col">
@@ -79,9 +104,7 @@ export default function GalleryPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <span className="text-[#eb9142] font-bold text-sm tracking-wider uppercase">GALLERY</span>
-            <h1 className="text-4xl md:text-5xl font-extrabold mt-4 mb-6">
-              Our Clinic & Success Stories
-            </h1>
+            <h1 className="text-4xl md:text-5xl font-extrabold mt-4 mb-6">Our Clinic & Success Stories</h1>
             <p className="text-xl text-gray-200">
               Explore our state-of-the-art facilities and celebrate the joy of families we've helped create
             </p>
@@ -98,8 +121,8 @@ export default function GalleryPage() {
                 key={index}
                 className={`px-6 py-2 rounded-full text-sm font-medium transition-colors ${
                   index === 0
-                    ? 'bg-[#eb9142] text-white'
-                    : 'bg-gray-100 text-gray-700 hover:bg-[#eb9142]/10 hover:text-[#eb9142]'
+                    ? "bg-[#eb9142] text-white"
+                    : "bg-gray-100 text-gray-700 hover:bg-[#eb9142]/10 hover:text-[#eb9142]"
                 }`}
               >
                 {category}
@@ -114,11 +137,14 @@ export default function GalleryPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {galleryItems.map((item, index) => (
-              <Card key={index} className="border-2 border-gray-100 hover:border-[#eb9142] transition-all hover:shadow-xl group overflow-hidden">
+              <Card
+                key={index}
+                className="border-2 border-gray-100 hover:border-[#eb9142] transition-all hover:shadow-xl group overflow-hidden"
+              >
                 <CardContent className="p-0">
                   <div className="relative aspect-square overflow-hidden">
                     <Image
-                      src={item.image}
+                      src={item.image || "/placeholder.svg"}
                       alt={item.title}
                       fill
                       className="object-cover group-hover:scale-110 transition-transform duration-300"
@@ -143,9 +169,7 @@ export default function GalleryPage() {
       <section className="py-20 bg-gradient-to-b from-white to-[#fbf7f6]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#47145a] mb-4">
-              Virtual Tour
-            </h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#47145a] mb-4">Virtual Tour</h2>
             <p className="text-lg text-gray-600">
               Take a virtual tour of our clinic and see our state-of-the-art facilities
             </p>
@@ -166,9 +190,7 @@ export default function GalleryPage() {
       {/* CTA Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#47145a] mb-6">
-            Experience our clinic in person
-          </h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-[#47145a] mb-6">Experience our clinic in person</h2>
           <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
             Schedule a visit to tour our facilities and meet with Dr Vrushni Bhuta
           </p>
@@ -181,5 +203,5 @@ export default function GalleryPage() {
         </div>
       </section>
     </div>
-  );
+  )
 }
