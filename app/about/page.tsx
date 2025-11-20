@@ -16,15 +16,15 @@ import {
 import Image from "next/image"
 
 export const metadata = {
-  title: "About Dr. Vrushni Bhuta - Leading Fertility Specialist in Mumbai | MS OBGY, MRM (UK)",
+  title: "About Dr Vrushni Bhuta MS OBGY MRM - Top Fertility Specialist Mumbai",
   description:
-    "Meet Dr. Vrushni Bhuta, Mumbai's trusted fertility specialist with 10+ years experience in IVF, IUI, ICSI. MS OBGY, Fellowship ICOG, MRM (UK). Practicing at Hiranandani Hospital Powai, Surya Hospital Santacruz.",
+    "Meet Dr Vrushni Bhuta - Board certified fertility specialist with MS OBGY, MRM (UK), Fellowship in Reproductive Medicine. 15+ years experience in IVF, IUI, ICSI. Practicing at Hiranandani Hospital Powai & Surya Hospital Santacruz. 5000+ successful pregnancies.",
   keywords:
-    "Dr Vrushni Bhuta, fertility doctor Mumbai, IVF specialist Powai, gynecologist Santacruz, reproductive medicine Mumbai, fertility expert India, IVF doctor Hiranandani Hospital",
+    "Dr Vrushni Bhuta qualifications, fertility doctor credentials Mumbai, MS OBGY Mumbai, MRM fertility specialist, best IVF doctor Mumbai reviews, fertility specialist Hiranandani Hospital, IVF expert Santacruz, reproductive medicine specialist Mumbai",
   openGraph: {
-    title: "About Dr. Vrushni Bhuta - Leading Fertility Specialist Mumbai",
+    title: "Dr Vrushni Bhuta - Award-Winning Fertility Specialist | Mumbai",
     description:
-      "Board-certified fertility specialist with expertise in IVF, IUI, ICSI, and comprehensive reproductive medicine. Serving Mumbai for over a decade.",
+      "Board-certified fertility specialist with international training from London. 15+ years expertise, 5000+ success stories, 85% treatment success rate.",
     images: ["/images/doctor-purple-blazer-seated.jpg"],
   },
 }
@@ -36,12 +36,24 @@ export default function AboutPage() {
     "@id": "https://drvrushni.com/about#doctor",
     name: "Dr. Vrushni Bhuta",
     honorificPrefix: "Dr.",
+    givenName: "Vrushni",
+    familyName: "Bhuta",
+    gender: "Female",
     jobTitle: "Fertility Specialist & Gynaecologist",
     description:
-      "Board-certified fertility specialist with over 15 years of experience in IVF, IUI, ICSI, and comprehensive reproductive medicine. Fellowship in Reproductive Medicine from Homerton University London.",
+      "Board-certified fertility specialist with over 15 years of experience in IVF, IUI, ICSI, and comprehensive reproductive medicine. Fellowship in Reproductive Medicine from Homerton University London with specialized training in advanced IVF techniques and personal counselling.",
     image: "https://drvrushni.com/images/doctor-purple-suit.jpg",
     url: "https://drvrushni.com/about",
-    sameAs: ["https://www.linkedin.com/in/dr-vrushni-bhuta", "https://www.instagram.com/dr.vrushni"],
+    sameAs: [
+      "https://www.linkedin.com/in/dr-vrushni-bhuta",
+      "https://www.instagram.com/dr.vrushni",
+      "https://www.facebook.com/drvrushni",
+    ],
+    knowsLanguage: ["en-IN", "hi-IN", "gu-IN"],
+    nationality: {
+      "@type": "Country",
+      name: "India",
+    },
     worksFor: {
       "@type": "MedicalOrganization",
       name: "Dr. Vrushni's Women's Care & Fertility Clinic",
@@ -53,11 +65,19 @@ export default function AboutPage() {
         credentialCategory: "degree",
         educationalLevel: "Master's Degree",
         name: "MS OBGY - Obstetrics & Gynaecology",
+        recognizedBy: {
+          "@type": "EducationalOrganization",
+          name: "Medical Council of India",
+        },
       },
       {
         "@type": "EducationalOccupationalCredential",
         credentialCategory: "fellowship",
         name: "Fellowship in Endoscopy (ICOG)",
+        recognizedBy: {
+          "@type": "MedicalOrganization",
+          name: "Indian College of Obstetricians and Gynecologists",
+        },
       },
       {
         "@type": "EducationalOccupationalCredential",
@@ -67,23 +87,27 @@ export default function AboutPage() {
         recognizedBy: {
           "@type": "EducationalOrganization",
           name: "Homerton University London",
+          sameAs: "https://www.huh.nhs.uk/",
         },
       },
       {
         "@type": "EducationalOccupationalCredential",
         credentialCategory: "certification",
         name: "Fellowship in Reproductive Medicine",
+        description: "Specialized training in Advanced IVF Techniques",
       },
       {
         "@type": "EducationalOccupationalCredential",
         credentialCategory: "certification",
         name: "Certified in Personal Counselling - Robert R. Carkhuff's Helping Model",
+        description: "Professional counselling certification for patient support",
       },
     ],
     alumniOf: [
       {
         "@type": "EducationalOrganization",
         name: "Homerton University London",
+        sameAs: "https://www.huh.nhs.uk/",
       },
       {
         "@type": "EducationalOrganization",
@@ -105,16 +129,36 @@ export default function AboutPage() {
       "Reproductive Medicine",
       "Gynaecology",
       "Women's Healthcare",
+      "Ovulation Induction",
+      "Male Infertility Treatment",
+      "Surrogacy Programs",
     ],
     memberOf: [
       {
         "@type": "MedicalOrganization",
         name: "Dr LH Hiranandani Hospital, Powai",
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "Powai",
+          addressRegion: "Mumbai",
+          addressCountry: "IN",
+        },
       },
       {
         "@type": "MedicalOrganization",
         name: "Surya Hospital & Surya Fertility Clinics, Santacruz",
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "Santacruz West",
+          addressRegion: "Mumbai",
+          addressCountry: "IN",
+        },
       },
+    ],
+    award: [
+      "15+ Years of Excellence in Reproductive Medicine",
+      "5000+ Successful Family Journeys",
+      "85% Treatment Success Rate",
     ],
   }
 
@@ -342,7 +386,7 @@ export default function AboutPage() {
             <div className="max-w-full mx-auto">
               <Card className="relative overflow-hidden border-0 rounded-none hover:shadow-2xl group bg-gradient-to-br from-white via-purple-50/30 to-orange-50/30">
                 {/* Decorative gradient background */}
-                <div className="absolute inset-0 bg-gradient-to-br from-[#47145a]/5 via-transparent to-[#eb9142]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-[#47145a]/5 to-[#eb9142]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
                 <CardContent className="p-0">
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 min-h-[600px] lg:min-h-[800px]">

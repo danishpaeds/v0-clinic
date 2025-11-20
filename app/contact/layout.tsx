@@ -2,15 +2,15 @@ import type React from "react"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Contact Dr. Vrushni Bhuta - Book IVF Consultation in Mumbai | Powai, Santacruz",
+  title: "Contact Dr Vrushni Bhuta - Book IVF Consultation Mumbai | Call +91-9820086575",
   description:
-    "Schedule your fertility consultation with Dr. Vrushni Bhuta in Mumbai. Available at Hiranandani Hospital Powai & Surya Hospital Santacruz. Call +91 9820086575 for appointment.",
+    "Schedule your fertility consultation with Dr Vrushni Bhuta in Mumbai. Two convenient locations: Hiranandani Hospital Powai & Surya Hospital Santacruz West. Call +91-9820086575 or book online. Free initial consultation available.",
   keywords:
-    "contact fertility doctor Mumbai, book IVF consultation Mumbai, Dr Vrushni Bhuta appointment, fertility clinic Powai contact, IVF doctor Santacruz contact, book fertility consultation India, IVF appointment Mumbai",
+    "contact fertility doctor Mumbai, book IVF consultation online, Dr Vrushni Bhuta phone number, fertility clinic Powai address, IVF appointment Santacruz, fertility consultation Mumbai, IVF doctor contact number, book fertility specialist Mumbai",
   openGraph: {
-    title: "Contact Dr. Vrushni Bhuta - Book Your Fertility Consultation",
+    title: "Book Your Fertility Consultation - Dr Vrushni Bhuta Mumbai",
     description:
-      "Get in touch with Mumbai's leading fertility specialist. Multiple locations in Powai & Santacruz. Book your consultation today.",
+      "Get expert fertility advice from Mumbai's leading IVF specialist. Easy online booking, multiple locations, flexible appointment times.",
     images: ["/images/doctor-purple-suit.jpg"],
   },
 }

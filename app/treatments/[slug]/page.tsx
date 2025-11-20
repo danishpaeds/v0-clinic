@@ -1811,18 +1811,36 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 
   if (!treatment) {
     return {
-      title: "Treatment Not Found",
+      title: "Treatment Not Found - Dr Vrushni Bhuta Fertility Clinic",
+      description:
+        "The requested treatment page could not be found. Browse our complete list of fertility treatments in Mumbai.",
     }
   }
 
+  // Create compelling title with treatment name, location, and brand
+  const title = `${treatment.title} in Mumbai - Cost, Success Rate & Procedure | Dr Vrushni Bhuta`
+
+  // Enhanced description with key details
+  const description = `${treatment.overview.substring(0, 120)}... Expert ${treatment.title} treatment in Mumbai by Dr Vrushni Bhuta. High success rates, affordable cost, personalized care. Clinics in Powai & Santacruz. Book consultation today.`
+
+  // Comprehensive keywords including local and long-tail terms
+  const keywords = `${treatment.title} Mumbai, ${treatment.title} cost Mumbai, ${treatment.title} success rate India, ${treatment.title} Powai, ${treatment.title} Santacruz, best ${treatment.title} doctor Mumbai, ${treatment.title} procedure Mumbai, Dr Vrushni Bhuta ${treatment.title}, affordable ${treatment.title} India`
+
   return {
-    title: `${treatment.title} in Mumbai | Dr. Vrushni Bhuta - Powai & Santacruz`,
-    description: `${treatment.overview} Expert fertility care in Mumbai by Dr. Vrushni Bhuta. Clinics in Powai & Santacruz.`,
-    keywords: `${treatment.title} Mumbai, ${treatment.title} Powai, ${treatment.title} Santacruz, fertility treatment Mumbai, Dr Vrushni Bhuta, ${treatment.title} India, ${treatment.title} cost Mumbai`,
+    title,
+    description,
+    keywords,
     openGraph: {
-      title: `${treatment.title} - Dr. Vrushni Bhuta Mumbai`,
-      description: treatment.overview,
+      title: `${treatment.title} Mumbai - High Success Rate | Dr Vrushni Bhuta`,
+      description: `Expert ${treatment.title} treatment with personalized care and proven results. Learn about procedure, cost, success rates & recovery.`,
       type: "website",
+      locale: "en_IN",
+      images: ["/images/doctor-purple-blazer-seated.jpg"],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${treatment.title} in Mumbai | Dr Vrushni Bhuta`,
+      description: `Comprehensive guide to ${treatment.title}: procedure, cost, success rates & expert care in Mumbai.`,
     },
   }
 }
@@ -1845,10 +1863,18 @@ export default function TreatmentPage({ params }: { params: Promise<{ slug: stri
     "@type": "MedicalProcedure",
     name: treatment.title,
     description: treatment.overview,
+    alternateName: treatment.title,
     procedureType: "Fertility Treatment",
-    bodyLocation: "Reproductive System",
-    preparation: treatment.process,
-    followup: "Regular monitoring and support throughout treatment",
+    medicationRequiredProperly: "Hormonal medications as prescribed",
+    bodyLocation: {
+      "@type": "AnatomicalStructure",
+      name: "Reproductive System",
+    },
+    preparation: treatment.process || "Comprehensive fertility assessment and personalized treatment planning",
+    howPerformed: treatment.process || "Advanced assisted reproductive technology procedures",
+    followup: "Regular monitoring, hormonal support, and ongoing consultation throughout treatment",
+    expectedPrognosis:
+      "Success rates vary based on individual factors; consultation required for personalized prognosis",
     availableService: {
       "@type": "MedicalTherapy",
       name: treatment.title,
@@ -1857,6 +1883,7 @@ export default function TreatmentPage({ params }: { params: Promise<{ slug: stri
     provider: {
       "@type": "Physician",
       name: "Dr. Vrushni Bhuta",
+      jobTitle: "Fertility Specialist & Gynaecologist",
       worksFor: {
         "@type": "MedicalClinic",
         name: "Dr. Vrushni's Women's Care & Fertility Clinic",
@@ -1870,7 +1897,17 @@ export default function TreatmentPage({ params }: { params: Promise<{ slug: stri
         },
         telephone: "+91-9820086575",
         url: "https://drvrushni.com",
+        priceRange: "₹₹₹",
       },
+    },
+    offers: {
+      "@type": "Offer",
+      availability: "https://schema.org/InStock",
+      availableAtOrFrom: {
+        "@type": "MedicalClinic",
+        name: "Dr. Vrushni's Women's Care & Fertility Clinic",
+      },
+      priceCurrency: "INR",
     },
   }
 

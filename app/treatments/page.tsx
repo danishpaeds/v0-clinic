@@ -4,15 +4,15 @@ import { ArrowRight, Heart, Sparkles, Baby } from "lucide-react"
 import Image from "next/image"
 
 export const metadata = {
-  title: "Fertility Treatments in Mumbai - IVF, IUI, ICSI, Egg Freezing | Dr. Vrushni Bhuta",
+  title: "Fertility Treatments Mumbai - IVF, IUI, ICSI, Egg Freezing | Dr Vrushni Bhuta",
   description:
-    "Comprehensive fertility treatments in Mumbai including IVF, IUI, ICSI, egg freezing, embryo cryopreservation, surrogacy, PGT & more. Expert care by Dr. Vrushni Bhuta at Powai & Santacruz.",
+    "Comprehensive fertility treatments in Mumbai: IVF (₹1.2-2L), IUI (₹15-25K), ICSI, egg freezing, PGT, surrogacy & more. Expert care by Dr Vrushni Bhuta with 85% success rate. Clinics in Powai & Santacruz. Book free consultation.",
   keywords:
-    "fertility treatments Mumbai, IVF treatment Mumbai, IUI procedure India, ICSI Mumbai, egg freezing Powai, embryo freezing Mumbai, surrogacy Mumbai, PGT testing India, fertility surgery Mumbai, donor egg program Mumbai, sperm freezing India, laparoscopy fertility Mumbai, hysteroscopy Mumbai, PRP ovary treatment, fertility preservation Mumbai",
+    "IVF cost Mumbai, IUI treatment price Mumbai, ICSI Mumbai cost, egg freezing Mumbai price, fertility treatment options Mumbai, PGT testing India, surrogacy program Mumbai, fertility surgery Mumbai, laparoscopy fertility Mumbai, donor egg program Mumbai",
   openGraph: {
-    title: "Complete Fertility Treatment Options in Mumbai | Dr. Vrushni Bhuta",
+    title: "Complete Fertility Treatment Options | Dr Vrushni Bhuta Mumbai",
     description:
-      "15+ advanced fertility treatments including IVF, IUI, ICSI, egg freezing & more. 85% success rate. Expert care in Mumbai's premier fertility clinic.",
+      "23+ advanced fertility treatments including IVF, IUI, ICSI, egg freezing, PGT & more. Transparent pricing, high success rates, personalized care.",
     images: ["/images/doctor-purple-blazer-seated.jpg"],
   },
 }
@@ -219,7 +219,7 @@ export default function TreatmentsPage() {
             {/* Stats */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12">
               <div className="text-center">
-                <div className="text-4xl font-bold text-[#eb9142] mb-2">15+</div>
+                <div className="text-4xl font-bold text-[#eb9142] mb-2">23+</div>
                 <div className="text-sm text-gray-300">Treatment Options</div>
               </div>
               <div className="text-center">
