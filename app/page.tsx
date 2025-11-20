@@ -60,6 +60,13 @@ export default function Home() {
         ],
         priceRange: "₹₹₹",
         medicalSpecialty: ["Reproductive Medicine", "Gynecology", "Fertility Treatment", "IVF"],
+        aggregateRating: {
+          "@type": "AggregateRating",
+          ratingValue: "4.9",
+          reviewCount: "320",
+          bestRating: "5",
+          worstRating: "1",
+        },
       },
       {
         "@type": "Physician",

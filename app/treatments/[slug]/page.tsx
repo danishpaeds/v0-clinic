@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { ArrowLeft, Phone, CheckCircle2, Clock, AlertCircle, MapPin, ArrowRight, Heart } from "lucide-react"
+import { ArrowLeft, Phone, CheckCircle2, Clock, AlertCircle, MapPin, ArrowRight } from "lucide-react"
 import { notFound } from "next/navigation"
 import type { Metadata } from "next"
 
@@ -1832,20 +1832,56 @@ export function generateStaticParams() {
   }))
 }
 
-export default function TreatmentDetailPage({ params }: { params: { slug: string } }) {
+export default function TreatmentPage({ params }: { params: { slug: string } }) {
   const treatment = treatments[params.slug]
 
   if (!treatment) {
     notFound()
   }
 
+  const procedureSchema = {
+    "@context": "https://schema.org",
+    "@type": "MedicalProcedure",
+    name: treatment.title,
+    description: treatment.overview,
+    procedureType: "Fertility Treatment",
+    bodyLocation: "Reproductive System",
+    preparation: treatment.process,
+    followup: "Regular monitoring and support throughout treatment",
+    availableService: {
+      "@type": "MedicalTherapy",
+      name: treatment.title,
+      description: treatment.overview,
+    },
+    provider: {
+      "@type": "Physician",
+      name: "Dr. Vrushni Bhuta",
+      worksFor: {
+        "@type": "MedicalClinic",
+        name: "Dr. Vrushni's Women's Care & Fertility Clinic",
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "Surya Hospital, 201 & 202, 2nd Floor, Dilkhush CHS, Juhu Tara Road",
+          addressLocality: "Santacruz West",
+          addressRegion: "Mumbai",
+          postalCode: "400054",
+          addressCountry: "IN",
+        },
+        telephone: "+91-9820086575",
+        url: "https://drvrushni.com",
+      },
+    },
+  }
+
   const relatedTreatments = Object.entries(treatments)
     .filter(([slug]) => slug !== params.slug)
-    .slice(0, 3)
     .map(([slug, data]) => ({ slug, ...data }))
+    .slice(0, 3)
 
   return (
-    <div className="flex flex-col">
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(procedureSchema) }} />
+
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-[#47145a] via-[#5a1b71] to-[#47145a] text-white py-20 overflow-hidden">
         {/* Decorative elements */}
@@ -2108,53 +2144,34 @@ export default function TreatmentDetailPage({ params }: { params: { slug: string
         </div>
       </section>
 
-      {/* Related Treatments section for internal linking */}
-      <section className="py-20 bg-gradient-to-b from-white to-[#fbf7f6]">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Related Treatments section before footer */}
+      <section className="py-16 bg-gradient-to-b from-white to-purple-50/30">
+        <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-[#47145a] mb-4">Related Treatments</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Explore other fertility and women's care treatments that might be relevant to your journey
-            </p>
+            <p className="text-lg text-muted-foreground">Explore other fertility treatments we offer</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {relatedTreatments.map((related) => (
-              <Link key={related.slug} href={`/treatments/${related.slug}`}>
-                <Card className="h-full border-2 border-gray-100 hover:border-[#eb9142] transition-all duration-300 hover:shadow-xl hover:-translate-y-2 group">
+              <Link key={related.slug} href={`/treatments/${related.slug}`} className="group">
+                <Card className="h-full border-2 border-purple-200/50 hover:border-purple-400 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
                   <CardContent className="p-6">
-                    <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[#47145a] to-[#5a1b71] flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                      <Heart className="w-7 h-7 text-white" />
-                    </div>
-                    <h3 className="text-xl font-bold text-[#47145a] mb-3 group-hover:text-[#eb9142] transition-colors">
+                    <h3 className="text-xl font-bold text-[#47145a] mb-3 group-hover:text-purple-600 transition-colors">
                       {related.title}
                     </h3>
-                    <p className="text-gray-600 text-sm mb-4 line-clamp-3">{related.subtitle}</p>
-                    <div className="flex items-center text-[#eb9142] font-semibold text-sm group-hover:gap-2 transition-all">
+                    <p className="text-muted-foreground mb-4 line-clamp-3">{related.overview}</p>
+                    <div className="flex items-center text-purple-600 font-semibold group-hover:gap-2 transition-all">
                       Learn More
-                      <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                      <ArrowRight className="w-4 h-4 ml-1 group-hover:ml-2 transition-all" />
                     </div>
                   </CardContent>
                 </Card>
               </Link>
             ))}
           </div>
-
-          <div className="text-center mt-12">
-            <Button
-              asChild
-              variant="outline"
-              size="lg"
-              className="border-2 border-[#47145a] text-[#47145a] hover:bg-[#47145a] hover:text-white bg-transparent"
-            >
-              <Link href="/treatments">
-                View All Treatments
-                <ArrowRight className="w-4 h-4 ml-2" />
-              </Link>
-            </Button>
-          </div>
         </div>
       </section>
-    </div>
+    </>
   )
 }
