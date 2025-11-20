@@ -1,68 +1,76 @@
-import { Card, CardContent } from '@/components/ui/card';
-import { Quote } from 'lucide-react';
+import { Card, CardContent } from "@/components/ui/card"
+import { Quote } from "lucide-react"
 
 export const metadata = {
-  title: 'Patient Testimonials - Dr Vrushni Bhuta Fertility Clinic',
-  description: 'Read success stories and testimonials from patients who achieved their dream of parenthood with Dr Vrushni Bhuta.',
-};
+  title: "Patient Success Stories & Testimonials - Dr Vrushni Bhuta Fertility Clinic | Mumbai",
+  description:
+    "Read real success stories and testimonials from patients who achieved their dream of parenthood with Dr Vrushni Bhuta. IVF, IUI, and fertility treatment reviews from Mumbai.",
+  keywords:
+    "fertility testimonials Mumbai, IVF success stories, patient reviews Dr Vrushni Bhuta, fertility clinic reviews Mumbai, IVF testimonials India, successful fertility treatment stories",
+  openGraph: {
+    title: "Real Patient Success Stories - Dr Vrushni Bhuta",
+    description: "Inspiring stories from families who achieved their parenthood dreams through expert fertility care.",
+    type: "website",
+  },
+}
 
 export default function TestimonialsPage() {
   const testimonials = [
     {
-      name: 'Anonymous',
-      treatment: 'IVF Treatment',
-      text: 'Dr Vrushni has been a guiding angel, genuinely understanding our issues. She has been extremely supportive since our first interaction. She genuinely takes the effort to understand patient issues and suggests thoughtful treatment courses. She has been a guiding angel in our pregnancy journey.',
+      name: "Anonymous",
+      treatment: "IVF Treatment",
+      text: "Dr Vrushni has been a guiding angel, genuinely understanding our issues. She has been extremely supportive since our first interaction. She genuinely takes the effort to understand patient issues and suggests thoughtful treatment courses. She has been a guiding angel in our pregnancy journey.",
       rating: 5,
     },
     {
-      name: 'Anonymous',
-      treatment: 'Fertility Treatment',
-      text: 'Our sincere thanks and gratitude to Dr Vrushni, who was there with us before, during, and after the treatment. She is very professional and dynamic, guiding us throughout our journey to becoming parents after 14 long years.',
+      name: "Anonymous",
+      treatment: "Fertility Treatment",
+      text: "Our sincere thanks and gratitude to Dr Vrushni, who was there with us before, during, and after the treatment. She is very professional and dynamic, guiding us throughout our journey to becoming parents after 14 long years.",
       rating: 5,
     },
     {
-      name: 'Anonymous',
-      treatment: 'Surrogacy',
-      text: 'Empathy is not often considered in IVF and surrogacy research, but it should be. Dr Vrushni\'s empathy, patience, and kindness stand out as much as her professionalism. I wholeheartedly recommend her to anyone considering reproductive assistance.',
+      name: "Anonymous",
+      treatment: "Surrogacy",
+      text: "Empathy is not often considered in IVF and surrogacy research, but it should be. Dr Vrushni's empathy, patience, and kindness stand out as much as her professionalism. I wholeheartedly recommend her to anyone considering reproductive assistance.",
       rating: 5,
     },
     {
-      name: 'Mrs. Sharma',
-      treatment: 'ICSI Treatment',
-      text: 'After years of trying to conceive, we were losing hope. Dr Vrushni not only provided us with the best medical treatment but also the emotional support we needed. Today, we are blessed with a beautiful baby girl. Thank you, Dr Vrushni!',
+      name: "Mrs. Sharma",
+      treatment: "ICSI Treatment",
+      text: "After years of trying to conceive, we were losing hope. Dr Vrushni not only provided us with the best medical treatment but also the emotional support we needed. Today, we are blessed with a beautiful baby girl. Thank you, Dr Vrushni!",
       rating: 5,
     },
     {
-      name: 'Mr. & Mrs. Patel',
-      treatment: 'IUI Treatment',
-      text: 'Dr Vrushni made our journey to parenthood smooth and stress-free. Her thorough explanations and caring approach made us feel comfortable throughout the entire process. We highly recommend her services.',
+      name: "Mr. & Mrs. Patel",
+      treatment: "IUI Treatment",
+      text: "Dr Vrushni made our journey to parenthood smooth and stress-free. Her thorough explanations and caring approach made us feel comfortable throughout the entire process. We highly recommend her services.",
       rating: 5,
     },
     {
-      name: 'Anonymous',
-      treatment: 'Egg Freezing',
-      text: 'I was nervous about egg freezing, but Dr Vrushni explained everything in detail and made sure I was comfortable with every step. Her expertise and compassionate care made all the difference.',
+      name: "Anonymous",
+      treatment: "Egg Freezing",
+      text: "I was nervous about egg freezing, but Dr Vrushni explained everything in detail and made sure I was comfortable with every step. Her expertise and compassionate care made all the difference.",
       rating: 5,
     },
     {
-      name: 'Mrs. Khan',
-      treatment: 'Laparoscopy',
-      text: 'Dr Vrushni diagnosed and treated my endometriosis through laparoscopy. The procedure was successful, and I conceived naturally within six months. I am forever grateful for her expertise and care.',
+      name: "Mrs. Khan",
+      treatment: "Laparoscopy",
+      text: "Dr Vrushni diagnosed and treated my endometriosis through laparoscopy. The procedure was successful, and I conceived naturally within six months. I am forever grateful for her expertise and care.",
       rating: 5,
     },
     {
-      name: 'Mr. & Mrs. Desai',
-      treatment: 'Frozen Embryo Transfer',
-      text: 'Our frozen embryo transfer was successful on the first attempt, thanks to Dr Vrushni\'s meticulous planning and care. We now have twins! She truly is an expert in her field.',
+      name: "Mr. & Mrs. Desai",
+      treatment: "Frozen Embryo Transfer",
+      text: "Our frozen embryo transfer was successful on the first attempt, thanks to Dr Vrushni's meticulous planning and care. We now have twins! She truly is an expert in her field.",
       rating: 5,
     },
     {
-      name: 'Anonymous',
-      treatment: 'Pre-conceptional Counselling',
-      text: 'The pre-conceptional counselling sessions with Dr Vrushni were incredibly helpful. She addressed all our concerns and helped us prepare physically and emotionally for pregnancy. We are now expecting our first child!',
+      name: "Anonymous",
+      treatment: "Pre-conceptional Counselling",
+      text: "The pre-conceptional counselling sessions with Dr Vrushni were incredibly helpful. She addressed all our concerns and helped us prepare physically and emotionally for pregnancy. We are now expecting our first child!",
       rating: 5,
     },
-  ];
+  ]
 
   return (
     <div className="flex flex-col">
@@ -71,12 +79,8 @@ export default function TestimonialsPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <span className="text-[#eb9142] font-bold text-sm tracking-wider uppercase">TESTIMONIALS</span>
-            <h1 className="text-4xl md:text-5xl font-extrabold mt-4 mb-6">
-              Heres what my patients say
-            </h1>
-            <p className="text-xl text-gray-200">
-              Stories of hope, success, and fulfilled dreams of parenthood
-            </p>
+            <h1 className="text-4xl md:text-5xl font-extrabold mt-4 mb-6">Here's what my patients say</h1>
+            <p className="text-xl text-gray-200">Stories of hope, success, and fulfilled dreams of parenthood</p>
           </div>
         </div>
       </section>
@@ -86,7 +90,10 @@ export default function TestimonialsPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
-              <Card key={index} className="border-2 border-gray-100 hover:border-[#eb9142] transition-all hover:shadow-xl relative">
+              <Card
+                key={index}
+                className="border-2 border-gray-100 hover:border-[#eb9142] transition-all hover:shadow-xl relative"
+              >
                 <CardContent className="p-6">
                   <div className="absolute top-4 right-4">
                     <Quote className="w-8 h-8 text-[#eb9142]/20" />
@@ -98,9 +105,7 @@ export default function TestimonialsPage() {
                       </svg>
                     ))}
                   </div>
-                  <p className="text-gray-700 mb-4 italic leading-relaxed">
-                    {testimonial.text}
-                  </p>
+                  <p className="text-gray-700 mb-4 italic leading-relaxed">{testimonial.text}</p>
                   <div className="border-t border-gray-200 pt-4">
                     <p className="font-semibold text-[#47145a]">{testimonial.name}</p>
                     <p className="text-sm text-[#eb9142]">{testimonial.treatment}</p>
@@ -139,9 +144,7 @@ export default function TestimonialsPage() {
       {/* CTA Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#47145a] mb-6">
-            Ready to start your own success story?
-          </h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-[#47145a] mb-6">Ready to start your own success story?</h2>
           <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
             Join hundreds of families who have achieved their dream of parenthood with Dr Vrushni Bhuta
           </p>
@@ -154,5 +157,5 @@ export default function TestimonialsPage() {
         </div>
       </section>
     </div>
-  );
+  )
 }

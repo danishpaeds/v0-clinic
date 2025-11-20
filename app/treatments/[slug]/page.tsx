@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { ArrowLeft, Phone, CheckCircle2, Clock, AlertCircle, MapPin } from "lucide-react"
+import { ArrowLeft, Phone, CheckCircle2, Clock, AlertCircle, MapPin, ArrowRight, Heart } from "lucide-react"
 import { notFound } from "next/navigation"
 import type { Metadata } from "next"
 
@@ -1499,7 +1499,7 @@ const treatments: Record<
       {
         title: "Treatment of Conditions",
         description:
-          "Examples include removal of endometriosis implants, ovarian cysts, uterine fibroids, adhesions, and opening blocked fallopian tubes.",
+          "Examples include removal of endometriosis implants, ovarian cysts, uterine fibroids, polyps, and adhesions, and opening blocked fallopian tubes.",
       },
       {
         title: "Recovery",
@@ -1839,6 +1839,11 @@ export default function TreatmentDetailPage({ params }: { params: { slug: string
     notFound()
   }
 
+  const relatedTreatments = Object.entries(treatments)
+    .filter(([slug]) => slug !== params.slug)
+    .slice(0, 3)
+    .map(([slug, data]) => ({ slug, ...data }))
+
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
@@ -2099,6 +2104,54 @@ export default function TreatmentDetailPage({ params }: { params: { slug: string
                 <span>Santacruz, Mumbai</span>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Related Treatments section for internal linking */}
+      <section className="py-20 bg-gradient-to-b from-white to-[#fbf7f6]">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#47145a] mb-4">Related Treatments</h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Explore other fertility and women's care treatments that might be relevant to your journey
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {relatedTreatments.map((related) => (
+              <Link key={related.slug} href={`/treatments/${related.slug}`}>
+                <Card className="h-full border-2 border-gray-100 hover:border-[#eb9142] transition-all duration-300 hover:shadow-xl hover:-translate-y-2 group">
+                  <CardContent className="p-6">
+                    <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[#47145a] to-[#5a1b71] flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                      <Heart className="w-7 h-7 text-white" />
+                    </div>
+                    <h3 className="text-xl font-bold text-[#47145a] mb-3 group-hover:text-[#eb9142] transition-colors">
+                      {related.title}
+                    </h3>
+                    <p className="text-gray-600 text-sm mb-4 line-clamp-3">{related.subtitle}</p>
+                    <div className="flex items-center text-[#eb9142] font-semibold text-sm group-hover:gap-2 transition-all">
+                      Learn More
+                      <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                    </div>
+                  </CardContent>
+                </Card>
+              </Link>
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <Button
+              asChild
+              variant="outline"
+              size="lg"
+              className="border-2 border-[#47145a] text-[#47145a] hover:bg-[#47145a] hover:text-white bg-transparent"
+            >
+              <Link href="/treatments">
+                View All Treatments
+                <ArrowRight className="w-4 h-4 ml-2" />
+              </Link>
+            </Button>
           </div>
         </div>
       </section>
