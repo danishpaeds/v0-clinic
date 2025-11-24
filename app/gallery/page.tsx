@@ -1,5 +1,8 @@
 import { Card, CardContent } from "@/components/ui/card"
 import Image from "next/image"
+import Link from "next/link"
+import { Button } from "@/components/ui/button"
+import { Calendar, ArrowRight } from "lucide-react"
 
 export const metadata = {
   title: "Clinic Gallery - Dr Vrushni's Women's Care & Fertility Clinic",
@@ -56,7 +59,7 @@ export default function GalleryPage() {
     {
       title: "Ultrasound Room",
       category: "Facilities",
-      image: "https://images.unsplash.com/photo-1579154341055-7f82d7f8a3ee?w=800&q=80",
+      image: "https://images.unsplash.com/photo-1579154341055-35f6edc7b762?w=800&q=80",
     },
     {
       title: "Waiting Area",
@@ -189,17 +192,41 @@ export default function GalleryPage() {
 
       {/* CTA Section */}
       <section className="py-20 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#47145a] mb-6">Experience our clinic in person</h2>
-          <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-            Schedule a visit to tour our facilities and meet with Dr Vrushni Bhuta
-          </p>
-          <a
-            href="/contact"
-            className="inline-flex items-center justify-center px-8 py-3 text-base font-medium rounded-md text-white bg-[#eb9142] hover:bg-[#d67f35] transition-colors"
-          >
-            Book a consultation
-          </a>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto bg-gradient-to-br from-[#47145a] to-[#5a1b71] rounded-3xl p-12 text-center text-white shadow-2xl relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-[#eb9142] rounded-full opacity-20 blur-3xl"></div>
+            <div className="absolute bottom-0 left-0 w-64 h-64 bg-pink-400 rounded-full opacity-20 blur-3xl"></div>
+
+            <div className="relative z-10">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">Experience Our Clinic in Person</h2>
+              <p className="text-lg text-gray-200 mb-8 max-w-2xl mx-auto">
+                Schedule a visit to tour our facilities and meet with Dr Vrushni Bhuta to discuss your fertility journey
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button
+                  asChild
+                  size="lg"
+                  className="bg-white text-[#47145a] hover:bg-gray-100 px-8 py-6 text-lg shadow-lg hover:shadow-xl hover:scale-105 transition-all"
+                >
+                  <Link href="/contact">
+                    <Calendar className="mr-2 h-5 w-5" />
+                    Book a Visit
+                  </Link>
+                </Button>
+                <Button
+                  asChild
+                  size="lg"
+                  variant="outline"
+                  className="border-2 border-white text-white hover:bg-white hover:text-[#47145a] px-8 py-6 text-lg hover:scale-105 transition-all bg-transparent"
+                >
+                  <Link href="/treatments">
+                    View Treatments
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Link>
+                </Button>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </div>

@@ -6,10 +6,11 @@ import "./globals.css"
 import { Header } from "@/src/components/Header"
 import { Footer } from "@/src/components/Footer"
 import { FloatingWhatsApp } from "@/components/FloatingWhatsApp"
+import { FloatingCallButton } from "@/components/FloatingCallButton"
 import { Breadcrumbs } from "@/components/Breadcrumbs"
 
-const _geist = Geist({ subsets: ["latin"] })
-const _geistMono = Geist_Mono({ subsets: ["latin"] })
+const _geist = Geist({ subsets: ["latin"], display: "swap", preload: true })
+const _geistMono = Geist_Mono({ subsets: ["latin"], display: "swap", preload: true })
 
 export const metadata: Metadata = {
   title: {
@@ -107,6 +108,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           <main className="flex-1">{children}</main>
           <Footer />
           <FloatingWhatsApp />
+          <FloatingCallButton />
         </div>
       </body>
     </html>

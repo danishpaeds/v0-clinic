@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import type { ReactNode } from "react"
+import { useReducedMotion } from "framer-motion"
 
 interface AnimatedSectionProps {
   children: ReactNode
@@ -12,28 +13,21 @@ interface AnimatedSectionProps {
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
   animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.6, ease: "easeOut" },
-}
-
-const fadeIn = {
-  initial: { opacity: 0 },
-  animate: { opacity: 1 },
-  transition: { duration: 0.6 },
-}
-
-const scaleIn = {
-  initial: { opacity: 0, scale: 0.95 },
-  animate: { opacity: 1, scale: 1 },
-  transition: { duration: 0.5, ease: "easeOut" },
 }
 
 export function AnimatedSection({ children, className = "", delay = 0 }: AnimatedSectionProps) {
+  const shouldReduceMotion = useReducedMotion()
+
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 20 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-50px" }}
-      transition={{ duration: 0.6, delay, ease: "easeOut" }}
+      viewport={{ once: true, margin: "-50px", amount: 0.3 }}
+      transition={{
+        duration: shouldReduceMotion ? 0 : 0.4,
+        delay: shouldReduceMotion ? 0 : delay,
+        ease: [0.25, 0.1, 0.25, 1],
+      }}
       className={className}
     >
       {children}
@@ -42,13 +36,19 @@ export function AnimatedSection({ children, className = "", delay = 0 }: Animate
 }
 
 export function AnimatedCard({ children, className = "", delay = 0 }: AnimatedSectionProps) {
+  const shouldReduceMotion = useReducedMotion()
+
   return (
     <motion.div
-      initial={{ opacity: 0, y: 30, scale: 0.95 }}
+      initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 20, scale: shouldReduceMotion ? 1 : 0.98 }}
       whileInView={{ opacity: 1, y: 0, scale: 1 }}
-      viewport={{ once: true, margin: "-50px" }}
-      transition={{ duration: 0.5, delay, ease: "easeOut" }}
-      whileHover={{ y: -8, scale: 1.02 }}
+      viewport={{ once: true, margin: "-50px", amount: 0.3 }}
+      transition={{
+        duration: shouldReduceMotion ? 0 : 0.35,
+        delay: shouldReduceMotion ? 0 : delay,
+        ease: [0.25, 0.1, 0.25, 1],
+      }}
+      whileHover={shouldReduceMotion ? {} : { y: -6, scale: 1.01 }}
       className={className}
     >
       {children}
@@ -57,12 +57,14 @@ export function AnimatedCard({ children, className = "", delay = 0 }: AnimatedSe
 }
 
 export function FadeIn({ children, className = "", delay = 0 }: AnimatedSectionProps) {
+  const shouldReduceMotion = useReducedMotion()
+
   return (
     <motion.div
-      initial={{ opacity: 0 }}
+      initial={{ opacity: shouldReduceMotion ? 1 : 0 }}
       whileInView={{ opacity: 1 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.6, delay }}
+      viewport={{ once: true, amount: 0.3 }}
+      transition={{ duration: shouldReduceMotion ? 0 : 0.4, delay: shouldReduceMotion ? 0 : delay }}
       className={className}
     >
       {children}
@@ -71,12 +73,18 @@ export function FadeIn({ children, className = "", delay = 0 }: AnimatedSectionP
 }
 
 export function ScaleIn({ children, className = "", delay = 0 }: AnimatedSectionProps) {
+  const shouldReduceMotion = useReducedMotion()
+
   return (
     <motion.div
-      initial={{ opacity: 0, scale: 0.9 }}
+      initial={{ opacity: shouldReduceMotion ? 1 : 0, scale: shouldReduceMotion ? 1 : 0.95 }}
       whileInView={{ opacity: 1, scale: 1 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, delay, type: "spring", stiffness: 100 }}
+      viewport={{ once: true, amount: 0.3 }}
+      transition={{
+        duration: shouldReduceMotion ? 0 : 0.35,
+        delay: shouldReduceMotion ? 0 : delay,
+        ease: [0.25, 0.1, 0.25, 1],
+      }}
       className={className}
     >
       {children}
@@ -85,12 +93,18 @@ export function ScaleIn({ children, className = "", delay = 0 }: AnimatedSection
 }
 
 export function SlideInLeft({ children, className = "", delay = 0 }: AnimatedSectionProps) {
+  const shouldReduceMotion = useReducedMotion()
+
   return (
     <motion.div
-      initial={{ opacity: 0, x: -40 }}
+      initial={{ opacity: shouldReduceMotion ? 1 : 0, x: shouldReduceMotion ? 0 : -30 }}
       whileInView={{ opacity: 1, x: 0 }}
-      viewport={{ once: true, margin: "-50px" }}
-      transition={{ duration: 0.6, delay, ease: "easeOut" }}
+      viewport={{ once: true, margin: "-50px", amount: 0.3 }}
+      transition={{
+        duration: shouldReduceMotion ? 0 : 0.4,
+        delay: shouldReduceMotion ? 0 : delay,
+        ease: [0.25, 0.1, 0.25, 1],
+      }}
       className={className}
     >
       {children}
@@ -99,12 +113,18 @@ export function SlideInLeft({ children, className = "", delay = 0 }: AnimatedSec
 }
 
 export function SlideInRight({ children, className = "", delay = 0 }: AnimatedSectionProps) {
+  const shouldReduceMotion = useReducedMotion()
+
   return (
     <motion.div
-      initial={{ opacity: 0, x: 40 }}
+      initial={{ opacity: shouldReduceMotion ? 1 : 0, x: shouldReduceMotion ? 0 : 30 }}
       whileInView={{ opacity: 1, x: 0 }}
-      viewport={{ once: true, margin: "-50px" }}
-      transition={{ duration: 0.6, delay, ease: "easeOut" }}
+      viewport={{ once: true, margin: "-50px", amount: 0.3 }}
+      transition={{
+        duration: shouldReduceMotion ? 0 : 0.4,
+        delay: shouldReduceMotion ? 0 : delay,
+        ease: [0.25, 0.1, 0.25, 1],
+      }}
       className={className}
     >
       {children}

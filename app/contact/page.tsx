@@ -1,6 +1,7 @@
 "use client"
 
 import type React from "react"
+import { useRouter } from "next/navigation"
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
@@ -10,6 +11,7 @@ import { useState } from "react"
 // For now, adding structured data via script tag in the component
 
 export default function ContactPage() {
+  const router = useRouter()
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -17,13 +19,16 @@ export default function ContactPage() {
     message: "",
   })
 
-  const [isSubmitted, setIsSubmitted] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    // Here you would typically send the form data to your backend
-    setIsSubmitted(true)
-    setTimeout(() => setIsSubmitted(false), 3000)
+    setIsSubmitting(true)
+
+    // Simulate form submission - in production, this would send data to backend
+    setTimeout(() => {
+      router.push("/thank-you")
+    }, 500)
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -267,17 +272,14 @@ export default function ContactPage() {
                         />
                       </div>
 
-                      <Button type="submit" size="lg" className="w-full bg-[#eb9142] hover:bg-[#d67f35] text-white">
-                        Send Message
+                      <Button
+                        type="submit"
+                        size="lg"
+                        className="w-full bg-[#eb9142] hover:bg-[#d67f35] text-white"
+                        disabled={isSubmitting}
+                      >
+                        {isSubmitting ? "Sending..." : "Send Message"}
                       </Button>
-
-                      {isSubmitted && (
-                        <div className="p-4 bg-green-50 border border-green-200 rounded-md">
-                          <p className="text-green-800 text-sm text-center">
-                            Thank you for your message! We'll get back to you soon.
-                          </p>
-                        </div>
-                      )}
                     </form>
                   </CardContent>
                 </Card>

@@ -2,6 +2,7 @@ import Link from "next/link"
 import { Card, CardContent } from "@/components/ui/card"
 import { ArrowRight, Heart, Sparkles, Baby } from "lucide-react"
 import Image from "next/image"
+import { InlineCallButton } from "@/components/InlineCallButton"
 
 export const metadata = {
   title: "Fertility Treatments Mumbai - IVF, IUI, ICSI, Egg Freezing | Dr Vrushni Bhuta",
@@ -363,13 +364,16 @@ export default function TreatmentsPage() {
                 Schedule a consultation with Dr Vrushni Bhuta to discuss your options and create a personalized
                 treatment plan tailored to your unique situation.
               </p>
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center px-10 py-4 text-lg font-semibold rounded-full text-[#47145a] bg-white hover:bg-gray-100 transition-all shadow-lg hover:shadow-xl hover:scale-105"
-              >
-                Book a Consultation
-                <ArrowRight className="w-5 h-5 ml-2" />
-              </Link>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center justify-center px-10 py-4 text-lg font-semibold rounded-full text-[#47145a] bg-white hover:bg-gray-100 transition-all shadow-lg hover:shadow-xl hover:scale-105"
+                >
+                  Book a Consultation
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </Link>
+                <InlineCallButton variant="outline" className="text-lg px-10 py-4 rounded-full" text="Or Call Now" />
+              </div>
             </div>
           </div>
         </div>

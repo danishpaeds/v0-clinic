@@ -4,6 +4,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { ChevronDown } from "lucide-react"
 import { useState } from "react"
 import Link from "next/link"
+import { InlineCallButton } from "@/components/InlineCallButton"
 
 const faqs = [
   {
@@ -326,12 +327,15 @@ export default function FAQClientPage() {
           <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
             We're here to help. Contact us to schedule a consultation and get personalized answers to your questions.
           </p>
-          <a
-            href="/contact"
-            className="inline-flex items-center justify-center px-8 py-3 text-base font-medium rounded-md text-white bg-[#eb9142] hover:bg-[#d67f35] transition-colors"
-          >
-            Get in touch
-          </a>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <a
+              href="/contact"
+              className="inline-flex items-center justify-center px-8 py-3 text-base font-medium rounded-md text-white bg-[#eb9142] hover:bg-[#d67f35] transition-colors"
+            >
+              Get in touch
+            </a>
+            <InlineCallButton variant="secondary" text="Or Call +91 9820086575" />
+          </div>
         </div>
       </section>
     </div>

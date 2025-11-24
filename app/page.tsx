@@ -5,6 +5,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { AnimatedSection, FadeIn, ScaleIn, SlideInLeft, SlideInRight } from "@/components/AnimatedSection"
 import { Heart, Award, Users, ArrowRight, Star, Calendar, Sparkles } from "lucide-react"
+import { InlineCallButton } from "@/components/InlineCallButton"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
@@ -275,6 +276,7 @@ export default function Home() {
                         <ArrowRight className="ml-2 h-5 w-5" />
                       </Link>
                     </Button>
+                    <InlineCallButton variant="secondary" className="w-full sm:w-auto" />
                     <Button
                       asChild
                       variant="outline"
@@ -493,16 +495,23 @@ export default function Home() {
 
                     {/* CTA Button */}
                     <FadeIn delay={0.8}>
-                      <Button
-                        asChild
-                        size="lg"
-                        className="text-lg md:text-xl px-10 md:px-12 lg:px-16 py-7 md:py-8 bg-gradient-to-r from-purple-600 to-orange-500 hover:from-purple-700 hover:to-orange-600 shadow-xl shadow-purple-500/30 hover:shadow-2xl hover:shadow-purple-500/40 transition-all hover:scale-105"
-                      >
-                        <Link href="/contact">
-                          Start Your Journey Today
-                          <ArrowRight className="ml-2 h-6 w-6" />
-                        </Link>
-                      </Button>
+                      <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center pt-2 md:pt-4">
+                        <Button
+                          asChild
+                          size="lg"
+                          className="text-lg md:text-xl px-10 md:px-12 lg:px-16 py-7 md:py-8 bg-gradient-to-r from-purple-600 to-orange-500 hover:from-purple-700 hover:to-orange-600 shadow-xl shadow-purple-500/30 hover:shadow-2xl hover:shadow-purple-500/40 transition-all hover:scale-105"
+                        >
+                          <Link href="/contact">
+                            Start Your Journey Today
+                            <ArrowRight className="ml-2 h-6 w-6" />
+                          </Link>
+                        </Button>
+                        <InlineCallButton
+                          variant="secondary"
+                          className="text-base md:text-lg px-8 py-6"
+                          text="Or Call Us Now"
+                        />
+                      </div>
                     </FadeIn>
                   </div>
                 </CardContent>
@@ -539,6 +548,10 @@ export default function Home() {
                       Book Consultation
                     </Link>
                   </Button>
+                  <InlineCallButton
+                    variant="outline"
+                    className="text-base md:text-lg px-6 md:px-8 py-5 md:py-6 w-full sm:w-auto"
+                  />
                   <Button
                     asChild
                     size="lg"
