@@ -1,5 +1,5 @@
 import type React from "react"
-import type { Metadata } from "next"
+import type { Metadata, Viewport } from "next"
 import { Geist, Geist_Mono } from "next/font/google"
 import Script from "next/script"
 import "./globals.css"
@@ -11,6 +11,17 @@ import { Breadcrumbs } from "@/components/Breadcrumbs"
 
 const _geist = Geist({ subsets: ["latin"], display: "swap", preload: true })
 const _geistMono = Geist_Mono({ subsets: ["latin"], display: "swap", preload: true })
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  userScalable: true,
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#47145a" },
+    { media: "(prefers-color-scheme: dark)", color: "#47145a" },
+  ],
+}
 
 export const metadata: Metadata = {
   title: {
@@ -25,6 +36,17 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://drvrushni.com"),
   alternates: {
     canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
   openGraph: {
     type: "website",
@@ -59,7 +81,7 @@ export const metadata: Metadata = {
     apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
   },
   verification: {
-    google: "your-google-verification-code", // User should replace with actual code
+    google: "google7c2909d72e7bf11f", // Added actual Google Search Console verification code
   },
 }
 
@@ -69,25 +91,14 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="en-IN">
       <head>
-        <Script id="gtm-script" strategy="beforeInteractive">
+        <Script id="gtm-head" strategy="beforeInteractive">
           {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-K7ZTLRMR');`}
-        </Script>
-
-        {/* Google Analytics (gtag.js) */}
-        <Script src="https://www.googletagmanager.com/gtag/js?id=G-3Y91XQN6GW" strategy="afterInteractive" />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-3Y91XQN6GW');
-          `}
         </Script>
       </head>
       <body className={`font-sans antialiased`} suppressHydrationWarning>
