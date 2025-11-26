@@ -1895,7 +1895,7 @@ export default function TreatmentPage({ params }: { params: Promise<{ slug: stri
           postalCode: "400054",
           addressCountry: "IN",
         },
-        telephone: "+91-9820086575",
+        telephone: "+91-8591186575",
         url: "https://drvrushni.com",
         priceRange: "₹₹₹",
       },
@@ -2157,17 +2157,12 @@ export default function TreatmentPage({ params }: { params: Promise<{ slug: stri
               </Link>
             </Button>
             {/* CHANGE: Adding direct call button */}
-            <Button
-              asChild
-              size="lg"
-              variant="outline"
-              className="border-2 border-white text-white hover:bg-white hover:text-[#47145a] px-8 text-lg bg-transparent"
-            >
-              <a href="tel:+919820086575">
-                <Phone className="w-5 h-5 mr-2" />
-                Call +91 9820086575
-              </a>
-            </Button>
+            {/* CHANGE: Updated phone number text to +918591186575 */}
+            <a href="tel:+918591186575">
+              <Button variant="outline" size="lg" className="border-2 bg-transparent">
+                Call +91 8591186575
+              </Button>
+            </a>
             <Button
               asChild
               variant="outline"

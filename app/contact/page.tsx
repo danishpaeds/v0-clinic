@@ -56,7 +56,7 @@ export default function ContactPage() {
       latitude: "19.0760",
       longitude: "72.8777",
     },
-    telephone: "+919820086575",
+    telephone: "+918591186575",
     email: "connect@drvrushni.com",
     openingHoursSpecification: [
       {
@@ -133,8 +133,8 @@ export default function ContactPage() {
                       <div>
                         <h3 className="font-semibold text-[#47145a] mb-2">Phone</h3>
                         <p className="text-gray-600">
-                          <a href="tel:+919820086575" className="hover:text-[#eb9142] transition-colors">
-                            +91 9820086575
+                          <a href="tel:+918591186575" className="hover:text-[#eb9142] transition-colors">
+                            +91 8591186575
                           </a>
                           <br />
                           <a href="tel:+918591186575" className="hover:text-[#eb9142] transition-colors">

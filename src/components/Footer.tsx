@@ -233,8 +233,8 @@ export function Footer() {
                   />
                 </svg>
                 <div className="text-sm space-y-1">
-                  <a href="tel:+919820086575" className="text-gray-300 hover:text-orange-300 transition-colors block">
-                    +91 9820086575
+                  <a href="tel:+918591186575" className="text-gray-300 hover:text-orange-300 transition-colors block">
+                    +91 8591186575
                   </a>
                   <a href="tel:+918591186575" className="text-gray-300 hover:text-orange-300 transition-colors block">
                     +91 8591186575

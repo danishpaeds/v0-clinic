@@ -12,7 +12,7 @@ export function FloatingCallButton() {
       className="fixed bottom-4 left-4 z-50 md:bottom-8 md:left-8"
     >
       <a
-        href="tel:+919820086575"
+        href="tel:+918591186575"
         className="group flex items-center justify-center bg-gradient-to-r from-[#47145a] to-[#eb9142] text-white w-12 h-12 md:w-14 md:h-14 rounded-full shadow-2xl hover:shadow-[0_0_30px_rgba(235,145,66,0.6)] transition-all duration-300 hover:scale-110 opacity-80 hover:opacity-95 backdrop-blur-md"
         aria-label="Call Dr Vrushni Bhuta"
       >

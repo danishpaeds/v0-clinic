@@ -36,7 +36,7 @@ export default function Home() {
         description:
           "Premier fertility clinic and women's healthcare center in Mumbai specializing in IVF, IUI, ICSI, and comprehensive reproductive medicine with personalized, compassionate care.",
         url: "https://drvrushni.com",
-        telephone: "+91-9820086575",
+        telephone: "+91-8591186575",
         email: "connect@drvrushni.com",
         image: [
           "https://drvrushni.com/images/doctor-purple-blazer-seated.jpg",
@@ -281,7 +281,7 @@ export default function Home() {
                       asChild
                       variant="outline"
                       size="lg"
-                      className="text-base md:text-lg px-8 py-6 bg-white/50 dark:bg-background/50 backdrop-blur-sm border-2 border-purple-200 dark:border-purple-800 hover:bg-purple-50 dark:hover:bg-purple-950/20 hover:border-purple-400 hover:scale-105 transition-all shadow-lg w-full sm:w-auto"
+                      className="text-base md:text-lg px-8 py-6 bg-white/50 dark:bg-background/50 backdrop-blur-sm border border-purple-300/50 dark:border-purple-700/50 hover:bg-purple-50 dark:hover:bg-purple-950/20 hover:border-purple-400 hover:scale-105 transition-all shadow-lg w-full sm:w-auto"
                     >
                       <Link href="/treatments">Explore Treatments</Link>
                     </Button>

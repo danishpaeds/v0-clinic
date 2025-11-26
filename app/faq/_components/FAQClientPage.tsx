@@ -334,7 +334,7 @@ export default function FAQClientPage() {
             >
               Get in touch
             </a>
-            <InlineCallButton variant="secondary" text="Or Call +91 9820086575" />
+            <InlineCallButton variant="secondary" text="Or Call +91 8591186575" />
           </div>
         </div>
       </section>

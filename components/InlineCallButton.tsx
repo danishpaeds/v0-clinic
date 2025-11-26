@@ -17,7 +17,7 @@ export function InlineCallButton({ variant = "primary", className = "", text = "
   }
 
   return (
-    <a href="tel:+919820086575" className={`${baseClasses} ${variantClasses[variant]} ${className}`}>
+    <a href="tel:+918591186575" className={`${baseClasses} ${variantClasses[variant]} ${className}`}>
       <Phone className="w-4 h-4 md:w-5 md:h-5" />
       {text}
     </a>

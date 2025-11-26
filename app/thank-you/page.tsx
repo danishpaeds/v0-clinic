@@ -82,8 +82,8 @@ export default function ThankYouPage() {
                 <CardContent className="p-6 text-center">
                   <Phone className="w-8 h-8 text-[#eb9142] mx-auto mb-3" />
                   <h3 className="font-semibold text-white mb-2">Call Us</h3>
-                  <a href="tel:+919820086575" className="text-gray-300 hover:text-[#eb9142] transition-colors text-sm">
-                    +91 9820086575
+                  <a href="tel:+918591186575" className="text-gray-300 hover:text-[#eb9142] transition-colors text-sm">
+                    +91 8591186575
                   </a>
                 </CardContent>
               </Card>
