@@ -127,6 +127,30 @@
     }
   }
 
+  /* Added performance-optimized animations for floating buttons */
+  @keyframes wiggle {
+    0%,
+    100% {
+      transform: rotate(0deg);
+    }
+    25% {
+      transform: rotate(10deg);
+    }
+    75% {
+      transform: rotate(-10deg);
+    }
+  }
+
+  @keyframes pulse-subtle {
+    0%,
+    100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.15);
+    }
+  }
+
   /* Added new premium animations */
   @keyframes shimmer {
     0% {
@@ -157,10 +181,20 @@
 
   .animate-fade-in {
     animation: fadeIn 0.8s ease-out forwards;
+    opacity: 0;
   }
 
   .animate-scale-in {
     animation: scaleIn 0.5s cubic-bezier(0.21, 0.47, 0.32, 0.98) forwards;
+  }
+
+  /* Added CSS-based animations to replace framer-motion */
+  .animate-wiggle {
+    animation: wiggle 2s ease-in-out infinite;
+  }
+
+  .animate-pulse-subtle {
+    animation: pulse-subtle 2s ease-in-out infinite;
   }
 
   .animate-shimmer {
@@ -198,7 +232,9 @@
     .animate-fade-in,
     .animate-scale-in,
     .animate-shimmer,
-    .animate-float {
+    .animate-float,
+    .animate-wiggle,
+    .animate-pulse-subtle {
       animation: none;
       opacity: 1;
       transform: none;

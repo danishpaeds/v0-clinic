@@ -1,16 +1,32 @@
 import type React from "react"
 import type { Metadata, Viewport } from "next"
 import { Geist, Geist_Mono } from "next/font/google"
-import Script from "next/script"
+import { GoogleTagManager } from "@next/third-parties/google"
 import "./globals.css"
 import { Header } from "@/src/components/Header"
-import { Footer } from "@/src/components/Footer"
-import { FloatingWhatsApp } from "@/components/FloatingWhatsApp"
-import { FloatingCallButton } from "@/components/FloatingCallButton"
+import dynamic from "next/dynamic"
 import { Breadcrumbs } from "@/components/Breadcrumbs"
+import { ClientFloatingWhatsApp } from "@/components/ClientFloatingWhatsApp"
+import { ClientFloatingCallButton } from "@/components/ClientFloatingCallButton"
 
-const _geist = Geist({ subsets: ["latin"], display: "swap", preload: true })
-const _geistMono = Geist_Mono({ subsets: ["latin"], display: "swap", preload: true })
+const Footer = dynamic(() => import("@/src/components/Footer").then((mod) => ({ default: mod.Footer })), {
+  loading: () => null,
+})
+
+const _geist = Geist({
+  subsets: ["latin"],
+  display: "swap",
+  preload: true,
+  variable: "--font-geist",
+  adjustFontFallback: true,
+})
+const _geistMono = Geist_Mono({
+  subsets: ["latin"],
+  display: "swap",
+  preload: true,
+  variable: "--font-geist-mono",
+  adjustFontFallback: true,
+})
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -92,33 +108,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en-IN">
-      <head>
-        <Script id="gtm-head" strategy="beforeInteractive">
-          {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-K7ZTLRMR');`}
-        </Script>
-      </head>
       <body className={`font-sans antialiased`} suppressHydrationWarning>
-        <noscript>
-          <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-K7ZTLRMR"
-            height="0"
-            width="0"
-            style={{ display: "none", visibility: "hidden" }}
-            title="Google Tag Manager"
-          />
-        </noscript>
+        <GoogleTagManager gtmId="GTM-K7ZTLRMR" />
 
         <div className="flex min-h-screen flex-col">
           <Header />
           <Breadcrumbs />
           <main className="flex-1">{children}</main>
           <Footer />
-          <FloatingWhatsApp />
-          <FloatingCallButton />
+          <ClientFloatingWhatsApp />
+          <ClientFloatingCallButton />
         </div>
       </body>
     </html>

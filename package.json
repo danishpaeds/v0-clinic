@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@emotion/is-prop-valid": "latest",
+    "@next/third-parties": "latest",
     "@radix-ui/react-slot": "latest",
     "@vercel/analytics": "1.5.0",
     "class-variance-authority": "^0.7.1",

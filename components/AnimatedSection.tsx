@@ -1,8 +1,13 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { lazy, Suspense } from "react"
 import type { ReactNode } from "react"
-import { useReducedMotion } from "framer-motion"
+
+const StaticWrapper = ({ children, className }: { children: ReactNode; className?: string }) => (
+  <div className={className}>{children}</div>
+)
+
+const MotionDiv = lazy(() => import("framer-motion").then((mod) => ({ default: mod.motion.div })))
 
 interface AnimatedSectionProps {
   children: ReactNode
@@ -10,124 +15,119 @@ interface AnimatedSectionProps {
   delay?: number
 }
 
-const fadeInUp = {
-  initial: { opacity: 0, y: 20 },
-  animate: { opacity: 1, y: 0 },
-}
-
 export function AnimatedSection({ children, className = "", delay = 0 }: AnimatedSectionProps) {
-  const shouldReduceMotion = useReducedMotion()
-
   return (
-    <motion.div
-      initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-50px", amount: 0.3 }}
-      transition={{
-        duration: shouldReduceMotion ? 0 : 0.4,
-        delay: shouldReduceMotion ? 0 : delay,
-        ease: [0.25, 0.1, 0.25, 1],
-      }}
-      className={className}
-    >
-      {children}
-    </motion.div>
+    <Suspense fallback={<StaticWrapper className={className}>{children}</StaticWrapper>}>
+      <MotionDiv
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-50px", amount: 0.3 }}
+        transition={{
+          duration: 0.35,
+          delay: delay,
+          ease: [0.25, 0.1, 0.25, 1],
+        }}
+        className={className}
+      >
+        {children}
+      </MotionDiv>
+    </Suspense>
   )
 }
 
 export function AnimatedCard({ children, className = "", delay = 0 }: AnimatedSectionProps) {
-  const shouldReduceMotion = useReducedMotion()
-
   return (
-    <motion.div
-      initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 20, scale: shouldReduceMotion ? 1 : 0.98 }}
-      whileInView={{ opacity: 1, y: 0, scale: 1 }}
-      viewport={{ once: true, margin: "-50px", amount: 0.3 }}
-      transition={{
-        duration: shouldReduceMotion ? 0 : 0.35,
-        delay: shouldReduceMotion ? 0 : delay,
-        ease: [0.25, 0.1, 0.25, 1],
-      }}
-      whileHover={shouldReduceMotion ? {} : { y: -6, scale: 1.01 }}
-      className={className}
-    >
-      {children}
-    </motion.div>
+    <Suspense fallback={<StaticWrapper className={className}>{children}</StaticWrapper>}>
+      <MotionDiv
+        initial={{ opacity: 0, y: 20, scale: 0.98 }}
+        whileInView={{ opacity: 1, y: 0, scale: 1 }}
+        viewport={{ once: true, margin: "-50px", amount: 0.3 }}
+        transition={{
+          duration: 0.3,
+          delay: delay,
+          ease: [0.25, 0.1, 0.25, 1],
+        }}
+        whileHover={{ y: -4, scale: 1.01 }}
+        className={className}
+      >
+        {children}
+      </MotionDiv>
+    </Suspense>
   )
 }
 
 export function FadeIn({ children, className = "", delay = 0 }: AnimatedSectionProps) {
-  const shouldReduceMotion = useReducedMotion()
-
   return (
-    <motion.div
-      initial={{ opacity: shouldReduceMotion ? 1 : 0 }}
-      whileInView={{ opacity: 1 }}
-      viewport={{ once: true, amount: 0.3 }}
-      transition={{ duration: shouldReduceMotion ? 0 : 0.4, delay: shouldReduceMotion ? 0 : delay }}
-      className={className}
-    >
-      {children}
-    </motion.div>
+    <Suspense fallback={<StaticWrapper className={className}>{children}</StaticWrapper>}>
+      <MotionDiv
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.35, delay: delay }}
+        className={className}
+      >
+        {children}
+      </MotionDiv>
+    </Suspense>
   )
 }
 
 export function ScaleIn({ children, className = "", delay = 0 }: AnimatedSectionProps) {
-  const shouldReduceMotion = useReducedMotion()
-
   return (
-    <motion.div
-      initial={{ opacity: shouldReduceMotion ? 1 : 0, scale: shouldReduceMotion ? 1 : 0.95 }}
-      whileInView={{ opacity: 1, scale: 1 }}
-      viewport={{ once: true, amount: 0.3 }}
-      transition={{
-        duration: shouldReduceMotion ? 0 : 0.35,
-        delay: shouldReduceMotion ? 0 : delay,
-        ease: [0.25, 0.1, 0.25, 1],
-      }}
-      className={className}
-    >
-      {children}
-    </motion.div>
+    <Suspense fallback={<StaticWrapper className={className}>{children}</StaticWrapper>}>
+      <MotionDiv
+        initial={{ opacity: 0, scale: 0.95 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{
+          duration: 0.3,
+          delay: delay,
+          ease: [0.25, 0.1, 0.25, 1],
+        }}
+        className={className}
+      >
+        {children}
+      </MotionDiv>
+    </Suspense>
   )
 }
 
 export function SlideInLeft({ children, className = "", delay = 0 }: AnimatedSectionProps) {
-  const shouldReduceMotion = useReducedMotion()
-
   return (
-    <motion.div
-      initial={{ opacity: shouldReduceMotion ? 1 : 0, x: shouldReduceMotion ? 0 : -30 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      viewport={{ once: true, margin: "-50px", amount: 0.3 }}
-      transition={{
-        duration: shouldReduceMotion ? 0 : 0.4,
-        delay: shouldReduceMotion ? 0 : delay,
-        ease: [0.25, 0.1, 0.25, 1],
-      }}
-      className={className}
-    >
-      {children}
-    </motion.div>
+    <Suspense fallback={<StaticWrapper className={className}>{children}</StaticWrapper>}>
+      <MotionDiv
+        initial={{ opacity: 0, x: -30 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true, margin: "-50px", amount: 0.3 }}
+        transition={{
+          duration: 0.35,
+          delay: delay,
+          ease: [0.25, 0.1, 0.25, 1],
+        }}
+        className={className}
+      >
+        {children}
+      </MotionDiv>
+    </Suspense>
   )
 }
 
 export function SlideInRight({ children, className = "", delay = 0 }: AnimatedSectionProps) {
-  const shouldReduceMotion = useReducedMotion()
-
   return (
-    <motion.div
-      initial={{ opacity: shouldReduceMotion ? 1 : 0, x: shouldReduceMotion ? 0 : 30 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      viewport={{ once: true, margin: "-50px", amount: 0.3 }}
-      transition={{
-        duration: shouldReduceMotion ? 0 : 0.4,
-        delay: shouldReduceMotion ? 0 : delay,
-        ease: [0.25, 0.1, 0.25, 1],
-      }}
-      className={className}
-    >
-      {children}
-    </motion.div>
+    <Suspense fallback={<StaticWrapper className={className}>{children}</StaticWrapper>}>
+      <MotionDiv
+        initial={{ opacity: 0, x: 30 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true, margin: "-50px", amount: 0.3 }}
+        transition={{
+          duration: 0.35,
+          delay: delay,
+          ease: [0.25, 0.1, 0.25, 1],
+        }}
+        className={className}
+      >
+        {children}
+      </MotionDiv>
+    </Suspense>
   )
 }

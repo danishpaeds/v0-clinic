@@ -1,13 +1,18 @@
 # robots.txt for drvrushni.com
 User-agent: *
 Allow: /
+
 Disallow: /api/
 Disallow: /admin/
 Disallow: /_next/
 Disallow: /thank-you
 
+Allow: /treatments/
+Allow: /contact
+Allow: /about
+Allow: /blog
+
 # Sitemap location
 Sitemap: https://drvrushni.com/sitemap.xml
 
-# Crawl delay (optional)
-Crawl-delay: 1
+# Google recommends not using crawl-delay for modern sites
