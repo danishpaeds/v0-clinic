@@ -245,9 +245,18 @@ export default function Home() {
                     </p>
 
                     <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-                      Led by <span className="font-semibold text-foreground">Dr. Vrushni Bhuta</span>, an experienced
-                      Gynaecologist and Fertility Consultant, our clinic supports women through every stage — from
-                      hormonal imbalance and fertility planning to pregnancy, motherhood, and holistic wellness.
+                      Led by <span className="font-semibold text-foreground">Dr. Vrushni Bhuta</span>, a trusted{" "}
+                      <span className="font-semibold text-foreground">fertility specialist in Mumbai</span>, our clinic
+                      offers comprehensive <span className="font-semibold text-foreground">IVF treatment</span>,{" "}
+                      <span className="font-semibold text-foreground">ICSI</span>, and advanced reproductive care. We
+                      support women through every stage — from hormonal imbalance and fertility planning to pregnancy,
+                      motherhood, and holistic wellness.
+                    </p>
+
+                    <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+                      As a leading center for <span className="font-semibold text-foreground">IVF in Mumbai</span>, we
+                      combine cutting-edge fertility treatments with compassionate, personalized care tailored to your
+                      unique journey.
                     </p>
 
                     <div className="bg-gradient-to-br from-purple-100/50 to-orange-100/50 dark:from-purple-900/20 dark:to-orange-900/20 p-6 rounded-2xl backdrop-blur-sm border border-purple-300/50 dark:border-purple-700/50">

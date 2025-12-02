@@ -549,6 +549,7 @@ export default function AboutPage() {
                     {[
                       "Dr LH Hiranandani Hospital, Powai",
                       "Surya Hospital & Surya Fertility Clinics, Santacruz (W)",
+                      "Bookurdoc Nahar Business Centre, Chandivali, Powai, Mumbai",
                     ].map((hospital, i) => (
                       <div key={i} className="bg-white/5 rounded-xl p-6 text-center border border-white/10">
                         <p className="text-white font-semibold">{hospital}</p>

@@ -232,10 +232,7 @@ export function Footer() {
                     d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
                   />
                 </svg>
-                <div className="text-sm space-y-1">
-                  <a href="tel:+918591186575" className="text-gray-300 hover:text-orange-300 transition-colors block">
-                    +91 8591186575
-                  </a>
+                <div className="text-sm">
                   <a href="tel:+918591186575" className="text-gray-300 hover:text-orange-300 transition-colors block">
                     +91 8591186575
                   </a>
@@ -289,6 +286,27 @@ export function Footer() {
 
         {/* Bottom Section */}
         <div className="py-8">
+          <div className="mb-6 pb-6 border-b border-white/10">
+            <div className="max-w-4xl mx-auto space-y-4">
+              {/* Medical Registration */}
+              <div className="text-center">
+                <p className="text-sm text-gray-300">
+                  <span className="font-semibold text-orange-300">Medical Registration:</span> MMC Registration -
+                  2009020251 (Dr Vrushni Bhuta)
+                </p>
+              </div>
+
+              {/* PCPNDT Disclaimer */}
+              <div className="bg-white/5 backdrop-blur-sm rounded-lg p-4 border border-white/10">
+                <p className="text-xs md:text-sm text-gray-300 text-center leading-relaxed">
+                  <span className="font-semibold text-orange-300">Disclaimer:</span> We strictly adhere to the PCPNDT
+                  Act. We do not perform gender determination or sex selection services. All treatments are performed
+                  within the legal framework of Indian Medical Law.
+                </p>
+              </div>
+            </div>
+          </div>
+
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-400">
             <p>&copy; {new Date().getFullYear()} Dr Vrushni Bhuta. All Rights Reserved.</p>
             <div className="flex items-center gap-6">
