@@ -319,6 +319,9 @@ export function Footer() {
               <Link href="/gallery" className="hover:text-orange-300 transition-colors">
                 Gallery
               </Link>
+              <Link href="/privacy-policy" className="hover:text-orange-300 transition-colors">
+                Privacy Policy
+              </Link>
             </div>
           </div>
         </div>
