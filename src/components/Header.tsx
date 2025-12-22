@@ -87,13 +87,13 @@ export function Header() {
 
             <Button
               asChild
-              className="bg-white hover:bg-white/95 px-6 py-3 shadow-[0_0_10px_rgba(255,255,255,0.5)] hover:shadow-[0_0_20px_rgba(255,255,255,0.8)] hover:scale-105 transition-all duration-500 whitespace-nowrap font-bold text-base border-2 border-white rounded-lg text-white"
+              className="bg-white hover:bg-white/95 px-6 py-3 shadow-[0_0_10px_rgba(255,255,255,0.5)] hover:shadow-[0_0_20px_rgba(255,255,255,0.8)] hover:scale-105 transition-all duration-500 whitespace-nowrap font-bold text-base border-2 border-white rounded-lg text-[#47145a]"
               style={{
                 animation: "subtle-glow 4s ease-in-out infinite",
               }}
             >
-              <Link href="/contact" className="flex items-center gap-2 text-white">
-                <Phone className="w-4 h-4" />
+              <Link href="/contact" className="flex items-center gap-2 text-[#47145a]">
+                <Phone className="w-4 h-4 text-[#47145a]" />
                 Book Now
               </Link>
             </Button>
@@ -152,9 +152,13 @@ export function Header() {
                   </svg>
                 </a>
               </div>
-              <Button asChild className="bg-white hover:bg-white/90 w-full mt-3 font-bold text-white">
-                <Link href="/contact" onClick={() => setMobileMenuOpen(false)} className="text-white">
-                  <Phone className="w-4 h-4 mr-2" />
+              <Button asChild className="bg-white hover:bg-white/90 w-full mt-3 font-bold">
+                <Link
+                  href="/contact"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="bg-gradient-to-r from-[#47145a] to-[#eb9142] bg-clip-text text-transparent"
+                >
+                  <Phone className="w-4 h-4 mr-2 text-[#47145a]" />
                   Book Consultation
                 </Link>
               </Button>

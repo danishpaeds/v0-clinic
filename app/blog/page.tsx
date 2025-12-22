@@ -39,8 +39,8 @@ export default function BlogPage() {
     {
       title: "Understanding IVF: A Complete Guide",
       excerpt:
-        "Learn everything you need to know about In Vitro Fertilisation, from the process to success rates and what to expect during treatment.",
-      date: "2024-10-15",
+        "Fertility struggles are emotional and personal. Learn everything about IVF treatment in Mumbai - the process, success rates, costs, and realistic expectations from Dr Vrushni Bhuta.",
+      date: "2024-01-15",
       category: "IVF",
       slug: "understanding-ivf-complete-guide",
     },

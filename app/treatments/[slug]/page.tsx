@@ -1806,8 +1806,9 @@ const treatments: Record<
   },
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const treatment = treatments[params.slug]
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params
+  const treatment = treatments[slug]
 
   if (!treatment) {
     return {
@@ -1851,8 +1852,9 @@ export function generateStaticParams() {
   }))
 }
 
-export default function TreatmentPage({ params }: { params: Promise<{ slug: string }> }) {
-  const treatment = treatments[params.slug]
+export default async function TreatmentPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params
+  const treatment = treatments[slug]
 
   if (!treatment) {
     notFound()

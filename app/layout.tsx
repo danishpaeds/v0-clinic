@@ -8,6 +8,7 @@ import { Footer } from "@/src/components/Footer"
 import { FloatingWhatsApp } from "@/components/FloatingWhatsApp"
 import { FloatingCallButton } from "@/components/FloatingCallButton"
 import { Breadcrumbs } from "@/components/Breadcrumbs"
+import { ScrollRestoration } from "@/components/ScrollRestoration"
 
 const _geist = Geist({ subsets: ["latin"], display: "swap", preload: true })
 const _geistMono = Geist_Mono({ subsets: ["latin"], display: "swap", preload: true })
@@ -71,6 +72,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`font-sans antialiased`} suppressHydrationWarning>
+        <ScrollRestoration />
+
         <Script id="gtm-script" strategy="afterInteractive">
           {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
