@@ -87,14 +87,14 @@ export function Header() {
 
             <Button
               asChild
-              className="bg-white hover:bg-white/95 px-6 py-3 shadow-[0_0_10px_rgba(255,255,255,0.5)] hover:shadow-[0_0_20px_rgba(255,255,255,0.8)] hover:scale-105 transition-all duration-500 whitespace-nowrap font-bold text-base border-2 border-white rounded-lg text-[#47145a]"
+              className="bg-white hover:bg-white/95 px-6 py-3 shadow-[0_0_10px_rgba(255,255,255,0.5)] hover:shadow-[0_0_20px_rgba(255,255,255,0.8)] hover:scale-105 transition-all duration-500 whitespace-nowrap font-bold text-base border-2 border-white rounded-lg"
               style={{
                 animation: "subtle-glow 4s ease-in-out infinite",
               }}
             >
-              <Link href="/contact" className="flex items-center gap-2 text-[#47145a]">
-                <Phone className="w-4 h-4 text-[#47145a]" />
-                Book Now
+              <Link href="/contact" className="flex items-center gap-2" style={{ color: "#47145a" }}>
+                <Phone className="w-4 h-4" style={{ color: "#47145a" }} />
+                <span style={{ color: "#47145a" }}>Book Now</span>
               </Link>
             </Button>
           </div>
@@ -156,10 +156,11 @@ export function Header() {
                 <Link
                   href="/contact"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="bg-gradient-to-r from-[#47145a] to-[#eb9142] bg-clip-text text-transparent"
+                  className="flex items-center gap-2"
+                  style={{ color: "#47145a" }}
                 >
-                  <Phone className="w-4 h-4 mr-2 text-[#47145a]" />
-                  Book Consultation
+                  <Phone className="w-4 h-4" style={{ color: "#47145a" }} />
+                  <span style={{ color: "#47145a" }}>Book Consultation</span>
                 </Link>
               </Button>
             </nav>

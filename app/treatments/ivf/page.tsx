@@ -1,13 +1,13 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Check, Phone, MessageCircle, Award, Clock, Heart, Shield, Star } from "lucide-react"
+import { Check, Phone, MessageCircle, Award, Clock, Heart, Shield, Star, Info } from "lucide-react"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "IVF Treatment Mumbai | 85% Success | Dr Vrushni Bhuta Powai Santacruz",
+  title: "IVF Treatment Mumbai | 50-70% Success | Dr Vrushni Bhuta Powai Santacruz",
   description:
-    "Best IVF clinic Mumbai with 85% success rate. Personalised IVF/ICSI treatment by Dr Vrushni Bhuta MS OBGY, MRM (UK). Hiranandani Hospital Powai & Santacruz West. Book consultation today.",
+    "Leading IVF & fertility clinic in Mumbai with 50-70% success rate. Personalized IVF/ICSI treatment by Dr Vrushni Bhuta MS OBGY, MRM (UK). Hiranandani Hospital Powai & Santacruz West. Book consultation today.",
   keywords: [
     "IVF Mumbai",
     "IVF treatment Mumbai",
@@ -19,10 +19,11 @@ export const metadata: Metadata = {
     "ICSI Mumbai",
     "fertility specialist Mumbai",
     "Dr Vrushni Bhuta IVF",
+    "Assisted Reproductive Technology Mumbai",
   ],
   openGraph: {
-    title: "IVF Treatment Mumbai | 85% Success | Dr Vrushni Bhuta",
-    description: "Best IVF clinic Mumbai with 85% success rate. Expert IVF/ICSI treatment at Powai & Santacruz.",
+    title: "IVF Treatment Mumbai | 50-70% Success | Dr Vrushni Bhuta",
+    description: "Leading IVF clinic Mumbai with 50-70% success rate. Expert IVF/ICSI treatment at Powai & Santacruz.",
     images: ["/images/doctor-purple-suit.jpg"],
     type: "website",
   },
@@ -44,14 +45,15 @@ export default function IVFLandingPage() {
             "@type": "MedicalBusiness",
             name: "Dr Vrushni Bhuta Fertility Clinic",
             description:
-              "Leading IVF and fertility clinic in Mumbai with 85% success rate. Personalized treatment by Dr Vrushni Bhuta MS OBGY, MRM (UK).",
+              "Leading IVF and fertility clinic in Mumbai with 50-70% success rate. Personalized treatment by Dr Vrushni Bhuta MS OBGY, MRM (UK).",
             medicalSpecialty: ["Fertility Medicine", "IVF", "ICSI", "Reproductive Endocrinology"],
             address: [
               {
                 "@type": "PostalAddress",
-                streetAddress: "Dr LH Hiranandani Hospital",
+                streetAddress: "Dr LH Hiranandani Hospital, Out Patient Department, 4th Floor, Tower B",
                 addressLocality: "Powai",
                 addressRegion: "Mumbai, Maharashtra",
+                postalCode: "400076",
                 addressCountry: "IN",
               },
               {
@@ -75,9 +77,9 @@ export default function IVFLandingPage() {
             aggregateRating: {
               "@type": "AggregateRating",
               ratingValue: "4.9",
-              reviewCount: "150",
+              reviewCount: "200+",
             },
-            priceRange: "₹₹₹",
+            priceRange: "₹₹₹₹", // Increased price range to reflect advanced services
           }),
         }}
       />
@@ -97,19 +99,24 @@ export default function IVFLandingPage() {
             </div>
 
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-6 leading-tight animate-fade-up">
-              IVF Treatment in Mumbai
-              <span className="block text-[#eb9142] mt-2">85% Success Rate</span>
+              Advanced Fertility Treatment in Mumbai
+              <span className="block text-[#eb9142] mt-2">50-70% Success Rate</span>
             </h1>
 
-            <p className="text-xl md:text-2xl text-gray-100 mb-8 leading-relaxed animate-fade-up">
-              Personalised IVF at Dr Vrushni's boutique clinic in Powai & Santacruz West
+            <p className="text-xl md:text-2xl text-gray-100 mb-4 leading-relaxed animate-fade-up">
+              Compassionate, Evidence-Based Fertility Care at Dr Vrushni's Women's Care & Fertility Clinic
+            </p>
+
+            <p className="text-lg text-gray-200 mb-8 animate-fade-up">
+              Santacruz West & Powai, Mumbai - Tailor-made treatment plans for every individual struggling on their
+              journey to parenthood
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12 animate-fade-up">
               {[
-                "Custom protocols for your age & diagnosis",
-                "Advanced ICSI, embryo testing, freezing",
-                "Transparent costs & timelines from day 1",
+                "IVF/IUI/ICSI/PICSI Treatment",
+                "Oocyte/Embryo Freezing & Genetic Testing",
+                "Transparent costs & detailed guidance from day one",
               ].map((benefit, index) => (
                 <div
                   key={index}
@@ -168,42 +175,59 @@ export default function IVFLandingPage() {
         </div>
       </section>
 
-      <section className="py-20 bg-white">
+      {/* What is IVF Section */}
+      <section className="py-20 bg-gradient-to-b from-[#fbf7f6] to-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#47145a] mb-6 text-center">
-              What Is IVF & When Should You Consider It?
-            </h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#47145a] mb-6 text-center">What is IVF/ICSI?</h2>
             <div className="prose max-w-none text-gray-700 text-lg leading-relaxed space-y-6">
               <p>
-                IVF (In Vitro Fertilisation) combines eggs and sperm in our advanced lab to create embryos transferred
-                to your uterus. This cutting-edge treatment offers hope when natural conception hasn't been successful.
+                IVF/ICSI is an advanced Assisted Reproductive Technique (ART) that offers hope to couples struggling
+                with infertility. In this treatment, the ovaries are stimulated with carefully monitored hormonal
+                injections to produce multiple eggs.
               </p>
               <p>
-                IVF is recommended when tubes are blocked, sperm count is low, you have PCOS, previous IUI attempts have
-                failed, or if you're over 35 and trying to conceive.
+                The oocytes are then retrieved under anaesthesia in a safe, painless procedure. In ICSI
+                (Intracytoplasmic Sperm Injection), a single healthy sperm is injected directly into the cytoplasm of
+                each egg to maximise the chances of fertilization.
               </p>
+              <p>
+                The resulting embryos are cultured in an advanced embryology laboratory using precise and controlled
+                techniques. The best quality embryo(s) are then carefully transferred into the uterus to achieve
+                pregnancy.
+              </p>
+              <div className="bg-[#fbf7f6] border-l-4 border-[#eb9142] p-6 rounded-r-lg my-6">
+                <p className="font-semibold text-[#47145a] mb-2">Dr Vrushni's Holistic Approach</p>
+                <p className="text-gray-700">
+                  Dr Vrushni meticulously plans advanced fertility treatments, blending science with compassion to help
+                  her patients achieve the best possible outcomes. She places deep importance on the emotional &
+                  physical wellbeing of the couple, believing that fertility outcomes are enhanced when both partners
+                  are aligned in mind, body & soul.
+                </p>
+              </div>
             </div>
 
             <div className="mt-10">
-              <h3 className="text-xl font-bold text-[#47145a] mb-6">IVF Is Recommended For:</h3>
+              <h3 className="text-xl font-bold text-[#47145a] mb-6">Advanced Fertility Treatments Available:</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {[
-                  "Blocked or damaged fallopian tubes",
-                  "Male factor infertility (low sperm count/quality)",
-                  "PCOS or ovulation disorders",
-                  "Endometriosis affecting fertility",
-                  "Unexplained infertility after 1+ years",
-                  "Failed IUI attempts (3+ cycles)",
-                  "Age-related fertility decline (35+)",
-                  "Genetic disorder screening needed",
-                ].map((indication, index) => (
+                  "IVF - In Vitro Fertilisation",
+                  "ICSI - Intracytoplasmic Sperm Injection",
+                  "PICSI - Physiological ICSI",
+                  "Oocyte (Egg) Freezing",
+                  "Embryo Freezing & Storage",
+                  "Blastocyst Culture",
+                  "Genetic Testing (PGT)",
+                  "Fertility Preservation",
+                  "Recurrent Implantation Failure Treatment",
+                  "IUI - Intrauterine Insemination",
+                ].map((treatment, index) => (
                   <div
                     key={index}
                     className="flex items-start gap-3 p-4 rounded-lg border-2 border-gray-100 hover:border-[#eb9142] transition-colors"
                   >
                     <Check className="w-5 h-5 text-[#eb9142] flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-700">{indication}</span>
+                    <span className="text-gray-700 font-medium">{treatment}</span>
                   </div>
                 ))}
               </div>
@@ -212,51 +236,64 @@ export default function IVFLandingPage() {
         </div>
       </section>
 
-      <section className="py-20 bg-gradient-to-b from-white to-[#fbf7f6]">
+      {/* IVF Journey Section */}
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#47145a] mb-4 text-center">Your IVF Journey</h2>
-            <p className="text-center text-gray-600 mb-12 text-lg">
-              A clear, step-by-step process designed around your unique needs
+          <div className="max-w-5xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#47145a] mb-4 text-center">
+              Your IVF Journey - From Fertility to Fulfilment
+            </h2>
+            <p className="text-center text-gray-600 mb-4 text-lg">
+              A thoughtfully personalized pathway that blends Mother Nature's wisdom with advanced reproductive science
+            </p>
+            <p className="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
+              Each step is designed to support you medically and emotionally, helping you navigate this often
+              challenging journey with clarity, compassion & confidence - towards the ultimate goal of parenthood.
             </p>
 
             <div className="space-y-6">
               {[
                 {
                   step: 1,
-                  title: "Personalised Assessment",
+                  title: "Fertility Assessment & Tailor-Made Roadmap",
                   description:
-                    "Dr Vrushni reviews your complete medical history, test reports, and creates a customised IVF protocol based on your age, diagnosis, and fertility goals.",
+                    "Your journey begins with a comprehensive fertility evaluation of both partners, including hormonal profile, ultrasound scans & detailed semen analysis. Based on these findings, a customized IVF treatment plan is thoughtfully curated. Dr Vrushni places deep importance on the emotional & physical wellbeing of the couple, believing that fertility outcomes are enhanced when both partners are aligned in mind, body & soul. This holistic approach helps prepare you not just medically, but emotionally, to welcome new life & begin your journey toward parenthood with confidence & harmony.",
                 },
                 {
                   step: 2,
                   title: "Ovarian Stimulation",
                   description:
-                    "10-12 days of carefully monitored hormone injections to help your ovaries produce multiple mature eggs. Regular ultrasounds track follicle growth.",
+                    "During this stage the ovaries are stimulated using carefully prescribed hormonal injections. These injections are subcutaneous, gentle & easy for patients to self-administer at home after proper guidance. The goal is to help ovaries produce multiple mature eggs in a single cycle. Follicular growth is closely monitored through a series of painless ultrasound scans & blood tests, allowing the treatment to be adjusted as needed to ensure safe, controlled & optimal response. Dr Vrushni encourages couples to move through the IVF cycle as a united team - supporting one another & maintaining emotional balance, positivity and calm throughout the journey.",
                 },
                 {
                   step: 3,
-                  title: "Egg Collection",
+                  title: "Oocyte Retrieval (Ovum Pick Up)",
                   description:
-                    "Quick 30-minute procedure under sedation using ultrasound guidance. You'll rest for a few hours and go home the same day with minimal discomfort.",
+                    "Oocyte retrieval is a safe & painless procedure performed under general anaesthesia. There are no surgical cuts or stitches involved. Using a transvaginal ultrasound probe, the ovaries are carefully visualized. A fine needle, guided alongside the ultrasound probe, gently enters each ovarian follicle to aspirate the follicular fluid. This fluid is immediately collected in sterile tubes and sent to the embryology laboratory, where the embryologist identifies & retrieves the oocytes (eggs). The procedure typically takes around 30 minutes. After observation, patients are discharged the same day once the effects of anaesthesia wear off & they are medically stable. Rest is advised on the day of procedure with light activities resuming the next day.",
                 },
                 {
                   step: 4,
-                  title: "Lab Fertilisation",
+                  title: "Fertilization - IVF or ICSI",
                   description:
-                    "Eggs and sperm are combined in our advanced embryology lab. ICSI (direct sperm injection) is used if needed for better fertilisation rates.",
+                    "On the day of egg retrieval, all mature eggs are identified & prepared for fertilization in the embryology laboratory. Fertilization is achieved using either IVF (In Vitro Fertilisation) where eggs and sperm are placed together in a specialized culture dish and fertilisation occurs naturally, or ICSI (Intracytoplasmic Sperm Injection) - a precise technique where a single healthy sperm is injected directly into each mature egg to optimize fertilization rates. Around 65%-75% of mature eggs successfully fertilize, creating embryos that will be carefully monitored over the coming days.",
                 },
                 {
                   step: 5,
-                  title: "Embryo Transfer",
+                  title: "Embryo Development",
                   description:
-                    "Painless 5-minute procedure where the best quality embryo is gently placed in your uterus using a thin catheter. No anaesthesia needed.",
+                    "Following fertilization, the embryos are cultured & closely monitored in the embryology laboratory over the next 5 to 6 days. Our advanced lab uses precise temperature control, specialized culture media, and continuous monitoring to create optimal conditions for embryo development. Embryos are assessed daily for quality, growth patterns, and developmental milestones to identify the best candidates for transfer.",
                 },
                 {
                   step: 6,
-                  title: "Pregnancy Test",
+                  title: "Embryo Transfer - Fresh or Frozen",
                   description:
-                    "Blood test 14 days after transfer reveals results. We support you every step with follow-up care whether trying again or celebrating success.",
+                    "Fresh Embryo Transfer: Embryos are transferred in the same cycle as oocyte retrieval, usually on day 2, day 3, or day 5 (blastocyst stage) depending on development. Frozen Embryo Transfer: The embryos are cultured to the desired stage and cryopreserved in liquid nitrogen. They are transferred in a later cycle once the uterine lining is optimally prepared. The embryo transfer procedure is gentle and painless - a soft catheter places the embryo into the prepared endometrial lining. No anaesthesia is required, and you can resume normal activities immediately after.",
+                },
+                {
+                  step: 7,
+                  title: "Luteal Phase Support & Pregnancy Confirmation",
+                  description:
+                    "After embryo transfer, hormonal support is provided to promote successful embryo implantation. This usually includes progesterone (oral, vaginal or injectable) & estrogen in frozen cycles. Support typically starts on the day of oocyte retrieval (fresh cycles) or endometrial preparation (frozen cycles) & continues until the blood pregnancy test (Beta HCG) 12-14 days after transfer. If pregnancy is confirmed, hormonal support may continue for several weeks to ensure optimal pregnancy progression and support.",
                 },
               ].map((item) => (
                 <Card
@@ -268,7 +305,7 @@ export default function IVFLandingPage() {
                       {item.step}
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-xl font-bold text-[#47145a] mb-2">{item.title}</h3>
+                      <h3 className="text-xl font-bold text-[#47145a] mb-3">{item.title}</h3>
                       <p className="text-gray-600 leading-relaxed">{item.description}</p>
                     </div>
                   </CardContent>
@@ -276,55 +313,62 @@ export default function IVFLandingPage() {
               ))}
             </div>
 
-            <div className="mt-12 text-center">
-              <Button
-                asChild
-                size="lg"
-                className="bg-gradient-to-r from-[#47145a] to-[#eb9142] hover:opacity-90 text-white px-8 py-6 text-lg font-bold shadow-xl hover:scale-105 transition-all duration-300"
-              >
-                <Link href="/contact">
-                  <Phone className="w-5 h-5 mr-2" />
-                  Book Your IVF Consultation Now
-                </Link>
-              </Button>
+            <div className="mt-12 p-6 bg-gradient-to-r from-[#fbf7f6] to-white rounded-xl border-2 border-[#eb9142]/20">
+              <div className="flex items-start gap-4">
+                <Info className="w-6 h-6 text-[#eb9142] flex-shrink-0 mt-1" />
+                <div>
+                  <h4 className="font-bold text-[#47145a] mb-2">Book Your Free Consultation</h4>
+                  <p className="text-gray-700 mb-4">
+                    Get transparent fertility treatment costs and detailed guidance from day one. Dr Vrushni will
+                    personally review your case and create a customized treatment plan tailored to your unique needs.
+                  </p>
+                  <Button asChild className="bg-gradient-to-r from-[#47145a] to-[#eb9142] hover:opacity-90 text-white">
+                    <Link href="/contact">
+                      <Phone className="w-4 h-4 mr-2" />
+                      Book Free Consultation
+                    </Link>
+                  </Button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
+      {/* Success Rates Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-[#47145a] mb-4 text-center">Our IVF Success Rates</h2>
             <p className="text-center text-gray-600 mb-12 text-lg">
-              Transparent outcomes based on thousands of successful treatments
+              Transparent outcomes based on personalized treatment protocols and advanced techniques
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
               <Card className="border-2 border-[#eb9142]/20 hover:border-[#eb9142] transition-all duration-300 hover:shadow-xl">
                 <CardContent className="p-8 text-center">
-                  <div className="text-5xl font-bold text-[#47145a] mb-2">40-50%</div>
+                  <div className="text-5xl font-bold text-[#47145a] mb-2">60-70%</div>
                   <div className="text-gray-600 font-medium mb-4">Per Transfer</div>
                   <div className="text-lg font-bold text-[#eb9142]">Under 35 Years</div>
-                  <p className="text-sm text-gray-500 mt-3">Highest success rates with optimal egg quality</p>
+                  <p className="text-sm text-gray-500 mt-3">Optimal success rates with personalized protocols</p>
                 </CardContent>
               </Card>
 
               <Card className="border-2 border-[#eb9142]/20 hover:border-[#eb9142] transition-all duration-300 hover:shadow-xl">
                 <CardContent className="p-8 text-center">
-                  <div className="text-5xl font-bold text-[#47145a] mb-2">30-40%</div>
+                  <div className="text-5xl font-bold text-[#47145a] mb-2">50-60%</div>
                   <div className="text-gray-600 font-medium mb-4">Per Transfer</div>
                   <div className="text-lg font-bold text-[#eb9142]">35-40 Years</div>
-                  <p className="text-sm text-gray-500 mt-3">Strong outcomes with personalised protocols</p>
+                  <p className="text-sm text-gray-500 mt-3">Strong outcomes with tailored treatment plans</p>
                 </CardContent>
               </Card>
 
               <Card className="border-2 border-[#47145a] bg-gradient-to-br from-[#47145a] to-[#66257B] text-white hover:shadow-xl transition-all duration-300 transform hover:scale-105">
                 <CardContent className="p-8 text-center">
-                  <div className="text-5xl font-bold text-[#eb9142] mb-2">85%</div>
-                  <div className="text-gray-100 font-medium mb-4">Cumulative</div>
+                  <div className="text-5xl font-bold text-[#eb9142] mb-2">50-70%</div>
+                  <div className="text-gray-100 font-medium mb-4">Overall Success</div>
                   <div className="text-lg font-bold text-white">Clinic Average</div>
-                  <p className="text-sm text-gray-200 mt-3">With multiple attempts over treatment cycles</p>
+                  <p className="text-sm text-gray-200 mt-3">Evidence-based compassionate fertility care</p>
                 </CardContent>
               </Card>
             </div>
@@ -344,12 +388,12 @@ export default function IVFLandingPage() {
                     </thead>
                     <tbody>
                       {[
-                        { age: "Under 30", success: "45-55%", liveBirth: "40-50%" },
-                        { age: "30-34", success: "40-50%", liveBirth: "35-45%" },
-                        { age: "35-37", success: "35-40%", liveBirth: "30-38%" },
-                        { age: "38-40", success: "25-35%", liveBirth: "22-32%" },
-                        { age: "41-42", success: "15-25%", liveBirth: "12-20%" },
-                        { age: "Over 42", success: "10-15%", liveBirth: "8-12%" },
+                        { age: "Under 30", success: "55-65%", liveBirth: "50-60%" },
+                        { age: "30-34", success: "45-55%", liveBirth: "40-50%" },
+                        { age: "35-37", success: "40-50%", liveBirth: "35-45%" },
+                        { age: "38-40", success: "30-40%", liveBirth: "25-35%" },
+                        { age: "41-42", success: "20-30%", liveBirth: "15-25%" },
+                        { age: "Over 42", success: "10-20%", liveBirth: "8-15%" },
                       ].map((row, index) => (
                         <tr key={index} className="border-b border-gray-100 hover:bg-[#fbf7f6]">
                           <td className="py-3 px-4 text-gray-700">{row.age}</td>
@@ -361,7 +405,8 @@ export default function IVFLandingPage() {
                   </table>
                 </div>
                 <p className="text-sm text-gray-500 mt-4 text-center">
-                  Success rates vary based on individual health factors, egg quality, sperm quality, and lifestyle.
+                  Success rates vary based on individual health factors, egg quality, sperm quality, and lifestyle. The
+                  rates presented are indicative and can be discussed in detail during your consultation.
                 </p>
               </CardContent>
             </Card>
@@ -544,7 +589,7 @@ export default function IVFLandingPage() {
         </div>
       </section>
 
-      <section className="py-16 bg-gradient-to-b from-white to-[#fbf7f6]">
+      <section className="py-20 bg-gradient-to-b from-white to-[#fbf7f6]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             <Card className="border-2 border-[#47145a]/20 bg-gradient-to-r from-white to-[#fbf7f6]">
