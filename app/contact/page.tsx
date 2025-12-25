@@ -7,8 +7,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { MapPin, Phone, Mail, Clock } from "lucide-react"
 import { useState } from "react"
-
-// For now, adding structured data via script tag in the component
+import { createClient } from "@/lib/supabase/client"
 
 export default function ContactPage() {
   const router = useRouter()
@@ -20,15 +19,33 @@ export default function ContactPage() {
   })
 
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [error, setError] = useState<string | null>(null)
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
+    setError(null)
 
-    // Simulate form submission - in production, this would send data to backend
-    setTimeout(() => {
+    try {
+      const supabase = createClient()
+
+      // Insert form data into Supabase
+      const { error: submitError } = await supabase.from("contact_submissions").insert({
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        message: formData.message,
+      })
+
+      if (submitError) throw submitError
+
+      // Redirect to thank you page on success
       router.push("/thank-you")
-    }, 500)
+    } catch (err) {
+      console.error("[v0] Contact form submission error:", err)
+      setError("Failed to submit form. Please try again or call us directly.")
+      setIsSubmitting(false)
+    }
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -271,6 +288,12 @@ export default function ContactPage() {
                           placeholder="Tell us how we can help you"
                         />
                       </div>
+
+                      {error && (
+                        <div className="p-4 bg-red-50 border border-red-200 rounded-md">
+                          <p className="text-sm text-red-600">{error}</p>
+                        </div>
+                      )}
 
                       <Button
                         type="submit"
