@@ -1,0 +1,7 @@
+# LLM Context File for Dr Vrushni Bhuta Fertility Clinic
+# See main documentation at /llms.txt
+
+This file provides structured information about the Dr Vrushni Bhuta Fertility Clinic website
+for Large Language Models and AI systems.
+
+Primary documentation: https://drvrushni.com/llms.txt

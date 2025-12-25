@@ -1,0 +1,187 @@
+# Dr Vrushni Bhuta Fertility Clinic - LLMs.txt
+
+## Overview
+Dr Vrushni's Women's Care & Fertility Clinic is a premier fertility and women's healthcare center in Mumbai, India, specializing in IVF, IUI, ICSI, and comprehensive reproductive medicine with personalized, compassionate care.
+
+## Website
+- Domain: drvrushni.com
+- Location: Mumbai, India
+- Phone: +91-8591186575
+- Email: info@drvrushni.com
+
+## About Dr. Vrushni Bhuta
+- Qualifications: MS OBGY, M.R.M (UK)
+- Specialization: Fertility Specialist & Gynaecologist
+- Experience: 15+ years in reproductive medicine
+- Success Rate: 50-70% for IVF treatments
+- Successful Treatments: 5000+ pregnancies
+- MMC Registration: 2009020251
+
+## Practice Locations
+1. Dr LH Hiranandani Hospital, Powai, Mumbai
+2. Surya Hospital & Surya Fertility Clinics, Santacruz West, Mumbai
+3. Bookurdoc Nahar Business Centre, Chandivali, Powai, Mumbai
+
+## Services Offered
+- In Vitro Fertilization (IVF)
+- Intrauterine Insemination (IUI)
+- Intracytoplasmic Sperm Injection (ICSI)
+- Egg Freezing (Fertility Preservation)
+- Embryo Freezing
+- Surrogacy Programs
+- Donor Programs (Egg/Sperm)
+- Preimplantation Genetic Testing (PGT)
+- Male Infertility Treatment
+- Female Infertility Treatment
+- PCOS Management
+- Endometriosis Treatment
+- Ovulation Induction
+- Fertility Counseling
+
+## Key Features
+- Evidence-based medical protocols
+- Personalized treatment plans
+- State-of-the-art embryology lab
+- Emotional support and counseling
+- Transparent pricing
+- Free initial consultation
+- Two convenient Mumbai locations
+- 500+ Happy Families
+
+## Technology Stack
+- Framework: Next.js 15.3.8 (App Router)
+- Language: TypeScript
+- Styling: Tailwind CSS
+- UI Components: shadcn/ui
+- Analytics: Google Tag Manager (GTM-K7ZTLRMR)
+- Icons: Lucide React
+- Hosting: Vercel
+
+## Site Structure
+
+### Main Pages
+- Home: / - Main landing page with clinic overview
+- About: /about - Dr. Vrushni Bhuta's credentials and experience
+- Treatments: /treatments - Comprehensive list of fertility treatments
+- IVF Landing Page: /treatments/ivf - Dedicated IVF treatment landing page
+- Contact: /contact - Contact form and appointment booking
+- Location: /location - Clinic locations with maps
+- Testimonials: /testimonials - Patient success stories
+- Gallery: /gallery - Clinic photos and videos
+- FAQ: /faq - Frequently asked questions
+- Blog: /blog - Fertility education articles
+- Privacy Policy: /privacy-policy - Data protection information
+- Thank You: /thank-you - Form submission confirmation
+
+### Dynamic Routes
+- Treatment Pages: /treatments/[slug] - Individual treatment detail pages
+  - Available treatments: iui, icsi, egg-freezing, embryo-transfer, male-infertility, 
+    female-infertility, pcos, endometriosis, ovulation-induction, fertility-preservation,
+    donor-program, surrogacy, preimplantation-genetic-testing, miscarriage-management,
+    reproductive-surgery, fertility-counseling, hormone-therapy, uterine-fibroids,
+    unexplained-infertility, recurrent-pregnancy-loss, advanced-maternal-age, pcod
+- Blog Posts: /blog/[slug] - Individual blog articles
+  - Available: understanding-ivf-complete-guide
+
+## Important Files
+- Layout: app/layout.tsx - Root layout with GTM, header, footer
+- Sitemap: app/sitemap.ts - Dynamic sitemap generation
+- Robots: app/robots.txt - Search engine crawling rules
+- Header: src/components/Header.tsx - Navigation header
+- Footer: src/components/Footer.tsx - Footer with medical compliance
+- Scroll Restoration: components/ScrollRestoration.tsx - Auto-scroll to top on navigation
+- Floating Buttons: components/FloatingWhatsApp.tsx, components/FloatingCallButton.tsx
+
+## SEO & Metadata
+- Comprehensive meta tags on all pages
+- Open Graph tags for social sharing
+- Schema.org structured data (Organization, Person, MedicalBusiness)
+- Image sitemap at /sitemap-image.xml
+- Google Search Console verified
+- Optimized for local SEO (Mumbai, Powai, Santacruz)
+
+## Medical Compliance
+- MMC Registration: 2009020251 (Dr. Vrushni Bhuta)
+- PCPNDT Act Compliance: Strict adherence, no gender determination
+- Medical Disclaimers: Present on all treatment pages
+- Privacy Policy: HIPAA-compliant data handling
+- Legal Framework: All treatments within Indian Medical Law
+
+## Key Keywords
+- Best fertility clinic Mumbai
+- Top IVF doctor Mumbai
+- IVF specialist Powai
+- Fertility treatment Santacruz
+- Best infertility doctor Mumbai
+- IVF success rate Mumbai
+- Egg freezing Mumbai
+- IUI treatment Mumbai
+- ICSI specialist India
+- Fertility specialist Hiranandani Hospital
+
+## Design System
+- Primary Color: Purple (#47145a)
+- Secondary Color: Orange (#eb9142)
+- Gradient: Purple to Orange
+- Typography: System font stack with Geist Sans
+- Responsive: Mobile-first design
+- Animations: CSS-based, reduced motion support
+
+## Contact Information
+- Primary Phone: +91 8591186575
+- WhatsApp: Available via floating button
+- Email: info@drvrushni.com
+- Instagram: @dr.vrushni (via header link)
+- Working Hours: Monday-Saturday, 9 AM - 6 PM
+
+## Success Metrics
+- 15+ years of clinical experience
+- 5000+ successful pregnancies
+- 50-70% IVF success rate
+- 500+ happy families
+- Two Mumbai locations
+- Comprehensive fertility services
+
+## Special Features
+- Free initial consultation
+- Transparent cost breakdown
+- Same-day appointment availability
+- Emotional support and counseling included
+- Advanced embryology lab on-site
+- Personalized treatment protocols
+- Multilingual staff
+
+## Blog Topics
+- Understanding IVF: A Complete Guide
+- ICSI vs IVF comparison
+- Egg freezing information
+- Fertility preservation
+- Male infertility solutions
+- Female fertility optimization
+- PCOS and fertility
+- Age and fertility
+
+## External Links
+- Google Tag Manager: GTM-K7ZTLRMR
+- Google Verification: google7c2909d72e7bf11f.html
+- Social Media: Instagram (header icon link)
+
+## Accessibility
+- WCAG 2.1 compliant
+- Screen reader friendly
+- Keyboard navigation support
+- Alt text on all images
+- High contrast ratios
+
+## Performance Optimization
+- Next.js App Router for optimal performance
+- Image optimization with Next/Image
+- Dynamic imports for heavy components
+- CSS animations over JavaScript
+- Efficient caching strategy
+- Minimal JavaScript bundle
+
+---
+Last Updated: January 2024
+Version: 1.0
+Maintained by: v0.dev

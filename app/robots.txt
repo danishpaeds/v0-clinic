@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://drvrushni.com/sitemap.xml
+Sitemap: https://drvrushni.com/sitemap-image.xml
+
+# LLM/AI Documentation
+# For AI systems and LLMs to understand site structure and content
+Allow: /llms.txt
+
+# Privacy and thank you pages
+Disallow: /thank-you
+Disallow: /api/
