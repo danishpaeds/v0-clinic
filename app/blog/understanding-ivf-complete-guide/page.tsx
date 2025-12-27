@@ -6,15 +6,38 @@ import { ArrowLeft, Calendar, Clock, CheckCircle2, Info } from "lucide-react"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Understanding IVF: A Complete Guide | Dr Vrushni Bhuta Fertility Clinic Mumbai",
+  title: "IVF Complete Guide Mumbai | Dr Vrushni Bhuta Clinic",
   description:
-    "Comprehensive guide to IVF treatment in Mumbai by Dr Vrushni Bhuta. Learn about the IVF process, success rates, what to expect, and make informed decisions about your fertility journey.",
+    "Expert IVF guide by Dr Vrushni Bhuta. Learn the process, success rates, costs & what to expect. Make informed fertility decisions in Mumbai.",
   keywords:
     "IVF guide Mumbai, IVF process explained, IVF success rates, fertility treatment Mumbai, Dr Vrushni Bhuta IVF, IVF step by step, IVF cost Mumbai, best IVF specialist Mumbai",
   openGraph: {
-    title: "Understanding IVF: A Complete Guide | Dr Vrushni Bhuta",
-    description: "Expert insights on IVF treatment from Mumbai's leading fertility specialist.",
+    title: "Understanding IVF: Complete Guide | Dr Vrushni Bhuta",
+    description:
+      "Expert IVF insights from Mumbai's leading fertility specialist. Process, success rates & realistic expectations.",
+    type: "article",
+    locale: "en_IN",
+    url: "https://drvrushni.com/blog/understanding-ivf-complete-guide",
+    images: [
+      {
+        url: "/images/doctor-purple-blazer-seated.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Dr Vrushni Bhuta - IVF Guide Mumbai",
+      },
+    ],
+    publishedTime: "2025-12-20",
+    modifiedTime: "2025-12-20",
+    authors: ["Dr Vrushni Bhuta"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Understanding IVF: Complete Guide | Dr Vrushni Bhuta",
+    description: "Expert IVF insights from Mumbai's leading fertility specialist.",
     images: ["/images/doctor-purple-blazer-seated.jpg"],
+  },
+  other: {
+    "last-modified": "December 2025",
   },
 }
 
@@ -29,8 +52,15 @@ export default function UnderstandingIVFBlogPost() {
     author: {
       "@type": "Person",
       name: "Dr. Vrushni Bhuta",
-      jobTitle: "Fertility Specialist",
-      affiliation: "Dr Vrushni's Women's Care & Fertility Clinic",
+      jobTitle: "Fertility Specialist & Gynaecologist",
+      affiliation: {
+        "@type": "Organization",
+        name: "Dr Vrushni's Women's Care & Fertility Clinic",
+        url: "https://drvrushni.com",
+      },
+      alumniOf: "Homerton University, London",
+      hasCredential: ["MS OBGY", "Fellowship in Endoscopy (ICOG)", "M.R.M (UK)"],
+      sameAs: ["https://drvrushni.com/about"],
     },
     publisher: {
       "@type": "Organization",
@@ -40,8 +70,24 @@ export default function UnderstandingIVFBlogPost() {
         url: "https://drvrushni.com/images/dr-vrushni-bhuta-logo.png",
       },
     },
-    datePublished: "2024-01-15",
-    dateModified: "2024-01-15",
+    datePublished: "2025-12-20",
+    dateModified: "2025-12-20",
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": "https://drvrushni.com/blog/understanding-ivf-complete-guide",
+    },
+    keywords: [
+      "IVF",
+      "ICSI",
+      "fertility treatment",
+      "IVF process",
+      "IVF success rate",
+      "Mumbai IVF",
+      "fertility specialist",
+    ],
+    articleSection: "Fertility Education",
+    wordCount: 3500,
+    inLanguage: "en-IN",
   }
 
   return (
@@ -52,7 +98,20 @@ export default function UnderstandingIVFBlogPost() {
         {/* Hero Section */}
         <section className="relative bg-gradient-to-br from-[#47145a] to-[#5a1b71] text-white py-20">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-4xl mx-auto">
+            <div className="max-w-4xl mx-auto text-center">
+              <div className="flex items-center justify-center gap-4 mb-6">
+                <span className="inline-block px-4 py-2 text-xs font-semibold text-white bg-[#eb9142] rounded-full uppercase tracking-wider">
+                  Fertility Education
+                </span>
+                <span className="flex items-center gap-1 text-sm">
+                  <Calendar className="w-4 h-4" />
+                  <span>December 20, 2025</span>
+                </span>
+                <span className="flex items-center gap-1 text-sm">
+                  <Clock className="w-4 h-4" />
+                  <span>12 min read</span>
+                </span>
+              </div>
               <Link
                 href="/blog"
                 className="inline-flex items-center text-[#eb9142] hover:text-[#d67f35] mb-6 transition-colors"
@@ -60,20 +119,7 @@ export default function UnderstandingIVFBlogPost() {
                 <ArrowLeft className="w-4 h-4 mr-2" />
                 Back to blog
               </Link>
-              <span className="text-[#eb9142] font-bold text-sm tracking-wider uppercase block mb-4">
-                FERTILITY EDUCATION
-              </span>
               <h1 className="text-4xl md:text-5xl font-extrabold mb-6">Understanding IVF: A Complete Guide</h1>
-              <div className="flex items-center gap-6 text-gray-300">
-                <div className="flex items-center gap-2">
-                  <Calendar className="w-4 h-4" />
-                  <span>January 15, 2024</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Clock className="w-4 h-4" />
-                  <span>12 min read</span>
-                </div>
-              </div>
             </div>
           </div>
         </section>
@@ -95,7 +141,9 @@ export default function UnderstandingIVFBlogPost() {
                   </div>
                   <div>
                     <p className="font-bold text-[#47145a]">Dr Vrushni Bhuta</p>
-                    <p className="text-sm text-gray-600">MS OBGY, M.R.M (UK) - Fertility Specialist, Mumbai</p>
+                    <p className="text-sm text-gray-600">
+                      MS OBGY, Fellowship in Endoscopy (ICOG), M.R.M (UK) - Fertility Specialist & Gynaecologist, Mumbai
+                    </p>
                     <p className="text-xs text-gray-500 mt-1">
                       Dr Vrushni's Women's Care & Fertility Clinic, Santacruz West
                     </p>
@@ -311,7 +359,7 @@ export default function UnderstandingIVFBlogPost() {
               </div>
 
               {/* Step 4 */}
-              <div className="bg-gradient-to-r from-[#eb9142]/5 to-white border-l-4 border-[#eb9142] p-6 rounded-r-lg mb-6">
+              <div className="bg-gradient-to-r from-[#47145a]/5 to-white border-l-4 border-[#47145a] p-6 rounded-r-lg mb-6">
                 <h4 className="text-xl font-bold text-[#47145a] mb-3">4. Embryo Culture – Careful Observation</h4>
                 <p className="text-gray-700 leading-relaxed mb-3">
                   Fertilized eggs are cultured for 3–5 days in specialized incubators.

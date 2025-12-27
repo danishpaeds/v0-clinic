@@ -4,23 +4,38 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { AnimatedSection, FadeIn, ScaleIn, SlideInLeft, SlideInRight } from "@/components/AnimatedSection"
-import { Heart, Award, Users, ArrowRight, Star, Calendar, Sparkles } from "lucide-react"
+import { Heart, Award, Users, ArrowRight, Star, Calendar, Sparkles, Clock } from "lucide-react"
 import { InlineCallButton } from "@/components/InlineCallButton"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Best Fertility Clinic in Mumbai | IVF Specialist Powai & Santacruz - Dr Vrushni",
+  title: "Best IVF Doctor Mumbai | Dr Vrushni Bhuta Fertility Clinic",
   description:
-    "Dr Vrushni Bhuta - Mumbai's trusted IVF & fertility specialist with 15+ years experience. Expert in IVF, IUI, ICSI, egg freezing. 85% success rate. Clinics in Powai (Hiranandani Hospital) & Santacruz West (Surya Hospital). Book your consultation today.",
+    "Dr Vrushni Bhuta - Mumbai's trusted IVF specialist. 15+ years experience, 85% success rate. Clinics in Powai & Santacruz. Book consultation today.",
   keywords:
     "best fertility clinic Mumbai, top IVF doctor Mumbai, IVF specialist Powai, fertility treatment Santacruz, Dr Vrushni Bhuta reviews, IVF success rate Mumbai, egg freezing Mumbai cost, best infertility doctor Mumbai, IUI treatment Mumbai, ICSI specialist India",
   openGraph: {
-    title: "Dr Vrushni Bhuta - Mumbai's #1 Fertility & IVF Specialist",
+    title: "Dr Vrushni Bhuta - Mumbai's #1 IVF & Fertility Specialist",
     description:
       "Award-winning fertility specialist with 5000+ successful treatments. Personalized IVF care with 85% success rate. Two convenient locations in Mumbai.",
     type: "website",
     locale: "en_IN",
     siteName: "Dr Vrushni Bhuta Fertility Clinic",
+    url: "https://drvrushni.com",
+    images: [
+      {
+        url: "/images/doctor-purple-suit.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Dr Vrushni Bhuta - Best IVF Specialist in Mumbai",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Dr Vrushni Bhuta - Mumbai's #1 IVF & Fertility Specialist",
+    description: "Award-winning fertility specialist with 5000+ successful treatments. 85% success rate.",
+    images: ["/images/doctor-purple-suit.jpg"],
   },
 }
 
@@ -324,10 +339,11 @@ export default function Home() {
                 <div className="relative aspect-[3/4] md:aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl max-w-md mx-auto lg:max-w-none hover:scale-105 hover:shadow-3xl hover:shadow-purple-500/30 transition-all duration-500 border-4 border-white/50 dark:border-purple-900/50">
                   <Image
                     src="/images/doctor-purple-blazer-seated.jpg"
-                    alt="Dr. Vrushni Bhuta - Leading Fertility Specialist in Mumbai"
+                    alt="Dr Vrushni Bhuta - Best IVF Fertility Specialist in Mumbai Powai Santacruz"
                     fill
                     className="object-cover"
                     priority
+                    sizes="(max-width: 768px) 100vw, 50vw"
                   />
                 </div>
 
@@ -379,9 +395,11 @@ export default function Home() {
                 <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-xl max-w-md mx-auto lg:max-w-none hover:scale-105 transition-transform duration-500">
                   <Image
                     src="/images/doctor-coral-suit.jpg"
-                    alt="Dr. Vrushni Bhuta providing personalized fertility consultation"
+                    alt="Dr Vrushni Bhuta providing personalized IVF consultation at Mumbai clinic Powai Santacruz"
                     fill
                     className="object-cover"
+                    loading="lazy"
+                    sizes="(max-width: 768px) 100vw, 50vw"
                   />
                 </div>
               </SlideInLeft>
@@ -470,10 +488,11 @@ export default function Home() {
                       <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-[28rem] lg:h-[28rem] rounded-3xl overflow-hidden shadow-2xl shadow-purple-500/30 ring-4 ring-purple-200/50 dark:ring-purple-800/50 hover:scale-105 hover:ring-purple-400/50 transition-all duration-500">
                         <Image
                           src="/images/dr-vrushni-bhuta-logo.png"
-                          alt="Dr. Vrushni Bhuta - Women's Care & Fertility Clinic Logo"
+                          alt="Dr. Vrushni's Women's Care & Fertility Clinic Logo - Mumbai Powai Santacruz"
                           fill
                           className="object-contain p-8 md:p-12 lg:p-16"
-                          priority
+                          loading="lazy"
+                          sizes="(max-width: 768px) 80vw, 40vw"
                         />
                       </div>
                     </FadeIn>
@@ -508,7 +527,7 @@ export default function Home() {
                         <Button
                           asChild
                           size="lg"
-                          className="text-lg md:text-xl px-10 md:px-12 lg:px-16 py-7 md:py-8 bg-gradient-to-r from-purple-600 to-orange-500 hover:from-purple-700 hover:to-orange-600 shadow-xl shadow-purple-500/30 hover:shadow-2xl hover:shadow-purple-500/40 transition-all hover:scale-105"
+                          className="text-lg md:text-xl px-10 md:px-12 lg:px-16 py-7 md:py-8 bg-gradient-to-r from-purple-600 to-orange-500 hover:from-purple-700 hover:to-orange-600 shadow-xl shadow-purple-500/30 hover:shadow-2xl hover:shadow-purple-500/40 transition-all hover:scale-[1.02]"
                         >
                           <Link href="/contact">
                             Start Your Journey Today
@@ -525,6 +544,123 @@ export default function Home() {
                   </div>
                 </CardContent>
               </Card>
+            </div>
+          </div>
+        </section>
+
+        {/* Featured Resource Section */}
+        <section className="py-12 md:py-20 bg-gradient-to-br from-purple-50/50 via-white to-orange-50/50 dark:from-purple-950/10 dark:via-background dark:to-orange-950/10">
+          <div className="container px-4 mx-auto">
+            <div className="max-w-6xl mx-auto">
+              <AnimatedSection className="text-center mb-10 md:mb-12 space-y-4">
+                <Badge
+                  variant="outline"
+                  className="text-purple-700 dark:text-purple-300 border-purple-300 dark:border-purple-700 bg-purple-50/50 dark:bg-purple-950/20 text-base md:text-lg px-5 py-2 font-semibold"
+                >
+                  Educational Resources
+                </Badge>
+                <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl text-balance">
+                  Learn About Your Fertility Journey
+                </h2>
+                <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                  Comprehensive guides to help you understand your treatment options and make informed decisions
+                </p>
+              </AnimatedSection>
+
+              <FadeIn delay={0.3}>
+                <Card className="overflow-hidden border-2 border-purple-200/50 dark:border-purple-800/50 shadow-xl hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-500 hover:scale-[1.02] bg-gradient-to-br from-white to-purple-50/30 dark:from-background dark:to-purple-950/10">
+                  <div className="grid md:grid-cols-5 gap-0">
+                    {/* Image Section */}
+                    <div className="md:col-span-2 relative h-64 md:h-auto">
+                      <div className="absolute inset-0 bg-gradient-to-br from-purple-600/20 to-orange-600/20 z-10" />
+                      <Image
+                        src="/images/doctor-purple-blazer-seated.jpg"
+                        alt="Dr Vrushni Bhuta - IVF Expert Mumbai"
+                        fill
+                        className="object-cover"
+                        loading="lazy"
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                      />
+                      <div className="absolute top-4 left-4 z-20">
+                        <Badge className="bg-gradient-to-r from-purple-600 to-orange-500 text-white border-0 text-sm px-3 py-1">
+                          Featured Guide
+                        </Badge>
+                      </div>
+                    </div>
+
+                    {/* Content Section */}
+                    <CardContent className="md:col-span-3 p-6 md:p-8 lg:p-10 flex flex-col justify-center">
+                      <div className="space-y-4">
+                        <div className="flex items-center gap-3 text-sm text-muted-foreground">
+                          <div className="flex items-center gap-1">
+                            <Calendar className="w-4 h-4" />
+                            <span>December 20, 2025</span>
+                          </div>
+                          <span>•</span>
+                          <div className="flex items-center gap-1">
+                            <Clock className="w-4 h-4" />
+                            <span>12 min read</span>
+                          </div>
+                        </div>
+
+                        <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold bg-gradient-to-r from-purple-600 to-orange-500 bg-clip-text text-transparent hover:from-purple-700 hover:to-orange-600 transition-all">
+                          Understanding IVF: A Complete Guide
+                        </h3>
+
+                        <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+                          A comprehensive guide to IVF treatment by Dr Vrushni Bhuta. Learn about the step-by-step
+                          process, success rates, costs, and what to expect during your fertility journey in Mumbai.
+                        </p>
+
+                        <div className="flex flex-wrap gap-2">
+                          <Badge variant="secondary" className="text-xs">
+                            IVF Process
+                          </Badge>
+                          <Badge variant="secondary" className="text-xs">
+                            Success Rates
+                          </Badge>
+                          <Badge variant="secondary" className="text-xs">
+                            Treatment Guide
+                          </Badge>
+                          <Badge variant="secondary" className="text-xs">
+                            Mumbai
+                          </Badge>
+                        </div>
+
+                        <div className="pt-4">
+                          <Button
+                            asChild
+                            size="lg"
+                            className="bg-gradient-to-r from-purple-600 to-orange-500 hover:from-purple-700 hover:to-orange-600 shadow-lg hover:shadow-xl transition-all hover:scale-105"
+                          >
+                            <Link href="/blog/understanding-ivf-complete-guide">
+                              Read Complete Guide
+                              <ArrowRight className="ml-2 h-5 w-5" />
+                            </Link>
+                          </Button>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </div>
+                </Card>
+              </FadeIn>
+
+              {/* Additional CTA */}
+              <FadeIn delay={0.5}>
+                <div className="text-center mt-8">
+                  <Button
+                    asChild
+                    variant="outline"
+                    size="lg"
+                    className="hover:scale-105 transition-transform bg-transparent"
+                  >
+                    <Link href="/blog">
+                      View All Articles
+                      <ArrowRight className="ml-2 h-5 w-5" />
+                    </Link>
+                  </Button>
+                </div>
+              </FadeIn>
             </div>
           </div>
         </section>
@@ -574,6 +710,13 @@ export default function Home() {
             </AnimatedSection>
           </div>
         </section>
+
+        {/* Content Last Updated Metadata */}
+        <div className="py-4 text-center border-t border-gray-200">
+          <p className="text-xs text-gray-500">
+            Content Last Updated: December 2025 | Dr Vrushni Bhuta Fertility Clinic Mumbai
+          </p>
+        </div>
       </div>
     </>
   )

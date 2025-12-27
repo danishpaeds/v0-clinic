@@ -16,16 +16,35 @@ import {
 import Image from "next/image"
 
 export const metadata = {
-  title: "About Dr Vrushni Bhuta MS OBGY MRM - Top Fertility Specialist Mumbai",
+  title: "Dr Vrushni Bhuta - Top IVF Specialist Mumbai | MS OBGY",
   description:
-    "Meet Dr Vrushni Bhuta - Board certified fertility specialist with MS OBGY, MRM (UK), Fellowship in Reproductive Medicine. 15+ years experience in IVF, IUI, ICSI. Practicing at Hiranandani Hospital Powai & Surya Hospital Santacruz. 5000+ successful pregnancies.",
+    "Meet Dr Vrushni Bhuta - Board certified fertility specialist. MS OBGY, MRM UK, 15+ years experience. 5000+ successful pregnancies at Hiranandani & Surya.",
   keywords:
     "Dr Vrushni Bhuta qualifications, fertility doctor credentials Mumbai, MS OBGY Mumbai, MRM fertility specialist, best IVF doctor Mumbai reviews, fertility specialist Hiranandani Hospital, IVF expert Santacruz, reproductive medicine specialist Mumbai",
   openGraph: {
-    title: "Dr Vrushni Bhuta - Award-Winning Fertility Specialist | Mumbai",
+    title: "Dr Vrushni Bhuta - Award-Winning Fertility Specialist",
     description:
-      "Board-certified fertility specialist with international training from London. 15+ years expertise, 5000+ success stories, 85% treatment success rate.",
+      "Board-certified fertility specialist with international training from London. 15+ years expertise, 5000+ success stories.",
+    type: "website",
+    locale: "en_IN",
+    url: "https://drvrushni.com/about",
+    images: [
+      {
+        url: "/images/doctor-purple-blazer-seated.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Dr Vrushni Bhuta - Fertility Specialist Mumbai",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Dr Vrushni Bhuta - Award-Winning Fertility Specialist",
+    description: "Board-certified fertility specialist with 15+ years expertise, 5000+ success stories.",
     images: ["/images/doctor-purple-blazer-seated.jpg"],
+  },
+  other: {
+    "last-modified": "December 2025",
   },
 }
 
@@ -75,7 +94,7 @@ export default function AboutPage() {
         credentialCategory: "fellowship",
         name: "Fellowship in Endoscopy (ICOG)",
         recognizedBy: {
-          "@type": "MedicalOrganization",
+          "@type": "EducationalOrganization",
           name: "Indian College of Obstetricians and Gynecologists",
         },
       },
@@ -192,7 +211,7 @@ export default function AboutPage() {
                 <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
                   <Image
                     src="/images/doctor-purple-suit.jpg"
-                    alt="Dr Vrushni Bhuta - Fertility Specialist"
+                    alt="Dr Vrushni Bhuta - Award-Winning Fertility Specialist Mumbai Powai Santacruz Hiranandani"
                     fill
                     className="object-cover"
                     priority
@@ -397,7 +416,7 @@ export default function AboutPage() {
                         <div className="relative w-full h-full max-w-3xl max-h-3xl transform group-hover:scale-105 transition-all duration-500">
                           <Image
                             src="/images/dr-vrushni-bhuta-logo.png"
-                            alt="Dr. Vrushni Bhuta Logo"
+                            alt="Dr Vrushni Women's Care & Fertility Clinic Logo Mumbai"
                             fill
                             className="object-contain p-8 lg:p-16"
                             priority
@@ -590,6 +609,11 @@ export default function AboutPage() {
             </div>
           </div>
         </section>
+
+        {/* Last Updated Section */}
+        <div className="mt-12 pt-8 border-t border-gray-200 text-center">
+          <p className="text-sm text-gray-500">Profile Last Updated: December 2025 | MMC Registration: 2009020251</p>
+        </div>
       </div>
     </>
   )

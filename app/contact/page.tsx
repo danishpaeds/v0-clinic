@@ -98,23 +98,23 @@ export default function ContactPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
 
       <div className="flex flex-col">
-        {/* Hero Section */}
-        <section className="relative bg-gradient-to-br from-[#47145a] to-[#5a1b71] text-white py-20">
+        <section className="relative bg-gradient-to-br from-[#47145a] to-[#5a1b71] text-white py-12 sm:py-16 md:py-20">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto text-center">
-              <span className="text-[#eb9142] font-bold text-sm tracking-wider uppercase">GET IN TOUCH</span>
-              <h1 className="text-4xl md:text-5xl font-extrabold mt-4 mb-6">We are here to guide and support you</h1>
-              <p className="text-xl text-gray-200">
+              <span className="text-[#eb9142] font-bold text-xs sm:text-sm tracking-wider uppercase">GET IN TOUCH</span>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mt-3 sm:mt-4 mb-4 sm:mb-6 leading-tight">
+                We are here to guide and support you
+              </h1>
+              <p className="text-lg sm:text-xl text-gray-200 leading-relaxed">
                 Please reach out to us by phone or email to schedule your appointment
               </p>
             </div>
           </div>
         </section>
 
-        {/* Contact Information & Form */}
-        <section className="py-20 bg-white">
+        <section className="py-12 sm:py-16 md:py-20 bg-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12">
               {/* Contact Information */}
               <div className="space-y-8">
                 <div>
@@ -219,12 +219,11 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              {/* Contact Form */}
               <div>
                 <Card className="border-2 border-[#47145a]/10">
-                  <CardContent className="p-8">
-                    <h2 className="text-2xl font-bold text-[#47145a] mb-6">Send us a message</h2>
-                    <form onSubmit={handleSubmit} className="space-y-6">
+                  <CardContent className="p-6 sm:p-8">
+                    <h2 className="text-xl sm:text-2xl font-bold text-[#47145a] mb-4 sm:mb-6">Send us a message</h2>
+                    <form onSubmit={handleSubmit} className="space-y-5 sm:space-y-6">
                       <div>
                         <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
                           Full Name *
@@ -236,7 +235,7 @@ export default function ContactPage() {
                           required
                           value={formData.name}
                           onChange={handleChange}
-                          className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#eb9142] focus:border-transparent"
+                          className="w-full px-4 py-3.5 sm:py-3 text-base border border-gray-300 rounded-md focus:ring-2 focus:ring-[#eb9142] focus:border-transparent touch-manipulation"
                           placeholder="Enter your name"
                         />
                       </div>
@@ -252,8 +251,10 @@ export default function ContactPage() {
                           required
                           value={formData.email}
                           onChange={handleChange}
-                          className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#eb9142] focus:border-transparent"
+                          className="w-full px-4 py-3.5 sm:py-3 text-base border border-gray-300 rounded-md focus:ring-2 focus:ring-[#eb9142] focus:border-transparent touch-manipulation"
                           placeholder="Enter your email"
+                          inputMode="email"
+                          autoComplete="email"
                         />
                       </div>
 
@@ -268,8 +269,10 @@ export default function ContactPage() {
                           required
                           value={formData.phone}
                           onChange={handleChange}
-                          className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#eb9142] focus:border-transparent"
+                          className="w-full px-4 py-3.5 sm:py-3 text-base border border-gray-300 rounded-md focus:ring-2 focus:ring-[#eb9142] focus:border-transparent touch-manipulation"
                           placeholder="Enter your phone number"
+                          inputMode="tel"
+                          autoComplete="tel"
                         />
                       </div>
 
@@ -284,7 +287,7 @@ export default function ContactPage() {
                           rows={5}
                           value={formData.message}
                           onChange={handleChange}
-                          className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#eb9142] focus:border-transparent resize-none"
+                          className="w-full px-4 py-3.5 sm:py-3 text-base border border-gray-300 rounded-md focus:ring-2 focus:ring-[#eb9142] focus:border-transparent resize-none touch-manipulation"
                           placeholder="Tell us how we can help you"
                         />
                       </div>
@@ -298,7 +301,7 @@ export default function ContactPage() {
                       <Button
                         type="submit"
                         size="lg"
-                        className="w-full bg-[#eb9142] hover:bg-[#d67f35] text-white"
+                        className="w-full bg-[#eb9142] hover:bg-[#d67f35] text-white text-base sm:text-lg font-bold min-h-[52px] touch-manipulation"
                         disabled={isSubmitting}
                       >
                         {isSubmitting ? "Sending..." : "Send Message"}

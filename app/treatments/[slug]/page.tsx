@@ -1853,8 +1853,8 @@ export function generateStaticParams() {
 }
 
 export default async function TreatmentPage({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params
-  const treatment = treatments[slug]
+  const resolvedParams = await params
+  const treatment = treatments[resolvedParams.slug as keyof typeof treatments]
 
   if (!treatment) {
     notFound()
@@ -1913,14 +1913,32 @@ export default async function TreatmentPage({ params }: { params: Promise<{ slug
     },
   }
 
+  const faqSchema = treatment.faqs
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: treatment.faqs.map((faq) => ({
+          "@type": "Question",
+          name: faq.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: faq.answer,
+          },
+        })),
+      }
+    : null
+
   const relatedTreatments = Object.entries(treatments)
-    .filter(([slug]) => slug !== params.slug)
+    .filter(([slug]) => slug !== resolvedParams.slug)
     .map(([slug, data]) => ({ slug, ...data }))
     .slice(0, 3)
 
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(procedureSchema) }} />
+      {faqSchema && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      )}
 
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-[#47145a] via-[#5a1b71] to-[#47145a] text-white py-20 overflow-hidden">
@@ -2119,6 +2137,9 @@ export default async function TreatmentPage({ params }: { params: Promise<{ slug
               <h2 className="text-3xl md:text-4xl font-bold text-[#47145a] mb-12 text-center">
                 Frequently Asked Questions
               </h2>
+              <p className="text-sm text-gray-500 text-center mb-8">
+                Last Updated: {new Date().toLocaleDateString("en-IN", { month: "long", year: "numeric" })}
+              </p>
               <div className="space-y-6">
                 {treatment.faqs.map((faq, index) => (
                   <Card key={index} className="border-2 border-gray-100 hover:border-[#eb9142] transition-colors">

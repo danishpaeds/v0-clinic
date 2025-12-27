@@ -4,15 +4,31 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 
 export const metadata = {
-  title: "Patient Success Stories & Testimonials - Dr Vrushni Bhuta Fertility Clinic | Mumbai",
+  title: "Patient Success Stories | Dr Vrushni Bhuta IVF Mumbai",
   description:
-    "Read real success stories and testimonials from patients who achieved their dream of parenthood with Dr Vrushni Bhuta. IVF, IUI, and fertility treatment reviews from Mumbai.",
+    "Read real IVF success stories & testimonials from patients who achieved parenthood with Dr Vrushni Bhuta. Real reviews from Mumbai fertility clinic.",
   keywords:
     "fertility testimonials Mumbai, IVF success stories, patient reviews Dr Vrushni Bhuta, fertility clinic reviews Mumbai, IVF testimonials India, successful fertility treatment stories",
   openGraph: {
     title: "Real Patient Success Stories - Dr Vrushni Bhuta",
     description: "Inspiring stories from families who achieved their parenthood dreams through expert fertility care.",
     type: "website",
+    locale: "en_IN",
+    url: "https://drvrushni.com/testimonials",
+    images: [
+      {
+        url: "/images/doctor-purple-suit.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Patient Success Stories - Dr Vrushni Bhuta Fertility Clinic",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Real Patient Success Stories - Dr Vrushni Bhuta",
+    description: "Inspiring stories from families who achieved their parenthood dreams.",
+    images: ["/images/doctor-purple-suit.jpg"],
   },
 }
 

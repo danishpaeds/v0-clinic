@@ -5,27 +5,44 @@ import { Check, Phone, MessageCircle, Award, Clock, Heart, Shield, Star, Info } 
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "IVF Treatment Mumbai | 50-70% Success | Dr Vrushni Bhuta Powai Santacruz",
+  title: "IVF Treatment Mumbai - 50-70% Success | Dr Vrushni Bhuta",
   description:
-    "Leading IVF & fertility clinic in Mumbai with 50-70% success rate. Personalized IVF/ICSI treatment by Dr Vrushni Bhuta MS OBGY, MRM (UK). Hiranandani Hospital Powai & Santacruz West. Book consultation today.",
+    "Advanced IVF treatment in Mumbai with 50-70% success rate. Expert care at Hiranandani Powai & Surya Santacruz. Free consultation with Dr Vrushni Bhuta.",
   keywords: [
-    "IVF Mumbai",
     "IVF treatment Mumbai",
-    "IVF doctor Powai",
-    "IVF Santacruz",
+    "IVF specialist Powai",
+    "Best IVF doctor Mumbai",
+    "IVF cost Mumbai",
     "IVF success rate Mumbai",
-    "best IVF clinic Mumbai",
-    "IVF specialist Mumbai",
-    "ICSI Mumbai",
-    "fertility specialist Mumbai",
-    "Dr Vrushni Bhuta IVF",
-    "Assisted Reproductive Technology Mumbai",
+    "Fertility clinic Hiranandani",
+    "ICSI treatment Mumbai",
+    "Advanced IVF Mumbai",
   ],
   openGraph: {
-    title: "IVF Treatment Mumbai | 50-70% Success | Dr Vrushni Bhuta",
-    description: "Leading IVF clinic Mumbai with 50-70% success rate. Expert IVF/ICSI treatment at Powai & Santacruz.",
-    images: ["/images/doctor-purple-suit.jpg"],
+    title: "IVF Treatment Mumbai - 50-70% Success | Dr Vrushni",
+    description:
+      "Expert IVF treatment with Dr. Vrushni Bhuta MS OBGY, MRM UK. 50-70% success rate, 3 Mumbai locations. Free consultation.",
     type: "website",
+    locale: "en_IN",
+    url: "https://drvrushni.com/treatments/ivf",
+    images: [
+      {
+        url: "/images/doctor-purple-suit.jpg",
+        width: 1200,
+        height: 630,
+        alt: "IVF Treatment in Mumbai with Dr Vrushni Bhuta",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "IVF Treatment Mumbai - 50-70% Success | Dr Vrushni",
+    description: "Expert IVF treatment with 50-70% success rate. 3 Mumbai locations. Free consultation.",
+    images: ["/images/doctor-purple-suit.jpg"],
+  },
+  other: {
+    "last-modified": "December 2025",
+    "content-type": "Medical Treatment Information",
   },
 }
 
@@ -80,6 +97,141 @@ export default function IVFLandingPage() {
               reviewCount: "200+",
             },
             priceRange: "₹₹₹₹", // Increased price range to reflect advanced services
+          }),
+        }}
+      />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "HowTo",
+            name: "IVF Treatment Process at Dr Vrushni's Fertility Clinic",
+            description:
+              "Complete step-by-step guide to IVF treatment from initial consultation to pregnancy confirmation",
+            totalTime: "P4W",
+            estimatedCost: {
+              "@type": "MonetaryAmount",
+              currency: "INR",
+              value: "150000-250000",
+            },
+            supply: [
+              {
+                "@type": "HowToSupply",
+                name: "Fertility medications and hormones",
+              },
+              {
+                "@type": "HowToSupply",
+                name: "Advanced embryology laboratory",
+              },
+            ],
+            tool: [
+              {
+                "@type": "HowToTool",
+                name: "Ultrasound monitoring equipment",
+              },
+              {
+                "@type": "HowToTool",
+                name: "Embryo culture incubators",
+              },
+            ],
+            step: [
+              {
+                "@type": "HowToStep",
+                position: 1,
+                name: "Fertility Assessment & Tailor-Made Roadmap",
+                text: "Comprehensive fertility evaluation of both partners including hormonal profile, ultrasound scans, and detailed semen analysis. A customized IVF treatment plan is created based on individual findings.",
+                url: "https://drvrushni.com/treatments/ivf#step-1",
+                image: "/placeholder.svg?height=400&width=600&text=Fertility+Assessment",
+              },
+              {
+                "@type": "HowToStep",
+                position: 2,
+                name: "Ovarian Stimulation",
+                text: "Ovaries are stimulated using hormonal injections (10-14 days). Subcutaneous injections are self-administered at home. Follicular growth monitored via ultrasound scans and blood tests.",
+                url: "https://drvrushni.com/treatments/ivf#step-2",
+                image: "/placeholder.svg?height=400&width=600&text=Ovarian+Stimulation",
+              },
+              {
+                "@type": "HowToStep",
+                position: 3,
+                name: "Oocyte Retrieval (Ovum Pick Up)",
+                text: "Safe, painless procedure under general anesthesia. Transvaginal ultrasound-guided fine needle aspiration of follicular fluid. Duration: 30 minutes. Same-day discharge.",
+                url: "https://drvrushni.com/treatments/ivf#step-3",
+                image: "/placeholder.svg?height=400&width=600&text=Egg+Retrieval",
+              },
+              {
+                "@type": "HowToStep",
+                position: 4,
+                name: "Fertilization - IVF or ICSI",
+                text: "Mature eggs fertilized using either conventional IVF (eggs and sperm together) or ICSI (single sperm injected into each egg). Fertilization rate: 65-75%.",
+                url: "https://drvrushni.com/treatments/ivf#step-4",
+                image: "/placeholder.svg?height=400&width=600&text=Fertilization",
+              },
+              {
+                "@type": "HowToStep",
+                position: 5,
+                name: "Embryo Development",
+                text: "Embryos cultured in advanced laboratory for 5-6 days. Daily quality assessment and monitoring. Optimal temperature control and specialized culture media used.",
+                url: "https://drvrushni.com/treatments/ivf#step-5",
+                image: "/placeholder.svg?height=400&width=600&text=Embryo+Development",
+              },
+              {
+                "@type": "HowToStep",
+                position: 6,
+                name: "Embryo Transfer - Fresh or Frozen",
+                text: "Gentle, painless procedure using soft catheter. Can be fresh (same cycle, day 2-5) or frozen (later cycle with prepared endometrium). No anesthesia required.",
+                url: "https://drvrushni.com/treatments/ivf#step-6",
+                image: "/placeholder.svg?height=400&width=600&text=Embryo+Transfer",
+              },
+              {
+                "@type": "HowToStep",
+                position: 7,
+                name: "Luteal Phase Support & Pregnancy Confirmation",
+                text: "Hormonal support (progesterone, estrogen) provided post-transfer. Beta HCG blood test performed 12-14 days after transfer to confirm pregnancy.",
+                url: "https://drvrushni.com/treatments/ivf#step-7",
+                image: "/placeholder.svg?height=400&width=600&text=Pregnancy+Test",
+              },
+            ],
+            performer: {
+              "@type": "MedicalOrganization",
+              name: "Dr Vrushni's Women's Care & Fertility Clinic",
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Mumbai",
+                addressRegion: "Maharashtra",
+                addressCountry: "IN",
+              },
+            },
+          }),
+        }}
+      />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "MedicalWebPage",
+            name: "IVF Treatment in Mumbai - Dr Vrushni Bhuta",
+            description:
+              "Comprehensive IVF treatment with 50-70% success rate at Dr Vrushni's Fertility Clinic in Mumbai",
+            lastReviewed: "2025-12-28",
+            dateModified: "2025-12-28",
+            about: {
+              "@type": "MedicalProcedure",
+              name: "In Vitro Fertilization (IVF)",
+              alternateName: "IVF Treatment",
+              procedureType: "Fertility Treatment",
+              bodyLocation: "Reproductive System",
+            },
+            mainEntity: {
+              "@type": "MedicalBusiness",
+              name: "Dr Vrushni's Women's Care & Fertility Clinic",
+              medicalSpecialty: "Reproductive Medicine",
+              priceRange: "₹₹₹",
+            },
           }),
         }}
       />
@@ -431,13 +583,13 @@ export default function IVFLandingPage() {
                   <div className="lg:col-span-2 relative h-80 lg:h-auto">
                     <img
                       src="/images/doctor-purple-suit.jpg"
-                      alt="Dr Vrushni Bhuta - Fertility Specialist Mumbai"
+                      alt="Dr Vrushni Bhuta MS OBGY MRM - Leading IVF Fertility Specialist Mumbai Powai Hiranandani Santacruz Surya Hospital"
                       className="w-full h-full object-cover"
                     />
                     <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#47145a] to-transparent p-6">
                       <img
                         src="/images/dr-vrushni-bhuta-logo.png"
-                        alt="Dr Vrushni Bhuta Logo"
+                        alt="Dr Vrushni's Women Care Fertility Clinic Mumbai Powai Santacruz Logo"
                         className="w-16 h-16 mb-2"
                       />
                     </div>
@@ -717,6 +869,246 @@ export default function IVFLandingPage() {
           </div>
         </div>
       </section>
+
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#47145a] mb-4 text-center">
+              Frequently Asked Questions About IVF
+            </h2>
+            <p className="text-center text-gray-600 mb-12">
+              Get answers to common questions about IVF treatment, success rates, and what to expect
+            </p>
+
+            <dl className="space-y-6">
+              <div className="bg-white p-6 rounded-xl border-2 border-gray-100">
+                <dt className="text-xl font-bold text-[#47145a] mb-3">Is IVF painful?</dt>
+                <dd className="text-gray-600 leading-relaxed">
+                  The IVF process involves some discomfort but is generally not painful. Daily hormone injections are
+                  subcutaneous (under the skin) and easy to self-administer. The egg retrieval is performed under
+                  general anesthesia, so you won't feel anything during the procedure. Mild cramping may occur
+                  afterward. The embryo transfer is painless and requires no anesthesia.
+                </dd>
+              </div>
+
+              <div className="bg-white p-6 rounded-xl border-2 border-gray-100">
+                <dt className="text-xl font-bold text-[#47145a] mb-3">How long does IVF treatment take?</dt>
+                <dd className="text-gray-600 leading-relaxed">
+                  A complete IVF cycle takes approximately 4-6 weeks from starting medication to the pregnancy test.
+                  This includes 10-14 days of ovarian stimulation, egg retrieval, 3-5 days of embryo development, embryo
+                  transfer, and a 12-14 day wait before the pregnancy test.
+                </dd>
+              </div>
+
+              <div className="bg-white p-6 rounded-xl border-2 border-gray-100">
+                <dt className="text-xl font-bold text-[#47145a] mb-3">What is the difference between IVF and ICSI?</dt>
+                <dd className="text-gray-600 leading-relaxed">
+                  IVF involves placing eggs and sperm together in a dish where fertilization occurs naturally. ICSI
+                  involves injecting a single sperm directly into each egg using a microscopic needle. ICSI is used when
+                  there are male factor issues (low count, poor motility) or previous IVF fertilization failures.
+                  Success rates are comparable (50-60% per cycle).
+                </dd>
+              </div>
+
+              <div className="bg-white p-6 rounded-xl border-2 border-gray-100">
+                <dt className="text-xl font-bold text-[#47145a] mb-3">How much does IVF cost in Mumbai?</dt>
+                <dd className="text-gray-600 leading-relaxed">
+                  IVF treatment at Dr. Vrushni's clinic ranges from ₹1,50,000 to ₹2,50,000 per cycle, including
+                  medications, procedures, and basic tests. Additional costs may include ICSI (+₹20-30K), embryo
+                  freezing (₹20-30K), PGT testing (₹60K-1L), and frozen embryo transfer (₹40-60K). Free initial
+                  consultation is provided.
+                </dd>
+              </div>
+
+              <div className="bg-white p-6 rounded-xl border-2 border-gray-100">
+                <dt className="text-xl font-bold text-[#47145a] mb-3">What are my chances of success with IVF?</dt>
+                <dd className="text-gray-600 leading-relaxed">
+                  Success rates at Dr. Vrushni's clinic are age-dependent: 60-70% clinical pregnancy rate for women
+                  under 35, 50-60% for ages 35-37, 35-45% for ages 38-40, and 20-30% for ages 41-42. Overall live birth
+                  rates range from 50-70% per cycle depending on age and individual factors. Cumulative success rates
+                  increase significantly with multiple cycles.
+                </dd>
+              </div>
+
+              <div className="bg-white p-6 rounded-xl border-2 border-gray-100">
+                <dt className="text-xl font-bold text-[#47145a] mb-3">Is bed rest required after embryo transfer?</dt>
+                <dd className="text-gray-600 leading-relaxed">
+                  No prolonged bed rest is needed. Research shows that normal activity after transfer does not reduce
+                  success rates. Rest for 15-20 minutes after the procedure, then resume normal activities. Avoid heavy
+                  lifting, vigorous exercise, and sexual intercourse for 2 weeks until the pregnancy test.
+                </dd>
+              </div>
+            </dl>
+
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{
+                __html: JSON.stringify({
+                  "@context": "https://schema.org",
+                  "@type": "FAQPage",
+                  mainEntity: [
+                    {
+                      "@type": "Question",
+                      name: "Is IVF painful?",
+                      acceptedAnswer: {
+                        "@type": "Answer",
+                        text: "The IVF process involves some discomfort but is generally not painful. Daily hormone injections are subcutaneous and easy to self-administer. The egg retrieval is performed under general anesthesia, so you won't feel anything during the procedure. Mild cramping may occur afterward. The embryo transfer is painless and requires no anesthesia.",
+                      },
+                    },
+                    {
+                      "@type": "Question",
+                      name: "How long does IVF treatment take?",
+                      acceptedAnswer: {
+                        "@type": "Answer",
+                        text: "A complete IVF cycle takes approximately 4-6 weeks from starting medication to the pregnancy test. This includes 10-14 days of ovarian stimulation, egg retrieval, 3-5 days of embryo development, embryo transfer, and a 12-14 day wait before the pregnancy test.",
+                      },
+                    },
+                    {
+                      "@type": "Question",
+                      name: "What is the difference between IVF and ICSI?",
+                      acceptedAnswer: {
+                        "@type": "Answer",
+                        text: "IVF involves placing eggs and sperm together in a dish where fertilization occurs naturally. ICSI involves injecting a single sperm directly into each egg using a microscopic needle. ICSI is used when there are male factor issues or previous IVF fertilization failures. Success rates are comparable at 50-60% per cycle.",
+                      },
+                    },
+                    {
+                      "@type": "Question",
+                      name: "How much does IVF cost in Mumbai?",
+                      acceptedAnswer: {
+                        "@type": "Answer",
+                        text: "IVF treatment at Dr. Vrushni's clinic ranges from ₹1,50,000 to ₹2,50,000 per cycle, including medications, procedures, and basic tests. Additional costs may include ICSI, embryo freezing, PGT testing, and frozen embryo transfer. Free initial consultation is provided.",
+                      },
+                    },
+                    {
+                      "@type": "Question",
+                      name: "What are my chances of success with IVF?",
+                      acceptedAnswer: {
+                        "@type": "Answer",
+                        text: "Success rates at Dr. Vrushni's clinic are age-dependent: 60-70% clinical pregnancy rate for women under 35, 50-60% for ages 35-37, 35-45% for ages 38-40, and 20-30% for ages 41-42. Overall live birth rates range from 50-70% per cycle depending on age and individual factors.",
+                      },
+                    },
+                    {
+                      "@type": "Question",
+                      name: "Is bed rest required after embryo transfer?",
+                      acceptedAnswer: {
+                        "@type": "Answer",
+                        text: "No prolonged bed rest is needed. Research shows that normal activity after transfer does not reduce success rates. Rest for 15-20 minutes after the procedure, then resume normal activities. Avoid heavy lifting, vigorous exercise, and sexual intercourse for 2 weeks.",
+                      },
+                    },
+                  ],
+                }),
+              }}
+            />
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#47145a] mb-4 text-center">
+              IVF vs Other Fertility Treatments
+            </h2>
+            <p className="text-center text-gray-600 mb-12">Compare treatment options to make an informed decision</p>
+
+            <div className="overflow-x-auto">
+              <table className="w-full border-collapse bg-white shadow-lg rounded-xl overflow-hidden">
+                <thead>
+                  <tr className="bg-gradient-to-r from-[#47145a] to-[#66257B] text-white">
+                    <th className="px-6 py-4 text-left font-bold">Factor</th>
+                    <th className="px-6 py-4 text-left font-bold">IVF</th>
+                    <th className="px-6 py-4 text-left font-bold">IUI</th>
+                    <th className="px-6 py-4 text-left font-bold">ICSI</th>
+                    <th className="px-6 py-4 text-left font-bold">Egg Freezing</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-b border-gray-100 hover:bg-gray-50">
+                    <td className="px-6 py-4 font-semibold text-gray-700">Success Rate (per cycle)</td>
+                    <td className="px-6 py-4 text-[#eb9142] font-bold">50-70%</td>
+                    <td className="px-6 py-4">15-20%</td>
+                    <td className="px-6 py-4">50-60%</td>
+                    <td className="px-6 py-4">50-60% (age &lt;35)</td>
+                  </tr>
+                  <tr className="border-b border-gray-100 hover:bg-gray-50">
+                    <td className="px-6 py-4 font-semibold text-gray-700">Cost Range (Mumbai)</td>
+                    <td className="px-6 py-4">₹1.5-2.5L</td>
+                    <td className="px-6 py-4">₹15-25K</td>
+                    <td className="px-6 py-4">₹1.8-2.8L</td>
+                    <td className="px-6 py-4">₹80K-1.5L</td>
+                  </tr>
+                  <tr className="border-b border-gray-100 hover:bg-gray-50">
+                    <td className="px-6 py-4 font-semibold text-gray-700">Duration</td>
+                    <td className="px-6 py-4">4-6 weeks</td>
+                    <td className="px-6 py-4">2-3 weeks</td>
+                    <td className="px-6 py-4">4-6 weeks</td>
+                    <td className="px-6 py-4">2-3 weeks</td>
+                  </tr>
+                  <tr className="border-b border-gray-100 hover:bg-gray-50">
+                    <td className="px-6 py-4 font-semibold text-gray-700">Invasiveness</td>
+                    <td className="px-6 py-4">Moderate</td>
+                    <td className="px-6 py-4">Minimal</td>
+                    <td className="px-6 py-4">Moderate</td>
+                    <td className="px-6 py-4">Moderate</td>
+                  </tr>
+                  <tr className="border-b border-gray-100 hover:bg-gray-50">
+                    <td className="px-6 py-4 font-semibold text-gray-700">Male Factor</td>
+                    <td className="px-6 py-4">Mild-Severe</td>
+                    <td className="px-6 py-4">Mild Only</td>
+                    <td className="px-6 py-4 text-[#eb9142] font-bold">Severe</td>
+                    <td className="px-6 py-4">N/A</td>
+                  </tr>
+                  <tr className="border-b border-gray-100 hover:bg-gray-50">
+                    <td className="px-6 py-4 font-semibold text-gray-700">Female Factor</td>
+                    <td className="px-6 py-4 text-[#eb9142] font-bold">Yes</td>
+                    <td className="px-6 py-4">Limited</td>
+                    <td className="px-6 py-4">Yes</td>
+                    <td className="px-6 py-4">Preservation</td>
+                  </tr>
+                  <tr className="border-b border-gray-100 hover:bg-gray-50">
+                    <td className="px-6 py-4 font-semibold text-gray-700">Lab Required</td>
+                    <td className="px-6 py-4">Advanced</td>
+                    <td className="px-6 py-4">Basic</td>
+                    <td className="px-6 py-4">Advanced</td>
+                    <td className="px-6 py-4">Advanced</td>
+                  </tr>
+                  <tr className="hover:bg-gray-50">
+                    <td className="px-6 py-4 font-semibold text-gray-700">Anesthesia</td>
+                    <td className="px-6 py-4">Yes (egg retrieval)</td>
+                    <td className="px-6 py-4">No</td>
+                    <td className="px-6 py-4">Yes (egg retrieval)</td>
+                    <td className="px-6 py-4">Yes (egg retrieval)</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{
+                __html: JSON.stringify({
+                  "@context": "https://schema.org",
+                  "@type": "Table",
+                  about: "Comparison of fertility treatment options",
+                  description:
+                    "Detailed comparison table of IVF, IUI, ICSI, and Egg Freezing treatments including success rates, costs, duration, and suitability factors",
+                }),
+              }}
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Content Freshness Indicator */}
+      <div className="py-6 text-center bg-gray-50 border-t border-gray-200">
+        <p className="text-sm text-gray-600">
+          <strong>Medical Information Last Reviewed:</strong> December 2025 by Dr Vrushni Bhuta, MS OBGY, MRM (UK)
+        </p>
+        <p className="text-xs text-gray-500 mt-2">
+          MMC Registration: 2009020251 | Clinics: Hiranandani Hospital Powai, Surya Hospital Santacruz West, Bookurdoc
+          Chandivali
+        </p>
+      </div>
     </div>
   )
 }

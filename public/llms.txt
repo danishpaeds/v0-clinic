@@ -7,7 +7,7 @@ Dr Vrushni's Women's Care & Fertility Clinic is a premier fertility and women's 
 - Domain: drvrushni.com
 - Location: Mumbai, India
 - Phone: +91-8591186575
-- Email: info@drvrushni.com
+- Email: connect@drvrushni.com
 
 ## About Dr. Vrushni Bhuta
 - Qualifications: MS OBGY, M.R.M (UK)
@@ -26,6 +26,7 @@ Dr Vrushni's Women's Care & Fertility Clinic is a premier fertility and women's 
 - In Vitro Fertilization (IVF)
 - Intrauterine Insemination (IUI)
 - Intracytoplasmic Sperm Injection (ICSI)
+- Physiological ICSI (PICSI)
 - Egg Freezing (Fertility Preservation)
 - Embryo Freezing
 - Surrogacy Programs
@@ -37,6 +38,8 @@ Dr Vrushni's Women's Care & Fertility Clinic is a premier fertility and women's 
 - Endometriosis Treatment
 - Ovulation Induction
 - Fertility Counseling
+- Assisted Hatching
+- Blastocyst Culture & Transfer
 
 ## Key Features
 - Evidence-based medical protocols
@@ -45,33 +48,59 @@ Dr Vrushni's Women's Care & Fertility Clinic is a premier fertility and women's 
 - Emotional support and counseling
 - Transparent pricing
 - Free initial consultation
-- Two convenient Mumbai locations
+- Multiple Mumbai locations
 - 500+ Happy Families
+- Advanced fertility preservation options
+- Comprehensive genetic testing
 
 ## Technology Stack
 - Framework: Next.js 15.3.8 (App Router)
 - Language: TypeScript
 - Styling: Tailwind CSS
 - UI Components: shadcn/ui
+- Database: Supabase (PostgreSQL)
+- Authentication: Supabase Auth
 - Analytics: Google Tag Manager (GTM-K7ZTLRMR)
 - Icons: Lucide React
 - Hosting: Vercel
+- Package Management: npm
+
+## Database Integration
+- Provider: Supabase
+- Tables:
+  - contact_submissions: Stores all form submissions from contact page and popup
+  - Fields: id, name, email, phone, message, status, notes, submitted_at
+- RLS Enabled: Yes, with proper security policies
+- Admin Dashboard: /admin/leads (password protected)
+
+## Authentication & Security
+- Supabase Auth for admin access
+- Protected routes via middleware
+- Admin login: /admin/login
+- Sign out route: /auth/signout
+- Row Level Security (RLS) on database tables
+- HTTPS enforcement
+- Security headers configured
 
 ## Site Structure
 
 ### Main Pages
-- Home: / - Main landing page with clinic overview
+- Home: / - Main landing page with clinic overview and featured blog
 - About: /about - Dr. Vrushni Bhuta's credentials and experience
 - Treatments: /treatments - Comprehensive list of fertility treatments
-- IVF Landing Page: /treatments/ivf - Dedicated IVF treatment landing page
-- Contact: /contact - Contact form and appointment booking
+- IVF Landing Page: /treatments/ivf - Dedicated IVF treatment landing page (high-converting)
+- Contact: /contact - Contact form with Supabase integration
 - Location: /location - Clinic locations with maps
 - Testimonials: /testimonials - Patient success stories
 - Gallery: /gallery - Clinic photos and videos
-- FAQ: /faq - Frequently asked questions
-- Blog: /blog - Fertility education articles
+- FAQ: /faq - Frequently asked questions with Schema.org markup
+- Blog: /blog - Fertility education articles (December 2025 dates)
 - Privacy Policy: /privacy-policy - Data protection information
 - Thank You: /thank-you - Form submission confirmation
+
+### Admin Pages (Protected)
+- Admin Login: /admin/login - Secure authentication page
+- Leads Dashboard: /admin/leads - View and manage contact form submissions
 
 ### Dynamic Routes
 - Treatment Pages: /treatments/[slug] - Individual treatment detail pages
@@ -83,29 +112,57 @@ Dr Vrushni's Women's Care & Fertility Clinic is a premier fertility and women's 
 - Blog Posts: /blog/[slug] - Individual blog articles
   - Available: understanding-ivf-complete-guide
 
-## Important Files
-- Layout: app/layout.tsx - Root layout with GTM, header, footer
-- Sitemap: app/sitemap.ts - Dynamic sitemap generation
-- Robots: app/robots.txt - Search engine crawling rules
-- Header: src/components/Header.tsx - Navigation header
-- Footer: src/components/Footer.tsx - Footer with medical compliance
+## Important Files & Components
+- Layout: app/layout.tsx - Root layout with GTM, header, footer, scroll restoration
+- Sitemap: app/sitemap.ts - Dynamic sitemap with all pages
+- Robots: app/robots.ts - Search engine crawling rules
+- Middleware: middleware.ts - Auth protection for admin routes
+- Header: src/components/Header.tsx - Navigation with Book Now CTA
+- Footer: src/components/Footer.tsx - Footer with medical compliance and llms.txt link
 - Scroll Restoration: components/ScrollRestoration.tsx - Auto-scroll to top on navigation
+- Scroll Popup: components/ScrollPopup.tsx - Lead capture popup after 8 seconds of scrolling
 - Floating Buttons: components/FloatingWhatsApp.tsx, components/FloatingCallButton.tsx
+- Breadcrumbs: components/Breadcrumbs.tsx - Navigation breadcrumbs with Schema.org
+- Supabase Client: lib/supabase/client.ts - Browser client
+- Supabase Server: lib/supabase/server.ts - Server-side client
 
 ## SEO & Metadata
 - Comprehensive meta tags on all pages
 - Open Graph tags for social sharing
-- Schema.org structured data (Organization, Person, MedicalBusiness)
+- Twitter Card metadata
+- Schema.org structured data:
+  - Organization
+  - Person (Doctor profile)
+  - MedicalBusiness
+  - BlogPosting (with author details)
+  - FAQPage
+  - BreadcrumbList
 - Image sitemap at /sitemap-image.xml
 - Google Search Console verified
 - Optimized for local SEO (Mumbai, Powai, Santacruz)
+- Hreflang tags for regional targeting (en-IN, en)
+- Canonical URLs properly set
+- lastModified dates in metadata
+- Security headers configured
 
 ## Medical Compliance
 - MMC Registration: 2009020251 (Dr. Vrushni Bhuta)
 - PCPNDT Act Compliance: Strict adherence, no gender determination
 - Medical Disclaimers: Present on all treatment pages
-- Privacy Policy: HIPAA-compliant data handling
+- Privacy Policy: Data protection compliant
 - Legal Framework: All treatments within Indian Medical Law
+- Ethical advertising guidelines followed
+
+## Lead Capture System
+- Contact Form: /contact (saves to Supabase)
+- Scroll Popup: Appears after 8 seconds of scrolling activity
+  - Shows once per session
+  - Collects: name, phone, email
+  - Saves to contact_submissions table
+- Admin Dashboard: View all submissions with status tracking
+- Status Options: New, Contacted, Converted, Not Interested
+- WhatsApp integration via floating button
+- Phone call integration via floating button
 
 ## Key Keywords
 - Best fertility clinic Mumbai
@@ -118,29 +175,38 @@ Dr Vrushni's Women's Care & Fertility Clinic is a premier fertility and women's 
 - IUI treatment Mumbai
 - ICSI specialist India
 - Fertility specialist Hiranandani Hospital
+- Best gynaecologist Mumbai
+- Female infertility treatment
+- Male infertility solutions
+- PCOS treatment Mumbai
 
 ## Design System
 - Primary Color: Purple (#47145a)
 - Secondary Color: Orange (#eb9142)
-- Gradient: Purple to Orange
-- Typography: System font stack with Geist Sans
+- Gradient: Purple to Orange (from-[#47145a] via-[#66257B] to-[#eb9142])
+- Typography: Geist Sans (system font stack)
 - Responsive: Mobile-first design
 - Animations: CSS-based, reduced motion support
+- UI Framework: shadcn/ui components
+- Consistent spacing with Tailwind scale
+- High contrast ratios for accessibility
 
 ## Contact Information
 - Primary Phone: +91 8591186575
 - WhatsApp: Available via floating button
-- Email: info@drvrushni.com
-- Instagram: @dr.vrushni (via header link)
-- Working Hours: Monday-Saturday, 9 AM - 6 PM
+- Email: connect@drvrushni.com
+- Instagram: @dr.vrushni
+- LinkedIn: dr-vrushni-bhuta-2473b529a
+- Working Hours: Mon-Sat 11am-9pm, Sun 11am-1pm (by appointment)
 
 ## Success Metrics
 - 15+ years of clinical experience
 - 5000+ successful pregnancies
 - 50-70% IVF success rate
 - 500+ happy families
-- Two Mumbai locations
+- Multiple Mumbai locations
 - Comprehensive fertility services
+- State-of-the-art technology
 
 ## Special Features
 - Free initial consultation
@@ -150,9 +216,11 @@ Dr Vrushni's Women's Care & Fertility Clinic is a premier fertility and women's 
 - Advanced embryology lab on-site
 - Personalized treatment protocols
 - Multilingual staff
+- 24/7 emergency support
+- Post-treatment follow-up care
 
-## Blog Topics
-- Understanding IVF: A Complete Guide
+## Blog Topics (December 2025)
+- Understanding IVF: A Complete Guide (Dec 20, 2025)
 - ICSI vs IVF comparison
 - Egg freezing information
 - Fertility preservation
@@ -160,28 +228,217 @@ Dr Vrushni's Women's Care & Fertility Clinic is a premier fertility and women's 
 - Female fertility optimization
 - PCOS and fertility
 - Age and fertility
+- Surrogacy guide
+- IUI success tips
 
-## External Links
-- Google Tag Manager: GTM-K7ZTLRMR
-- Google Verification: google7c2909d72e7bf11f.html
-- Social Media: Instagram (header icon link)
+## Database Schema
+\`\`\`sql
+-- Contact Submissions Table
+CREATE TABLE contact_submissions (
+  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+  name TEXT NOT NULL,
+  email TEXT NOT NULL,
+  phone TEXT NOT NULL,
+  message TEXT,
+  status TEXT DEFAULT 'new',
+  notes TEXT,
+  submitted_at TIMESTAMP DEFAULT NOW()
+);
 
-## Accessibility
-- WCAG 2.1 compliant
-- Screen reader friendly
-- Keyboard navigation support
-- Alt text on all images
-- High contrast ratios
+\`\`\`
 
-## Performance Optimization
-- Next.js App Router for optimal performance
-- Image optimization with Next/Image
-- Dynamic imports for heavy components
-- CSS animations over JavaScript
-- Efficient caching strategy
-- Minimal JavaScript bundle
+## Treatment Decision Trees
+
+### When to Choose IVF
+**Conditions:**
+- Both fallopian tubes blocked
+- Severe male factor infertility
+- Advanced maternal age (>35 years)
+- Multiple failed IUI cycles (3+)
+- Severe endometriosis
+- Unexplained infertility (>2 years)
+- Genetic disorder screening required
+- Fertility preservation needed
+
+**Success Rate:** 50-70% per cycle (age-dependent)
+**Duration:** 4-6 weeks per cycle
+**Best For:** Couples with structural issues, severe infertility factors
+
+### When to Choose IUI
+**Conditions:**
+- Mild male factor infertility
+- Cervical mucus issues
+- Unexplained infertility (<2 years)
+- Single women or same-sex couples using donor sperm
+- Mild endometriosis
+- Ovulation disorders
+
+**Success Rate:** 15-20% per cycle (under 35), 40-50% cumulative after 3-4 cycles
+**Duration:** 2-3 weeks per cycle
+**Best For:** Younger couples with mild fertility issues
+
+### When to Choose ICSI
+**Conditions:**
+- Severe male factor infertility (low count/motility)
+- Previous IVF with poor fertilization
+- Frozen sperm use (cancer patients)
+- Obstructive azoospermia
+- Antisperm antibodies
+- Small number of eggs retrieved
+
+**Success Rate:** 50-60% per cycle (comparable to IVF)
+**Duration:** Same as IVF (4-6 weeks)
+**Best For:** Male infertility factors, previous IVF failures
+
+### When to Choose Egg Freezing
+**Conditions:**
+- Age <35 (optimal)
+- Cancer treatment planned
+- Medical conditions affecting fertility
+- Career/personal reasons to delay
+- Family history of early menopause
+- Not ready for parenthood but want future option
+
+**Success Rate:** 50-60% live birth per egg (under 35), 30-40% (35-40 years)
+**Duration:** Single cycle (2-3 weeks)
+**Best For:** Fertility preservation, future planning
+
+## Treatment Comparison Table
+
+| Factor | IVF | IUI | ICSI | Egg Freezing |
+|--------|-----|-----|------|--------------|
+| Success Rate (per cycle) | 50-70% | 15-20% | 50-60% | 50-60% (age <35) |
+| Cost Range (Mumbai) | ₹1.5-2.5L | ₹15-25K | ₹1.8-2.8L | ₹80K-1.5L |
+| Duration | 4-6 weeks | 2-3 weeks | 4-6 weeks | 2-3 weeks |
+| Invasiveness | Moderate | Minimal | Moderate | Moderate |
+| Male Factor | Mild-Severe | Mild Only | Severe | N/A |
+| Female Factor | Yes | Limited | Yes | Preservation |
+| Lab Required | Advanced | Basic | Advanced | Advanced |
+| Anesthesia | Yes (egg retrieval) | No | Yes (egg retrieval) | Yes (egg retrieval) |
+
+## Cost Breakdown Structures
+
+### IVF Treatment Cost (Mumbai)
+- Initial Consultation: Free
+- Baseline Tests: ₹5,000-8,000
+- Medications: ₹35,000-60,000
+- IVF Procedure: ₹80,000-1,20,000
+- ICSI (if needed): +₹20,000-30,000
+- Embryo Freezing: ₹20,000-30,000/cycle
+- FET (Frozen Transfer): ₹40,000-60,000
+- PGT Testing: ₹60,000-1,00,000
+- **Total Range: ₹1,50,000-2,50,000**
+
+### IUI Treatment Cost (Mumbai)
+- Initial Consultation: Free
+- Baseline Tests: ₹3,000-5,000
+- Medications: ₹3,000-8,000
+- IUI Procedure: ₹8,000-12,000
+- Follicular Monitoring: ₹2,000-3,000
+- **Total Range: ₹15,000-25,000 per cycle**
+
+### Egg Freezing Cost (Mumbai)
+- Initial Consultation: Free
+- Baseline Tests: ₹5,000-8,000
+- Medications: ₹35,000-50,000
+- Egg Retrieval: ₹40,000-60,000
+- Freezing & Storage (1 year): ₹15,000-20,000
+- Annual Storage: ₹10,000-15,000
+- **Total Range: ₹80,000-1,50,000 + annual storage**
+
+## Success Rate Methodology
+
+### How We Calculate Success Rates
+1. **Per Cycle Basis:** Pregnancy rate divided by number of embryo transfers
+2. **Live Birth Rate:** Actual babies born divided by total cycles started
+3. **Age-Stratified:** Separated by age groups (<35, 35-37, 38-40, >40)
+4. **Clinical Pregnancy:** Confirmed by ultrasound heartbeat at 6-7 weeks
+5. **Biochemical Pregnancy:** Positive blood test but no clinical confirmation
+
+### Age-Based IVF Success Rates (Dr. Vrushni's Clinic)
+| Age Group | Clinical Pregnancy Rate | Live Birth Rate |
+|-----------|------------------------|-----------------|
+| Under 35 | 60-70% | 50-60% |
+| 35-37 years | 50-60% | 40-50% |
+| 38-40 years | 35-45% | 30-40% |
+| 41-42 years | 20-30% | 15-25% |
+| Over 43 | 10-20% | 8-15% |
+
+### Factors Affecting Success
+- Egg quality (age-dependent)
+- Sperm quality
+- Embryo quality
+- Uterine receptivity
+- Previous pregnancy history
+- BMI and lifestyle factors
+- Underlying medical conditions
+- Number of embryos transferred
+
+## Common User Queries & Answers
+
+### Q: Is IVF painful?
+**A:** The IVF process involves some discomfort but is generally not painful. Daily hormone injections are subcutaneous (under the skin) and easy to self-administer. The egg retrieval is performed under general anesthesia, so you won't feel anything during the procedure. Mild cramping may occur afterward. The embryo transfer is painless and requires no anesthesia.
+
+### Q: How long does IVF treatment take?
+**A:** A complete IVF cycle takes approximately 4-6 weeks from starting medication to the pregnancy test. This includes 10-14 days of ovarian stimulation, egg retrieval, 3-5 days of embryo development, embryo transfer, and a 12-14 day wait before the pregnancy test.
+
+### Q: What is the difference between IVF and ICSI?
+**A:** IVF involves placing eggs and sperm together in a dish where fertilization occurs naturally. ICSI involves injecting a single sperm directly into each egg using a microscopic needle. ICSI is used when there are male factor issues (low count, poor motility) or previous IVF fertilization failures.
+
+### Q: Can I work during IVF treatment?
+**A:** Yes, most women continue working during IVF treatment. You'll need time off for appointments (monitoring scans every 2-3 days) and the egg retrieval day (with next day rest). The embryo transfer day requires minimal time off. Listen to your body and reduce stress where possible.
+
+### Q: How many IVF cycles will I need?
+**A:** Success rates are cumulative. Under 35 years, about 60-70% succeed in the first cycle, 80-85% by the second cycle, and 90%+ by the third cycle. Age, diagnosis, and individual factors affect this. Dr. Vrushni will discuss realistic expectations based on your specific situation.
+
+### Q: Is bed rest required after embryo transfer?
+**A:** No prolonged bed rest is needed. Research shows that normal activity after transfer does not reduce success rates. Rest for 15-20 minutes after the procedure, then resume normal activities. Avoid heavy lifting, vigorous exercise, and sexual intercourse for 2 weeks.
+
+### Q: What are the risks of IVF?
+**A:** IVF is generally safe. Risks include Ovarian Hyperstimulation Syndrome (OHSS) in 1-2% of cases, multiple pregnancy if multiple embryos are transferred (reduced with single embryo transfer), ectopic pregnancy (<1%), and egg retrieval complications (rare: <0.5%). Dr. Vrushni monitors closely to minimize risks.
+
+### Q: How much does IVF cost in Mumbai?
+**A:** IVF treatment at Dr. Vrushni's clinic ranges from ₹1,50,000 to ₹2,50,000 per cycle, including medications, procedures, and basic tests. Additional costs may include ICSI (+₹20-30K), embryo freezing (₹20-30K), PGT testing (₹60K-1L), and frozen embryo transfer (₹40-60K). Free initial consultation is provided.
+
+### Q: Should I freeze embryos or do a fresh transfer?
+**A:** Both have similar success rates. Fresh transfer happens in the same cycle as egg retrieval (day 3 or day 5). Frozen transfer allows time for optimal uterine preparation and may be better if OHSS risk is high, embryo testing is needed, or timing doesn't align. Dr. Vrushni will recommend based on your specific situation.
+
+### Q: When should I consider egg freezing?
+**A:** Ideal under age 35. Consider if you're planning cancer treatment, have a family history of early menopause, want to delay parenthood for career/personal reasons, or have medical conditions affecting fertility. Success rates are highest with younger eggs (50-60% live birth per egg under 35).
+
+## API Endpoints Documentation
+- Contact Form Submission: Sends data to Supabase `contact_submissions` table
+- Admin Authentication: Uses Supabase Auth with email/password
+- Lead Management: CRUD operations on contact_submissions via admin dashboard
+- Image Sitemap: /image-sitemap.xml (dynamic generation)
+
+## Recent Updates (December 2025)
+- Added Supabase database integration
+- Implemented lead capture system with admin dashboard
+- Created scroll popup for lead generation
+- Added authentication for admin routes
+- Updated all blog dates to December 2025
+- Enhanced SEO with comprehensive structured data
+- Added hreflang tags for regional targeting (en-IN, en)
+- Implemented security headers
+- Added featured blog section on home page
+- Created Understanding IVF blog post
+- Updated IVF landing page with verified content
+- Added doctor profile section to IVF page
+- Implemented scroll restoration on all pages
+- Added exit-intent popup for additional lead capture
+- Enhanced internal linking across all pages
+- Added WarningOrRegulation schema to medical disclaimers
+- Created image sitemap for better image SEO
+- Implemented visual breadcrumb navigation site-wide
+- Added location-based keywords to all image alt texts
+- Included "last updated" dates on all content pages
+- Added HowTo schema for IVF process steps
+- Created comprehensive treatment decision trees
+- Implemented structured data tables with proper markup
+- Enhanced Q&A formatted content for AI consumption
 
 ---
-Last Updated: January 2024
-Version: 1.0
+Last Updated: December 28, 2025
+Version: 2.1
 Maintained by: v0.dev

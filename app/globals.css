@@ -83,6 +83,30 @@
     @apply bg-background text-foreground;
   }
 
+  /* Enhanced mobile scrolling performance */
+  /* Better scroll behavior with hardware acceleration */
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Enable GPU acceleration for smooth scrolling */
+  html,
+  body {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+
+  /* Optimize scrollable containers */
+  body,
+  main,
+  section {
+    will-change: scroll-position;
+    -webkit-overflow-scrolling: touch;
+  }
+
   /* Production-ready CSS animations using native keyframes */
   /* Enhanced animations with smoother easing and better performance */
   @keyframes fadeUp {
@@ -191,6 +215,104 @@
     transition-duration: 300ms;
   }
 
+  /* Enhanced mobile-specific optimizations for better scrolling */
+  @media (max-width: 768px) {
+    /* Optimize scroll performance on mobile */
+    html {
+      -webkit-overflow-scrolling: touch;
+      scroll-behavior: smooth;
+      overscroll-behavior-y: contain; /* Prevent bounce at top/bottom */
+    }
+
+    /* Better scroll momentum on iOS */
+    body {
+      -webkit-overflow-scrolling: touch;
+      overflow-y: scroll;
+      overscroll-behavior-y: contain;
+    }
+
+    /* Prevent layout shifts during scroll */
+    main {
+      contain: layout style paint;
+    }
+
+    /* Optimize fixed elements to not interfere with scrolling */
+    .fixed,
+    [class*="fixed"] {
+      transform: translateZ(0);
+      -webkit-transform: translateZ(0);
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+    }
+
+    /* Reduce scroll jank by containing layout */
+    section {
+      contain: layout;
+    }
+
+    button,
+    a[role="button"],
+    input[type="submit"],
+    input[type="button"] {
+      min-height: 44px; /* Apple's minimum touch target */
+      min-width: 44px;
+    }
+
+    /* Better form inputs on mobile - prevents zoom on iOS */
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="number"],
+    input[type="password"],
+    textarea,
+    select {
+      font-size: 16px; /* Prevents auto-zoom on iOS when focusing */
+    }
+
+    /* Improved tap highlight with brand color */
+    * {
+      -webkit-tap-highlight-color: rgba(235, 145, 66, 0.2);
+    }
+
+    /* Better scroll behavior on mobile */
+    html {
+      -webkit-overflow-scrolling: touch;
+      scroll-behavior: smooth;
+    }
+
+    /* Prevent text size adjust on orientation change */
+    html {
+      -webkit-text-size-adjust: 100%;
+    }
+
+    /* Better spacing for mobile readability */
+    p,
+    li {
+      line-height: 1.6;
+    }
+
+    /* Optimize for mobile viewport */
+    body {
+      min-height: 100svh; /* Use small viewport height */
+    }
+  }
+
+  /* Added touch-manipulation utility class */
+  .touch-manipulation {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: rgba(235, 145, 66, 0.2);
+  }
+
+  /* Better focus states for accessibility and mobile */
+  button:focus-visible,
+  a:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible,
+  select:focus-visible {
+    outline: 2px solid #eb9142;
+    outline-offset: 2px;
+  }
+
   /* Added reduced motion support for accessibility */
   @media (prefers-reduced-motion: reduce) {
     .animate-fade-up,
@@ -203,5 +325,39 @@
       opacity: 1;
       transform: none;
     }
+
+    /* Also disable transitions for reduced motion */
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  /* Add utility classes for better scroll performance */
+  .scroll-smooth {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .scroll-snap-y {
+    scroll-snap-type: y proximity;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .scroll-snap-center {
+    scroll-snap-align: center;
+    scroll-snap-stop: normal;
+  }
+
+  /* Optimize animations for scroll-triggered content */
+  .will-change-transform {
+    will-change: transform;
+  }
+
+  .will-change-scroll {
+    will-change: scroll-position;
   }
 }

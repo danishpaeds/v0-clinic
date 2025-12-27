@@ -5,13 +5,25 @@ import Script from "next/script"
 import "./globals.css"
 import { Header } from "@/src/components/Header"
 import { Footer } from "@/src/components/Footer"
-import { FloatingWhatsApp } from "@/components/FloatingWhatsApp"
-import { FloatingCallButton } from "@/components/FloatingCallButton"
 import { Breadcrumbs } from "@/components/Breadcrumbs"
 import { ScrollRestoration } from "@/components/ScrollRestoration"
+import { ClientComponents } from "@/components/ClientComponents"
 
-const _geist = Geist({ subsets: ["latin"], display: "swap", preload: true })
-const _geistMono = Geist_Mono({ subsets: ["latin"], display: "swap", preload: true })
+const _geist = Geist({
+  subsets: ["latin"],
+  display: "swap",
+  preload: true,
+  variable: "--font-geist",
+  fallback: ["system-ui", "arial"],
+})
+
+const _geistMono = Geist_Mono({
+  subsets: ["latin"],
+  display: "swap",
+  preload: true,
+  variable: "--font-geist-mono",
+  fallback: ["ui-monospace", "monospace"],
+})
 
 export const metadata: Metadata = {
   title: {
@@ -19,13 +31,28 @@ export const metadata: Metadata = {
     template: "%s | Dr Vrushni Bhuta Fertility Clinic",
   },
   description:
-    "Leading IVF & fertility specialist in Mumbai with 15+ years experience. Dr Vrushni Bhuta offers personalized IVF, IUI, ICSI treatments at Powai & Santacruz. 85% success rate. Book consultation today.",
+    "Leading IVF & fertility specialist in Mumbai with 15+ years experience. Dr Vrushni Bhuta offers personalized IVF, IUI, ICSI treatments at Powai & Santacruz. 50-70% success rate. Book consultation today.",
   keywords:
     "best IVF doctor Mumbai, fertility specialist Powai, IVF clinic Santacruz, Dr Vrushni Bhuta, fertility treatment Mumbai, IUI specialist Mumbai, ICSI treatment India, egg freezing Mumbai, fertility clinic near me, infertility doctor Mumbai",
   generator: "v0.app",
   metadataBase: new URL("https://drvrushni.com"),
   alternates: {
     canonical: "/",
+    languages: {
+      "en-IN": "https://drvrushni.com",
+      en: "https://drvrushni.com",
+    },
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
   openGraph: {
     type: "website",
@@ -48,8 +75,10 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Dr Vrushni Bhuta - Best IVF Doctor Mumbai | Fertility Specialist",
     description:
-      "15+ years expertise in IVF, IUI, ICSI. 85% success rate. Personalized fertility care in Powai & Santacruz, Mumbai.",
+      "15+ years expertise in IVF, IUI, ICSI. 50-70% success rate. Personalized fertility care in Powai & Santacruz, Mumbai.",
     images: ["/images/doctor-purple-blazer-seated.jpg"],
+    creator: "@drvrushni",
+    site: "@drvrushni",
   },
   icons: {
     icon: [
@@ -62,6 +91,8 @@ export const metadata: Metadata = {
   verification: {
     google: "google7c2909d72e7bf11f",
   },
+  category: "healthcare",
+  classification: "Healthcare - Fertility Treatment",
 }
 
 export default function RootLayout({
@@ -70,11 +101,20 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
-      <body className={`font-sans antialiased`} suppressHydrationWarning>
+    <html lang="en" className="scroll-smooth">
+      <head>
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://wa.me" />
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes, viewport-fit=cover"
+        />
+      </head>
+      <body className={`${_geist.variable} ${_geistMono.variable} font-sans antialiased`} suppressHydrationWarning>
         <ScrollRestoration />
 
-        <Script id="gtm-script" strategy="afterInteractive">
+        <Script id="gtm-script" strategy="lazyOnload">
           {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
@@ -95,10 +135,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <div className="flex min-h-screen flex-col">
           <Header />
           <Breadcrumbs />
-          <main className="flex-1">{children}</main>
+          <main className="flex-1 will-change-scroll">{children}</main>
           <Footer />
-          <FloatingWhatsApp />
-          <FloatingCallButton />
+          <ClientComponents />
         </div>
       </body>
     </html>
