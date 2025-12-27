@@ -26,6 +26,8 @@ const nextConfig = {
   },
   swcMinify: true,
   async headers() {
+    const oneYear = 31536000 // 1 year in seconds
+    
     return [
       {
         source: '/:path*',
@@ -48,42 +50,60 @@ const nextConfig = {
           },
         ],
       },
+      // Static images in public/images folder
       {
-        source: '/images/:path*',
+        source: '/images/:path*.(jpg|jpeg|png|webp|avif|svg|gif|ico)',
         headers: [
           {
             key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable',
-          },
-          {
-            key: 'Expires',
-            value: new Date(Date.now() + 31536000000).toUTCString(),
+            value: `public, max-age=${oneYear}, immutable`,
           },
         ],
       },
+      // Next.js optimized images
       {
-        source: '/_next/image',
+        source: '/_next/image/:path*',
         headers: [
           {
             key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable',
-          },
-          {
-            key: 'Expires',
-            value: new Date(Date.now() + 31536000000).toUTCString(),
+            value: `public, max-age=${oneYear}, immutable`,
           },
         ],
       },
+      // Next.js static files
+      {
+        source: '/_next/static/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: `public, max-age=${oneYear}, immutable`,
+          },
+        ],
+      },
+      // Placeholder SVG images
       {
         source: '/placeholder.svg',
         headers: [
           {
             key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable',
+            value: `public, max-age=${oneYear}, immutable`,
           },
+        ],
+      },
+      // Logo and favicon
+      {
+        source: '/:path*.(ico|png|svg)',
+        has: [
           {
-            key: 'Expires',
-            value: new Date(Date.now() + 31536000000).toUTCString(),
+            type: 'header',
+            key: 'accept',
+            value: '(.*image.*)',
+          },
+        ],
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: `public, max-age=${oneYear}, immutable`,
           },
         ],
       },
